@@ -1,0 +1,2202 @@
+[54520.903908][ctx       none]==========va_TraceCreateConfig
+[54520.903913][ctx       none]	profile = 7
+[54520.903914][ctx       none]	entrypoint = 1
+[54520.903914][ctx       none]	num_attribs = 0
+[54520.903934][ctx       none]==========va_TraceQuerySurfaceAttributes
+[54520.903934][ctx       none]	config = 0x00000004
+[54520.903938][ctx       none]==========va_TraceQuerySurfaceAttributes
+[54520.903939][ctx       none]	config = 0x00000004
+[54520.903939][ctx       none]	attrib_list[0] =
+[54520.903939][ctx       none]		type = 1
+[54520.903939][ctx       none]		flags = 3
+[54520.903940][ctx       none]		value.type = 1
+[54520.903940][ctx       none]		value.value.i = 0x3231564e
+[54520.903940][ctx       none]	attrib_list[1] =
+[54520.903940][ctx       none]		type = 3
+[54520.903941][ctx       none]		flags = 1
+[54520.903941][ctx       none]		value.type = 1
+[54520.903941][ctx       none]		value.value.i = 0x00001000
+[54520.903941][ctx       none]	attrib_list[2] =
+[54520.903941][ctx       none]		type = 5
+[54520.903942][ctx       none]		flags = 1
+[54520.903942][ctx       none]		value.type = 1
+[54520.903942][ctx       none]		value.value.i = 0x00001000
+[54520.903942][ctx       none]	attrib_list[3] =
+[54520.903942][ctx       none]		type = 6
+[54520.903943][ctx       none]		flags = 3
+[54520.903943][ctx       none]		value.type = 1
+[54520.903943][ctx       none]		value.value.i = 0x30000005
+[54520.903946][ctx       none]==========va_TraceQuerySurfaceAttributes
+[54520.903946][ctx       none]	config = 0x00000004
+[54520.903949][ctx       none]==========va_TraceQuerySurfaceAttributes
+[54520.903949][ctx       none]	config = 0x00000004
+[54520.903949][ctx       none]	attrib_list[0] =
+[54520.903949][ctx       none]		type = 1
+[54520.903950][ctx       none]		flags = 3
+[54520.903950][ctx       none]		value.type = 1
+[54520.903950][ctx       none]		value.value.i = 0x3231564e
+[54520.903950][ctx       none]	attrib_list[1] =
+[54520.903950][ctx       none]		type = 3
+[54520.903951][ctx       none]		flags = 1
+[54520.903951][ctx       none]		value.type = 1
+[54520.903951][ctx       none]		value.value.i = 0x00001000
+[54520.903951][ctx       none]	attrib_list[2] =
+[54520.903951][ctx       none]		type = 5
+[54520.903952][ctx       none]		flags = 1
+[54520.903952][ctx       none]		value.type = 1
+[54520.903952][ctx       none]		value.value.i = 0x00001000
+[54520.903952][ctx       none]	attrib_list[3] =
+[54520.903952][ctx       none]		type = 6
+[54520.903953][ctx       none]		flags = 3
+[54520.903953][ctx       none]		value.type = 1
+[54520.903953][ctx       none]		value.value.i = 0x30000005
+[54520.903956][ctx       none]==========va_TraceDestroyConfig
+[54520.903956][ctx       none]	config = 0x00000004
+[54520.903977][ctx       none]==========va_TraceCreateSurfaces
+[54520.903977][ctx       none]	width = 320
+[54520.903978][ctx       none]	height = 240
+[54520.903978][ctx       none]	format = 1
+[54520.903978][ctx       none]	num_surfaces = 1
+[54520.903978][ctx       none]		surfaces[0] = 0x00000000
+[54520.903979][ctx       none]	attrib_list[0] =
+[54520.903979][ctx       none]		type = 1
+[54520.903979][ctx       none]		flags = 0
+[54520.903979][ctx       none]		value.type = 0
+[54520.903980][ctx       none]	attrib_list[1] =
+[54520.903980][ctx       none]		type = 6
+[54520.903980][ctx       none]		flags = 2
+[54520.903980][ctx       none]		value.type = 1
+[54520.903980][ctx       none]		value.value.i = 0x00000001
+[54520.903998][ctx       none]==========va_TraceCreateSurfaces
+[54520.903998][ctx       none]	width = 320
+[54520.903999][ctx       none]	height = 240
+[54520.903999][ctx       none]	format = 1
+[54520.903999][ctx       none]	num_surfaces = 1
+[54520.903999][ctx       none]		surfaces[0] = 0x00000001
+[54520.904000][ctx       none]	attrib_list[0] =
+[54520.904000][ctx       none]		type = 1
+[54520.904000][ctx       none]		flags = 0
+[54520.904000][ctx       none]		value.type = 0
+[54520.904000][ctx       none]	attrib_list[1] =
+[54520.904001][ctx       none]		type = 6
+[54520.904001][ctx       none]		flags = 2
+[54520.904001][ctx       none]		value.type = 1
+[54520.904001][ctx       none]		value.value.i = 0x00000001
+[54520.904014][ctx       none]==========va_TraceCreateSurfaces
+[54520.904015][ctx       none]	width = 320
+[54520.904015][ctx       none]	height = 240
+[54520.904015][ctx       none]	format = 1
+[54520.904015][ctx       none]	num_surfaces = 1
+[54520.904016][ctx       none]		surfaces[0] = 0x00000002
+[54520.904016][ctx       none]	attrib_list[0] =
+[54520.904016][ctx       none]		type = 1
+[54520.904016][ctx       none]		flags = 0
+[54520.904017][ctx       none]		value.type = 0
+[54520.904017][ctx       none]	attrib_list[1] =
+[54520.904017][ctx       none]		type = 6
+[54520.904017][ctx       none]		flags = 2
+[54520.904017][ctx       none]		value.type = 1
+[54520.904018][ctx       none]		value.value.i = 0x00000001
+[54520.904027][ctx       none]==========va_TraceCreateSurfaces
+[54520.904028][ctx       none]	width = 320
+[54520.904028][ctx       none]	height = 240
+[54520.904028][ctx       none]	format = 1
+[54520.904028][ctx       none]	num_surfaces = 1
+[54520.904028][ctx       none]		surfaces[0] = 0x00000003
+[54520.904029][ctx       none]	attrib_list[0] =
+[54520.904029][ctx       none]		type = 1
+[54520.904029][ctx       none]		flags = 0
+[54520.904029][ctx       none]		value.type = 0
+[54520.904030][ctx       none]	attrib_list[1] =
+[54520.904030][ctx       none]		type = 6
+[54520.904030][ctx       none]		flags = 2
+[54520.904030][ctx       none]		value.type = 1
+[54520.904030][ctx       none]		value.value.i = 0x00000001
+[54520.904046][ctx       none]==========va_TraceCreateSurfaces
+[54520.904047][ctx       none]	width = 320
+[54520.904047][ctx       none]	height = 240
+[54520.904047][ctx       none]	format = 1
+[54520.904047][ctx       none]	num_surfaces = 1
+[54520.904048][ctx       none]		surfaces[0] = 0x00000004
+[54520.904048][ctx       none]	attrib_list[0] =
+[54520.904048][ctx       none]		type = 1
+[54520.904048][ctx       none]		flags = 0
+[54520.904049][ctx       none]		value.type = 0
+[54520.904049][ctx       none]	attrib_list[1] =
+[54520.904049][ctx       none]		type = 6
+[54520.904049][ctx       none]		flags = 2
+[54520.904049][ctx       none]		value.type = 1
+[54520.904050][ctx       none]		value.value.i = 0x00000001
+[54520.904061][ctx       none]==========va_TraceCreateSurfaces
+[54520.904062][ctx       none]	width = 320
+[54520.904062][ctx       none]	height = 240
+[54520.904062][ctx       none]	format = 1
+[54520.904062][ctx       none]	num_surfaces = 1
+[54520.904062][ctx       none]		surfaces[0] = 0x00000005
+[54520.904063][ctx       none]	attrib_list[0] =
+[54520.904063][ctx       none]		type = 1
+[54520.904063][ctx       none]		flags = 0
+[54520.904063][ctx       none]		value.type = 0
+[54520.904064][ctx       none]	attrib_list[1] =
+[54520.904064][ctx       none]		type = 6
+[54520.904064][ctx       none]		flags = 2
+[54520.904064][ctx       none]		value.type = 1
+[54520.904064][ctx       none]		value.value.i = 0x00000001
+[54520.904074][ctx       none]==========va_TraceCreateSurfaces
+[54520.904075][ctx       none]	width = 320
+[54520.904075][ctx       none]	height = 240
+[54520.904075][ctx       none]	format = 1
+[54520.904075][ctx       none]	num_surfaces = 1
+[54520.904076][ctx       none]		surfaces[0] = 0x00000006
+[54520.904076][ctx       none]	attrib_list[0] =
+[54520.904076][ctx       none]		type = 1
+[54520.904076][ctx       none]		flags = 0
+[54520.904076][ctx       none]		value.type = 0
+[54520.904077][ctx       none]	attrib_list[1] =
+[54520.904077][ctx       none]		type = 6
+[54520.904077][ctx       none]		flags = 2
+[54520.904077][ctx       none]		value.type = 1
+[54520.904077][ctx       none]		value.value.i = 0x00000001
+[54520.904088][ctx       none]==========va_TraceCreateSurfaces
+[54520.904089][ctx       none]	width = 320
+[54520.904089][ctx       none]	height = 240
+[54520.904089][ctx       none]	format = 1
+[54520.904089][ctx       none]	num_surfaces = 1
+[54520.904089][ctx       none]		surfaces[0] = 0x00000007
+[54520.904090][ctx       none]	attrib_list[0] =
+[54520.904090][ctx       none]		type = 1
+[54520.904090][ctx       none]		flags = 0
+[54520.904090][ctx       none]		value.type = 0
+[54520.904091][ctx       none]	attrib_list[1] =
+[54520.904091][ctx       none]		type = 6
+[54520.904091][ctx       none]		flags = 2
+[54520.904091][ctx       none]		value.type = 1
+[54520.904091][ctx       none]		value.value.i = 0x00000001
+[54520.904103][ctx       none]==========va_TraceCreateSurfaces
+[54520.904104][ctx       none]	width = 320
+[54520.904104][ctx       none]	height = 240
+[54520.904104][ctx       none]	format = 1
+[54520.904104][ctx       none]	num_surfaces = 1
+[54520.904104][ctx       none]		surfaces[0] = 0x00000008
+[54520.904105][ctx       none]	attrib_list[0] =
+[54520.904105][ctx       none]		type = 1
+[54520.904105][ctx       none]		flags = 0
+[54520.904105][ctx       none]		value.type = 0
+[54520.904106][ctx       none]	attrib_list[1] =
+[54520.904106][ctx       none]		type = 6
+[54520.904106][ctx       none]		flags = 2
+[54520.904106][ctx       none]		value.type = 1
+[54520.904106][ctx       none]		value.value.i = 0x00000001
+[54520.904116][ctx       none]==========va_TraceCreateSurfaces
+[54520.904116][ctx       none]	width = 320
+[54520.904116][ctx       none]	height = 240
+[54520.904117][ctx       none]	format = 1
+[54520.904117][ctx       none]	num_surfaces = 1
+[54520.904117][ctx       none]		surfaces[0] = 0x00000009
+[54520.904117][ctx       none]	attrib_list[0] =
+[54520.904117][ctx       none]		type = 1
+[54520.904118][ctx       none]		flags = 0
+[54520.904118][ctx       none]		value.type = 0
+[54520.904118][ctx       none]	attrib_list[1] =
+[54520.904118][ctx       none]		type = 6
+[54520.904118][ctx       none]		flags = 2
+[54520.904119][ctx       none]		value.type = 1
+[54520.904119][ctx       none]		value.value.i = 0x00000001
+[54520.904128][ctx       none]==========va_TraceCreateSurfaces
+[54520.904128][ctx       none]	width = 320
+[54520.904128][ctx       none]	height = 240
+[54520.904129][ctx       none]	format = 1
+[54520.904129][ctx       none]	num_surfaces = 1
+[54520.904129][ctx       none]		surfaces[0] = 0x0000000a
+[54520.904129][ctx       none]	attrib_list[0] =
+[54520.904130][ctx       none]		type = 1
+[54520.904130][ctx       none]		flags = 0
+[54520.904130][ctx       none]		value.type = 0
+[54520.904130][ctx       none]	attrib_list[1] =
+[54520.904130][ctx       none]		type = 6
+[54520.904131][ctx       none]		flags = 2
+[54520.904131][ctx       none]		value.type = 1
+[54520.904131][ctx       none]		value.value.i = 0x00000001
+[54520.904141][ctx       none]==========va_TraceCreateSurfaces
+[54520.904142][ctx       none]	width = 320
+[54520.904142][ctx       none]	height = 240
+[54520.904142][ctx       none]	format = 1
+[54520.904142][ctx       none]	num_surfaces = 1
+[54520.904143][ctx       none]		surfaces[0] = 0x0000000b
+[54520.904143][ctx       none]	attrib_list[0] =
+[54520.904143][ctx       none]		type = 1
+[54520.904143][ctx       none]		flags = 0
+[54520.904144][ctx       none]		value.type = 0
+[54520.904144][ctx       none]	attrib_list[1] =
+[54520.904144][ctx       none]		type = 6
+[54520.904144][ctx       none]		flags = 2
+[54520.904144][ctx       none]		value.type = 1
+[54520.904145][ctx       none]		value.value.i = 0x00000001
+[54520.904153][ctx       none]==========va_TraceCreateSurfaces
+[54520.904153][ctx       none]	width = 320
+[54520.904154][ctx       none]	height = 240
+[54520.904154][ctx       none]	format = 1
+[54520.904154][ctx       none]	num_surfaces = 1
+[54520.904154][ctx       none]		surfaces[0] = 0x0000000c
+[54520.904155][ctx       none]	attrib_list[0] =
+[54520.904155][ctx       none]		type = 1
+[54520.904155][ctx       none]		flags = 0
+[54520.904155][ctx       none]		value.type = 0
+[54520.904155][ctx       none]	attrib_list[1] =
+[54520.904156][ctx       none]		type = 6
+[54520.904156][ctx       none]		flags = 2
+[54520.904156][ctx       none]		value.type = 1
+[54520.904156][ctx       none]		value.value.i = 0x00000001
+[54520.904165][ctx       none]==========va_TraceCreateSurfaces
+[54520.904165][ctx       none]	width = 320
+[54520.904166][ctx       none]	height = 240
+[54520.904166][ctx       none]	format = 1
+[54520.904166][ctx       none]	num_surfaces = 1
+[54520.904166][ctx       none]		surfaces[0] = 0x0000000d
+[54520.904166][ctx       none]	attrib_list[0] =
+[54520.904167][ctx       none]		type = 1
+[54520.904167][ctx       none]		flags = 0
+[54520.904167][ctx       none]		value.type = 0
+[54520.904167][ctx       none]	attrib_list[1] =
+[54520.904168][ctx       none]		type = 6
+[54520.904168][ctx       none]		flags = 2
+[54520.904168][ctx       none]		value.type = 1
+[54520.904168][ctx       none]		value.value.i = 0x00000001
+[54520.904182][ctx       none]==========va_TraceCreateSurfaces
+[54520.904183][ctx       none]	width = 320
+[54520.904183][ctx       none]	height = 240
+[54520.904183][ctx       none]	format = 1
+[54520.904183][ctx       none]	num_surfaces = 1
+[54520.904183][ctx       none]		surfaces[0] = 0x0000000e
+[54520.904184][ctx       none]	attrib_list[0] =
+[54520.904184][ctx       none]		type = 1
+[54520.904184][ctx       none]		flags = 0
+[54520.904184][ctx       none]		value.type = 0
+[54520.904185][ctx       none]	attrib_list[1] =
+[54520.904185][ctx       none]		type = 6
+[54520.904185][ctx       none]		flags = 2
+[54520.904185][ctx       none]		value.type = 1
+[54520.904185][ctx       none]		value.value.i = 0x00000001
+[54520.904195][ctx       none]==========va_TraceCreateSurfaces
+[54520.904195][ctx       none]	width = 320
+[54520.904195][ctx       none]	height = 240
+[54520.904196][ctx       none]	format = 1
+[54520.904196][ctx       none]	num_surfaces = 1
+[54520.904196][ctx       none]		surfaces[0] = 0x0000000f
+[54520.904196][ctx       none]	attrib_list[0] =
+[54520.904196][ctx       none]		type = 1
+[54520.904197][ctx       none]		flags = 0
+[54520.904197][ctx       none]		value.type = 0
+[54520.904197][ctx       none]	attrib_list[1] =
+[54520.904197][ctx       none]		type = 6
+[54520.904198][ctx       none]		flags = 2
+[54520.904198][ctx       none]		value.type = 1
+[54520.904198][ctx       none]		value.value.i = 0x00000001
+[54520.904207][ctx       none]==========va_TraceCreateSurfaces
+[54520.904208][ctx       none]	width = 320
+[54520.904208][ctx       none]	height = 240
+[54520.904208][ctx       none]	format = 1
+[54520.904209][ctx       none]	num_surfaces = 1
+[54520.904209][ctx       none]		surfaces[0] = 0x00000010
+[54520.904209][ctx       none]	attrib_list[0] =
+[54520.904209][ctx       none]		type = 1
+[54520.904209][ctx       none]		flags = 0
+[54520.904210][ctx       none]		value.type = 0
+[54520.904210][ctx       none]	attrib_list[1] =
+[54520.904210][ctx       none]		type = 6
+[54520.904210][ctx       none]		flags = 2
+[54520.904210][ctx       none]		value.type = 1
+[54520.904211][ctx       none]		value.value.i = 0x00000001
+[54520.904221][ctx       none]==========va_TraceCreateSurfaces
+[54520.904222][ctx       none]	width = 320
+[54520.904222][ctx       none]	height = 240
+[54520.904222][ctx       none]	format = 1
+[54520.904222][ctx       none]	num_surfaces = 1
+[54520.904222][ctx       none]		surfaces[0] = 0x00000011
+[54520.904223][ctx       none]	attrib_list[0] =
+[54520.904223][ctx       none]		type = 1
+[54520.904223][ctx       none]		flags = 0
+[54520.904223][ctx       none]		value.type = 0
+[54520.904224][ctx       none]	attrib_list[1] =
+[54520.904224][ctx       none]		type = 6
+[54520.904224][ctx       none]		flags = 2
+[54520.904224][ctx       none]		value.type = 1
+[54520.904224][ctx       none]		value.value.i = 0x00000001
+[54520.904233][ctx       none]==========va_TraceCreateSurfaces
+[54520.904233][ctx       none]	width = 320
+[54520.904234][ctx       none]	height = 240
+[54520.904234][ctx       none]	format = 1
+[54520.904234][ctx       none]	num_surfaces = 1
+[54520.904234][ctx       none]		surfaces[0] = 0x00000012
+[54520.904235][ctx       none]	attrib_list[0] =
+[54520.904235][ctx       none]		type = 1
+[54520.904235][ctx       none]		flags = 0
+[54520.904235][ctx       none]		value.type = 0
+[54520.904235][ctx       none]	attrib_list[1] =
+[54520.904236][ctx       none]		type = 6
+[54520.904236][ctx       none]		flags = 2
+[54520.904236][ctx       none]		value.type = 1
+[54520.904236][ctx       none]		value.value.i = 0x00000001
+[54520.904245][ctx       none]==========va_TraceCreateSurfaces
+[54520.904245][ctx       none]	width = 320
+[54520.904246][ctx       none]	height = 240
+[54520.904246][ctx       none]	format = 1
+[54520.904246][ctx       none]	num_surfaces = 1
+[54520.904246][ctx       none]		surfaces[0] = 0x00000013
+[54520.904247][ctx       none]	attrib_list[0] =
+[54520.904247][ctx       none]		type = 1
+[54520.904247][ctx       none]		flags = 0
+[54520.904247][ctx       none]		value.type = 0
+[54520.904247][ctx       none]	attrib_list[1] =
+[54520.904248][ctx       none]		type = 6
+[54520.904248][ctx       none]		flags = 2
+[54520.904248][ctx       none]		value.type = 1
+[54520.904248][ctx       none]		value.value.i = 0x00000001
+[54520.904259][ctx       none]==========va_TraceCreateSurfaces
+[54520.904260][ctx       none]	width = 320
+[54520.904260][ctx       none]	height = 240
+[54520.904260][ctx       none]	format = 1
+[54520.904260][ctx       none]	num_surfaces = 1
+[54520.904261][ctx       none]		surfaces[0] = 0x00000014
+[54520.904261][ctx       none]	attrib_list[0] =
+[54520.904261][ctx       none]		type = 1
+[54520.904261][ctx       none]		flags = 0
+[54520.904262][ctx       none]		value.type = 0
+[54520.904262][ctx       none]	attrib_list[1] =
+[54520.904262][ctx       none]		type = 6
+[54520.904262][ctx       none]		flags = 2
+[54520.904262][ctx       none]		value.type = 1
+[54520.904263][ctx       none]		value.value.i = 0x00000001
+[54520.904276][ctx       none]==========va_TraceCreateSurfaces
+[54520.904277][ctx       none]	width = 320
+[54520.904277][ctx       none]	height = 240
+[54520.904278][ctx       none]	format = 1
+[54520.904278][ctx       none]	num_surfaces = 1
+[54520.904278][ctx       none]		surfaces[0] = 0x00000015
+[54520.904279][ctx       none]	attrib_list[0] =
+[54520.904279][ctx       none]		type = 1
+[54520.904280][ctx       none]		flags = 0
+[54520.904280][ctx       none]		value.type = 0
+[54520.904281][ctx       none]	attrib_list[1] =
+[54520.904281][ctx       none]		type = 6
+[54520.904281][ctx       none]		flags = 2
+[54520.904282][ctx       none]		value.type = 1
+[54520.904282][ctx       none]		value.value.i = 0x00000001
+[54520.904295][ctx       none]==========va_TraceCreateSurfaces
+[54520.904295][ctx       none]	width = 320
+[54520.904295][ctx       none]	height = 240
+[54520.904295][ctx       none]	format = 1
+[54520.904296][ctx       none]	num_surfaces = 1
+[54520.904296][ctx       none]		surfaces[0] = 0x00000016
+[54520.904296][ctx       none]	attrib_list[0] =
+[54520.904296][ctx       none]		type = 1
+[54520.904297][ctx       none]		flags = 0
+[54520.904297][ctx       none]		value.type = 0
+[54520.904297][ctx       none]	attrib_list[1] =
+[54520.904297][ctx       none]		type = 6
+[54520.904297][ctx       none]		flags = 2
+[54520.904298][ctx       none]		value.type = 1
+[54520.904298][ctx       none]		value.value.i = 0x00000001
+[54520.904307][ctx       none]==========va_TraceCreateSurfaces
+[54520.904307][ctx       none]	width = 320
+[54520.904308][ctx       none]	height = 240
+[54520.904308][ctx       none]	format = 1
+[54520.904308][ctx       none]	num_surfaces = 1
+[54520.904308][ctx       none]		surfaces[0] = 0x00000017
+[54520.904309][ctx       none]	attrib_list[0] =
+[54520.904309][ctx       none]		type = 1
+[54520.904309][ctx       none]		flags = 0
+[54520.904309][ctx       none]		value.type = 0
+[54520.904309][ctx       none]	attrib_list[1] =
+[54520.904310][ctx       none]		type = 6
+[54520.904310][ctx       none]		flags = 2
+[54520.904310][ctx       none]		value.type = 1
+[54520.904310][ctx       none]		value.value.i = 0x00000001
+[54520.904321][ctx       none]==========va_TraceCreateSurfaces
+[54520.904321][ctx       none]	width = 320
+[54520.904322][ctx       none]	height = 240
+[54520.904322][ctx       none]	format = 1
+[54520.904322][ctx       none]	num_surfaces = 1
+[54520.904322][ctx       none]		surfaces[0] = 0x00000018
+[54520.904323][ctx       none]	attrib_list[0] =
+[54520.904323][ctx       none]		type = 1
+[54520.904323][ctx       none]		flags = 0
+[54520.904323][ctx       none]		value.type = 0
+[54520.904323][ctx       none]	attrib_list[1] =
+[54520.904324][ctx       none]		type = 6
+[54520.904324][ctx       none]		flags = 2
+[54520.904324][ctx       none]		value.type = 1
+[54520.904324][ctx       none]		value.value.i = 0x00000001
+[54520.904336][ctx       none]==========va_TraceCreateSurfaces
+[54520.904337][ctx       none]	width = 320
+[54520.904337][ctx       none]	height = 240
+[54520.904337][ctx       none]	format = 1
+[54520.904337][ctx       none]	num_surfaces = 1
+[54520.904338][ctx       none]		surfaces[0] = 0x00000019
+[54520.904338][ctx       none]	attrib_list[0] =
+[54520.904338][ctx       none]		type = 1
+[54520.904338][ctx       none]		flags = 0
+[54520.904339][ctx       none]		value.type = 0
+[54520.904339][ctx       none]	attrib_list[1] =
+[54520.904339][ctx       none]		type = 6
+[54520.904339][ctx       none]		flags = 2
+[54520.904339][ctx       none]		value.type = 1
+[54520.904340][ctx       none]		value.value.i = 0x00000001
+[54520.904348][ctx       none]==========va_TraceCreateSurfaces
+[54520.904349][ctx       none]	width = 320
+[54520.904349][ctx       none]	height = 240
+[54520.904349][ctx       none]	format = 1
+[54520.904350][ctx       none]	num_surfaces = 1
+[54520.904350][ctx       none]		surfaces[0] = 0x0000001a
+[54520.904350][ctx       none]	attrib_list[0] =
+[54520.904350][ctx       none]		type = 1
+[54520.904350][ctx       none]		flags = 0
+[54520.904351][ctx       none]		value.type = 0
+[54520.904351][ctx       none]	attrib_list[1] =
+[54520.904351][ctx       none]		type = 6
+[54520.904351][ctx       none]		flags = 2
+[54520.904352][ctx       none]		value.type = 1
+[54520.904352][ctx       none]		value.value.i = 0x00000001
+[54520.904360][ctx       none]==========va_TraceCreateSurfaces
+[54520.904361][ctx       none]	width = 320
+[54520.904361][ctx       none]	height = 240
+[54520.904361][ctx       none]	format = 1
+[54520.904361][ctx       none]	num_surfaces = 1
+[54520.904362][ctx       none]		surfaces[0] = 0x0000001b
+[54520.904362][ctx       none]	attrib_list[0] =
+[54520.904362][ctx       none]		type = 1
+[54520.904362][ctx       none]		flags = 0
+[54520.904363][ctx       none]		value.type = 0
+[54520.904363][ctx       none]	attrib_list[1] =
+[54520.904363][ctx       none]		type = 6
+[54520.904363][ctx       none]		flags = 2
+[54520.904363][ctx       none]		value.type = 1
+[54520.904364][ctx       none]		value.value.i = 0x00000001
+[54520.904374][ctx       none]==========va_TraceCreateSurfaces
+[54520.904374][ctx       none]	width = 320
+[54520.904374][ctx       none]	height = 240
+[54520.904374][ctx       none]	format = 1
+[54520.904375][ctx       none]	num_surfaces = 1
+[54520.904375][ctx       none]		surfaces[0] = 0x0000001c
+[54520.904375][ctx       none]	attrib_list[0] =
+[54520.904375][ctx       none]		type = 1
+[54520.904376][ctx       none]		flags = 0
+[54520.904376][ctx       none]		value.type = 0
+[54520.904376][ctx       none]	attrib_list[1] =
+[54520.904376][ctx       none]		type = 6
+[54520.904376][ctx       none]		flags = 2
+[54520.904377][ctx       none]		value.type = 1
+[54520.904377][ctx       none]		value.value.i = 0x00000001
+[54520.904396][ctx       none]==========va_TraceCreateConfig
+[54520.904396][ctx       none]	profile = 7
+[54520.904397][ctx       none]	entrypoint = 1
+[54520.904397][ctx       none]	num_attribs = 0
+[54520.904400][ctx       none]==========va_TraceQuerySurfaceAttributes
+[54520.904400][ctx       none]	config = 0x00000004
+[54520.904403][ctx       none]==========va_TraceQuerySurfaceAttributes
+[54520.904403][ctx       none]	config = 0x00000004
+[54520.904404][ctx       none]	attrib_list[0] =
+[54520.904404][ctx       none]		type = 1
+[54520.904404][ctx       none]		flags = 3
+[54520.904404][ctx       none]		value.type = 1
+[54520.904404][ctx       none]		value.value.i = 0x3231564e
+[54520.904405][ctx       none]	attrib_list[1] =
+[54520.904405][ctx       none]		type = 3
+[54520.904405][ctx       none]		flags = 1
+[54520.904405][ctx       none]		value.type = 1
+[54520.904406][ctx       none]		value.value.i = 0x00001000
+[54520.904406][ctx       none]	attrib_list[2] =
+[54520.904406][ctx       none]		type = 5
+[54520.904406][ctx       none]		flags = 1
+[54520.904406][ctx       none]		value.type = 1
+[54520.904407][ctx       none]		value.value.i = 0x00001000
+[54520.904407][ctx       none]	attrib_list[3] =
+[54520.904407][ctx       none]		type = 6
+[54520.904407][ctx       none]		flags = 3
+[54520.904407][ctx       none]		value.type = 1
+[54520.904408][ctx       none]		value.value.i = 0x30000005
+[54520.904412][ctx       none]==========va_TraceQuerySurfaceAttributes
+[54520.904412][ctx       none]	config = 0x00000004
+[54520.904415][ctx       none]==========va_TraceQuerySurfaceAttributes
+[54520.904415][ctx       none]	config = 0x00000004
+[54520.904415][ctx       none]	attrib_list[0] =
+[54520.904416][ctx       none]		type = 1
+[54520.904416][ctx       none]		flags = 3
+[54520.904416][ctx       none]		value.type = 1
+[54520.904416][ctx       none]		value.value.i = 0x3231564e
+[54520.904416][ctx       none]	attrib_list[1] =
+[54520.904417][ctx       none]		type = 3
+[54520.904417][ctx       none]		flags = 1
+[54520.904417][ctx       none]		value.type = 1
+[54520.904417][ctx       none]		value.value.i = 0x00001000
+[54520.904417][ctx       none]	attrib_list[2] =
+[54520.904418][ctx       none]		type = 5
+[54520.904418][ctx       none]		flags = 1
+[54520.904418][ctx       none]		value.type = 1
+[54520.904418][ctx       none]		value.value.i = 0x00001000
+[54520.904418][ctx       none]	attrib_list[3] =
+[54520.904419][ctx       none]		type = 6
+[54520.904419][ctx       none]		flags = 3
+[54520.904419][ctx       none]		value.type = 1
+[54520.904419][ctx       none]		value.value.i = 0x30000005
+[54520.905113][ctx 0x10000000]==========va_TraceCreateContext
+[54520.905114][ctx 0x10000000]	context = 0x10000000 va_trace_flag 0x1
+[54520.905114][ctx 0x10000000]	profile = 7 entrypoint = 1
+[54520.905115][ctx 0x10000000]	config = 0x00000004
+[54520.905115][ctx 0x10000000]	width = 320
+[54520.905115][ctx 0x10000000]	height = 240
+[54520.905116][ctx 0x10000000]	flag = 0x00000001
+[54520.905116][ctx 0x10000000]	num_render_targets = 29
+[54520.905116][ctx 0x10000000]		render_targets[0] = 0x00000000
+[54520.905117][ctx 0x10000000]		render_targets[1] = 0x00000001
+[54520.905117][ctx 0x10000000]		render_targets[2] = 0x00000002
+[54520.905117][ctx 0x10000000]		render_targets[3] = 0x00000003
+[54520.905117][ctx 0x10000000]		render_targets[4] = 0x00000004
+[54520.905118][ctx 0x10000000]		render_targets[5] = 0x00000005
+[54520.905118][ctx 0x10000000]		render_targets[6] = 0x00000006
+[54520.905118][ctx 0x10000000]		render_targets[7] = 0x00000007
+[54520.905118][ctx 0x10000000]		render_targets[8] = 0x00000008
+[54520.905119][ctx 0x10000000]		render_targets[9] = 0x00000009
+[54520.905119][ctx 0x10000000]		render_targets[10] = 0x0000000a
+[54520.905119][ctx 0x10000000]		render_targets[11] = 0x0000000b
+[54520.905120][ctx 0x10000000]		render_targets[12] = 0x0000000c
+[54520.905120][ctx 0x10000000]		render_targets[13] = 0x0000000d
+[54520.905120][ctx 0x10000000]		render_targets[14] = 0x0000000e
+[54520.905120][ctx 0x10000000]		render_targets[15] = 0x0000000f
+[54520.905121][ctx 0x10000000]		render_targets[16] = 0x00000010
+[54520.905135][ctx 0x10000000]		render_targets[17] = 0x00000011
+[54520.905136][ctx 0x10000000]		render_targets[18] = 0x00000012
+[54520.905136][ctx 0x10000000]		render_targets[19] = 0x00000013
+[54520.905136][ctx 0x10000000]		render_targets[20] = 0x00000014
+[54520.905137][ctx 0x10000000]		render_targets[21] = 0x00000015
+[54520.905137][ctx 0x10000000]		render_targets[22] = 0x00000016
+[54520.905137][ctx 0x10000000]		render_targets[23] = 0x00000017
+[54520.905137][ctx 0x10000000]		render_targets[24] = 0x00000018
+[54520.905138][ctx 0x10000000]		render_targets[25] = 0x00000019
+[54520.905138][ctx 0x10000000]		render_targets[26] = 0x0000001a
+[54520.905138][ctx 0x10000000]		render_targets[27] = 0x0000001b
+[54520.905139][ctx 0x10000000]		render_targets[28] = 0x0000001c
+[54520.905242][ctx 0x10000000]==========va_TraceBeginPicture
+[54520.905243][ctx 0x10000000]	context = 0x10000000
+[54520.905244][ctx 0x10000000]	render_targets = 0x0000001c
+[54520.905244][ctx 0x10000000]	frame_count  = #0
+[54520.905252][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.905252][ctx 0x10000000]	context = 0x10000000
+[54520.905253][ctx 0x10000000]	num_buffers = 2
+[54520.905255][ctx 0x10000000]	---------------------------
+[54520.905255][ctx 0x10000000]	buffers[0] = 0x00000000
+[54520.905256][ctx 0x10000000]	  type = VAPictureParameterBufferType
+[54520.905256][ctx 0x10000000]	  size = 672
+[54520.905256][ctx 0x10000000]	  num_elements = 1
+[54520.905258][ctx 0x10000000]	element[0] =
+[54520.905259][ctx 0x10000000]	--VAPictureParameterBufferH264
+[54520.905259][ctx 0x10000000]	CurrPic.picture_id = 0x0000001c
+[54520.905260][ctx 0x10000000]	CurrPic.frame_idx = 0
+[54520.905260][ctx 0x10000000]	CurrPic.flags = 0x00000008
+[54520.905260][ctx 0x10000000]	CurrPic.TopFieldOrderCnt = 65536
+[54520.905261][ctx 0x10000000]	CurrPic.BottomFieldOrderCnt = 65536
+[54520.905261][ctx 0x10000000]	ReferenceFrames (TopFieldOrderCnt-BottomFieldOrderCnt-picture_id-frame_idx-flags:
+[54520.905261][ctx 0x10000000]	picture_width_in_mbs_minus1 = 19
+[54520.905262][ctx 0x10000000]	picture_height_in_mbs_minus1 = 14
+[54520.905262][ctx 0x10000000]	bit_depth_luma_minus8 = 0
+[54520.905262][ctx 0x10000000]	bit_depth_chroma_minus8 = 0
+[54520.905262][ctx 0x10000000]	num_ref_frames = 4
+[54520.905263][ctx 0x10000000]	seq fields = 32849
+[54520.905263][ctx 0x10000000]	chroma_format_idc = 1
+[54520.905263][ctx 0x10000000]	residual_colour_transform_flag = 0
+[54520.905263][ctx 0x10000000]	frame_mbs_only_flag = 1
+[54520.905264][ctx 0x10000000]	mb_adaptive_frame_field_flag = 0
+[54520.905264][ctx 0x10000000]	direct_8x8_inference_flag = 1
+[54520.905264][ctx 0x10000000]	MinLumaBiPredSize8x8 = 0
+[54520.905264][ctx 0x10000000]	pic_init_qp_minus26 = -3
+[54520.905265][ctx 0x10000000]	pic_init_qs_minus26 = 0
+[54520.905265][ctx 0x10000000]	chroma_qp_index_offset = -2
+[54520.905265][ctx 0x10000000]	second_chroma_qp_index_offset = -2
+[54520.905266][ctx 0x10000000]	pic_fields = 0x51b
+[54520.905266][ctx 0x10000000]		entropy_coding_mode_flag = 1
+[54520.905266][ctx 0x10000000]		weighted_pred_flag = 1
+[54520.905267][ctx 0x10000000]		weighted_bipred_idc = 2
+[54520.905267][ctx 0x10000000]		transform_8x8_mode_flag = 1
+[54520.905267][ctx 0x10000000]		deblocking_filter_control_present_flag = 1
+[54520.905268][ctx 0x10000000]		reference_pic_flag = 1
+[54520.905268][ctx 0x10000000]	frame_num = 0
+[54520.905274][ctx 0x10000000]	---------------------------
+[54520.905274][ctx 0x10000000]	buffers[1] = 0x00000001
+[54520.905275][ctx 0x10000000]	  type = VAIQMatrixBufferType
+[54520.905275][ctx 0x10000000]	  size = 240
+[54520.905275][ctx 0x10000000]	  num_elements = 1
+[54520.905276][ctx 0x10000000]	element[0] =
+[54520.905300][ctx 0x10000000]	--VAIQMatrixBufferH264
+[54520.905300][ctx 0x10000000]	ScalingList4x4[6][16]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.905309][ctx 0x10000000]	ScalingList8x8[2][64]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.905334][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.905334][ctx 0x10000000]	context = 0x10000000
+[54520.905334][ctx 0x10000000]	num_buffers = 2
+[54520.905335][ctx 0x10000000]	---------------------------
+[54520.905335][ctx 0x10000000]	buffers[0] = 0x00000002
+[54520.905335][ctx 0x10000000]	  type = VASliceParameterBufferType
+[54520.905335][ctx 0x10000000]	  size = 3128
+[54520.905336][ctx 0x10000000]	  num_elements = 1
+[54520.905336][ctx 0x10000000]	element[0] =
+[54520.905337][ctx 0x10000000]	--VASliceParameterBufferH264
+[54520.905337][ctx 0x10000000]	slice_data_size = 4506
+[54520.905338][ctx 0x10000000]	slice_data_offset = 0
+[54520.905338][ctx 0x10000000]	slice_data_flag = 0x00000000
+[54520.905338][ctx 0x10000000]	slice_data_bit_offset = 34
+[54520.905339][ctx 0x10000000]	first_mb_in_slice = 0
+[54520.905339][ctx 0x10000000]	slice_type = 2
+[54520.905339][ctx 0x10000000]	direct_spatial_mv_pred_flag = 0
+[54520.905339][ctx 0x10000000]	num_ref_idx_l0_active_minus1 = 0
+[54520.905340][ctx 0x10000000]	num_ref_idx_l1_active_minus1 = 0
+[54520.905340][ctx 0x10000000]	cabac_init_idc = 0
+[54520.905340][ctx 0x10000000]	slice_qp_delta = 0
+[54520.905341][ctx 0x10000000]	disable_deblocking_filter_idc = 0
+[54520.905341][ctx 0x10000000]	slice_alpha_c0_offset_div2 = 0
+[54520.905341][ctx 0x10000000]	slice_beta_offset_div2 = 0
+[54520.905341][ctx 0x10000000]	RefPicList0 =
+[54520.905342][ctx 0x10000000]	RefPicList1 =
+[54520.905342][ctx 0x10000000]	luma_log2_weight_denom = 0
+[54520.905342][ctx 0x10000000]	chroma_log2_weight_denom = 0
+[54520.905342][ctx 0x10000000]	luma_weight_l0_flag = 0
+[54520.905343][ctx 0x10000000]		0	0
+[54520.905343][ctx 0x10000000]	chroma_weight_l0_flag = 0
+[54520.905343][ctx 0x10000000]		0	0	0	0
+[54520.905343][ctx 0x10000000]	luma_weight_l1_flag = 0
+[54520.905344][ctx 0x10000000]		0	0
+[54520.905344][ctx 0x10000000]	chroma_weight_l1_flag = 0
+[54520.905344][ctx 0x10000000]		0	0	0	0
+[54520.905348][ctx 0x10000000]	---------------------------
+[54520.905348][ctx 0x10000000]	buffers[1] = 0x00000003
+[54520.905349][ctx 0x10000000]	  type = VASliceDataBufferType
+[54520.905349][ctx 0x10000000]	  size = 4506
+[54520.905349][ctx 0x10000000]	  num_elements = 1
+[54520.905350][ctx 0x10000000]	element[0] =
+--VASliceDataBufferType
+[54520.906144][ctx 0x10000000]==========va_TraceEndPicture
+[54520.906145][ctx 0x10000000]	context = 0x10000000
+[54520.906145][ctx 0x10000000]	render_targets = 0x0000001c
+[54520.914922][ctx 0x10000000]==========va_TraceBeginPicture
+[54520.914924][ctx 0x10000000]	context = 0x10000000
+[54520.914924][ctx 0x10000000]	render_targets = 0x00000013
+[54520.914925][ctx 0x10000000]	frame_count  = #9
+[54520.914936][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.914937][ctx 0x10000000]	context = 0x10000000
+[54520.914937][ctx 0x10000000]	num_buffers = 2
+[54520.914938][ctx 0x10000000]	---------------------------
+[54520.914938][ctx 0x10000000]	buffers[0] = 0x00000003
+[54520.914939][ctx 0x10000000]	  type = VAPictureParameterBufferType
+[54520.914940][ctx 0x10000000]	  size = 672
+[54520.914940][ctx 0x10000000]	  num_elements = 1
+[54520.914942][ctx 0x10000000]	element[0] =
+[54520.914943][ctx 0x10000000]	--VAPictureParameterBufferH264
+[54520.914944][ctx 0x10000000]	CurrPic.picture_id = 0x00000013
+[54520.914945][ctx 0x10000000]	CurrPic.frame_idx = 5
+[54520.914945][ctx 0x10000000]	CurrPic.flags = 0x00000008
+[54520.914946][ctx 0x10000000]	CurrPic.TopFieldOrderCnt = 65560
+[54520.914946][ctx 0x10000000]	CurrPic.BottomFieldOrderCnt = 65560
+[54520.914947][ctx 0x10000000]	ReferenceFrames (TopFieldOrderCnt-BottomFieldOrderCnt-picture_id-frame_idx-flags:
+[54520.914947][ctx 0x10000000]		00065548-00065548-0x00000016-00000004-0x00000008
+[54520.914949][ctx 0x10000000]		00065552-00065552-0x00000017-00000003-0x00000008
+[54520.914950][ctx 0x10000000]		00065544-00065544-0x0000001b-00000001-0x00000008
+[54520.914951][ctx 0x10000000]	picture_width_in_mbs_minus1 = 19
+[54520.914951][ctx 0x10000000]	picture_height_in_mbs_minus1 = 14
+[54520.914952][ctx 0x10000000]	bit_depth_luma_minus8 = 0
+[54520.914952][ctx 0x10000000]	bit_depth_chroma_minus8 = 0
+[54520.914953][ctx 0x10000000]	num_ref_frames = 4
+[54520.914953][ctx 0x10000000]	seq fields = 32849
+[54520.914954][ctx 0x10000000]	chroma_format_idc = 1
+[54520.914954][ctx 0x10000000]	residual_colour_transform_flag = 0
+[54520.914955][ctx 0x10000000]	frame_mbs_only_flag = 1
+[54520.914956][ctx 0x10000000]	mb_adaptive_frame_field_flag = 0
+[54520.914956][ctx 0x10000000]	direct_8x8_inference_flag = 1
+[54520.914957][ctx 0x10000000]	MinLumaBiPredSize8x8 = 0
+[54520.914957][ctx 0x10000000]	pic_init_qp_minus26 = -3
+[54520.914958][ctx 0x10000000]	pic_init_qs_minus26 = 0
+[54520.914958][ctx 0x10000000]	chroma_qp_index_offset = -2
+[54520.914959][ctx 0x10000000]	second_chroma_qp_index_offset = -2
+[54520.914959][ctx 0x10000000]	pic_fields = 0x51b
+[54520.914960][ctx 0x10000000]		entropy_coding_mode_flag = 1
+[54520.914961][ctx 0x10000000]		weighted_pred_flag = 1
+[54520.914961][ctx 0x10000000]		weighted_bipred_idc = 2
+[54520.914962][ctx 0x10000000]		transform_8x8_mode_flag = 1
+[54520.914963][ctx 0x10000000]		deblocking_filter_control_present_flag = 1
+[54520.914963][ctx 0x10000000]		reference_pic_flag = 1
+[54520.914964][ctx 0x10000000]	frame_num = 5
+[54520.914975][ctx 0x10000000]	---------------------------
+[54520.914976][ctx 0x10000000]	buffers[1] = 0x00000002
+[54520.914976][ctx 0x10000000]	  type = VAIQMatrixBufferType
+[54520.914977][ctx 0x10000000]	  size = 240
+[54520.914977][ctx 0x10000000]	  num_elements = 1
+[54520.914978][ctx 0x10000000]	element[0] =
+[54520.914980][ctx 0x10000000]	--VAIQMatrixBufferH264
+[54520.914980][ctx 0x10000000]	ScalingList4x4[6][16]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.914992][ctx 0x10000000]	ScalingList8x8[2][64]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.915013][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.915014][ctx 0x10000000]	context = 0x10000000
+[54520.915015][ctx 0x10000000]	num_buffers = 2
+[54520.915015][ctx 0x10000000]	---------------------------
+[54520.915016][ctx 0x10000000]	buffers[0] = 0x00000001
+[54520.915016][ctx 0x10000000]	  type = VASliceParameterBufferType
+[54520.915017][ctx 0x10000000]	  size = 3128
+[54520.915017][ctx 0x10000000]	  num_elements = 1
+[54520.915018][ctx 0x10000000]	element[0] =
+[54520.915020][ctx 0x10000000]	--VASliceParameterBufferH264
+[54520.915020][ctx 0x10000000]	slice_data_size = 2028
+[54520.915020][ctx 0x10000000]	slice_data_offset = 0
+[54520.915021][ctx 0x10000000]	slice_data_flag = 0x00000000
+[54520.915021][ctx 0x10000000]	slice_data_bit_offset = 81
+[54520.915022][ctx 0x10000000]	first_mb_in_slice = 0
+[54520.915023][ctx 0x10000000]	slice_type = 0
+[54520.915023][ctx 0x10000000]	direct_spatial_mv_pred_flag = 0
+[54520.915024][ctx 0x10000000]	num_ref_idx_l0_active_minus1 = 3
+[54520.915024][ctx 0x10000000]	num_ref_idx_l1_active_minus1 = 0
+[54520.915025][ctx 0x10000000]	cabac_init_idc = 0
+[54520.915025][ctx 0x10000000]	slice_qp_delta = 0
+[54520.915026][ctx 0x10000000]	disable_deblocking_filter_idc = 0
+[54520.915026][ctx 0x10000000]	slice_alpha_c0_offset_div2 = 0
+[54520.915027][ctx 0x10000000]	slice_beta_offset_div2 = 0
+[54520.915027][ctx 0x10000000]	RefPicList0 =
+[54520.915028][ctx 0x10000000]00065552-00065552-0x00000017-00000003-0x00000008
+[54520.915029][ctx 0x10000000]00065552-00065552-0x00000017-00000003-0x00000008
+[54520.915030][ctx 0x10000000]00065548-00065548-0x00000016-00000004-0x00000008
+[54520.915031][ctx 0x10000000]00065544-00065544-0x0000001b-00000001-0x00000008
+[54520.915031][ctx 0x10000000]	RefPicList1 =
+[54520.915032][ctx 0x10000000]	luma_log2_weight_denom = 0
+[54520.915032][ctx 0x10000000]	chroma_log2_weight_denom = 0
+[54520.915033][ctx 0x10000000]	luma_weight_l0_flag = 1
+[54520.915033][ctx 0x10000000]		1	0
+[54520.915034][ctx 0x10000000]		1	-1
+[54520.915035][ctx 0x10000000]		1	0
+[54520.915035][ctx 0x10000000]		1	0
+[54520.915036][ctx 0x10000000]	chroma_weight_l0_flag = 0
+[54520.915036][ctx 0x10000000]		1	0	1	0
+[54520.915037][ctx 0x10000000]		1	0	1	0
+[54520.915038][ctx 0x10000000]		1	0	1	0
+[54520.915039][ctx 0x10000000]		1	0	1	0
+[54520.915039][ctx 0x10000000]	luma_weight_l1_flag = 0
+[54520.915040][ctx 0x10000000]		1	0
+[54520.915040][ctx 0x10000000]	chroma_weight_l1_flag = 0
+[54520.915041][ctx 0x10000000]		1	0	1	0
+[54520.915045][ctx 0x10000000]	---------------------------
+[54520.915046][ctx 0x10000000]	buffers[1] = 0x00000000
+[54520.915047][ctx 0x10000000]	  type = VASliceDataBufferType
+[54520.915047][ctx 0x10000000]	  size = 2028
+[54520.915048][ctx 0x10000000]	  num_elements = 1
+[54520.915049][ctx 0x10000000]	element[0] =
+--VASliceDataBufferType
+[54520.915559][ctx 0x10000000]==========va_TraceEndPicture
+[54520.915560][ctx 0x10000000]	context = 0x10000000
+[54520.915561][ctx 0x10000000]	render_targets = 0x00000013
+[54520.922187][ctx 0x10000000]==========va_TraceBeginPicture
+[54520.922188][ctx 0x10000000]	context = 0x10000000
+[54520.922189][ctx 0x10000000]	render_targets = 0x00000014
+[54520.922189][ctx 0x10000000]	frame_count  = #18
+[54520.922197][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.922198][ctx 0x10000000]	context = 0x10000000
+[54520.922198][ctx 0x10000000]	num_buffers = 2
+[54520.922199][ctx 0x10000000]	---------------------------
+[54520.922199][ctx 0x10000000]	buffers[0] = 0x00000000
+[54520.922199][ctx 0x10000000]	  type = VAPictureParameterBufferType
+[54520.922200][ctx 0x10000000]	  size = 672
+[54520.922200][ctx 0x10000000]	  num_elements = 1
+[54520.922201][ctx 0x10000000]	element[0] =
+[54520.922202][ctx 0x10000000]	--VAPictureParameterBufferH264
+[54520.922202][ctx 0x10000000]	CurrPic.picture_id = 0x00000014
+[54520.922202][ctx 0x10000000]	CurrPic.frame_idx = 10
+[54520.922203][ctx 0x10000000]	CurrPic.flags = 0x00000008
+[54520.922203][ctx 0x10000000]	CurrPic.TopFieldOrderCnt = 65572
+[54520.922203][ctx 0x10000000]	CurrPic.BottomFieldOrderCnt = 65572
+[54520.922204][ctx 0x10000000]	ReferenceFrames (TopFieldOrderCnt-BottomFieldOrderCnt-picture_id-frame_idx-flags:
+[54520.922204][ctx 0x10000000]		00065576-00065576-0x0000001c-00000009-0x00000008
+[54520.922205][ctx 0x10000000]		00065564-00065564-0x00000018-00000008-0x00000008
+[54520.922205][ctx 0x10000000]		00065568-00065568-0x00000010-00000007-0x00000008
+[54520.922206][ctx 0x10000000]		00065560-00065560-0x00000013-00000005-0x00000008
+[54520.922206][ctx 0x10000000]	picture_width_in_mbs_minus1 = 19
+[54520.922206][ctx 0x10000000]	picture_height_in_mbs_minus1 = 14
+[54520.922207][ctx 0x10000000]	bit_depth_luma_minus8 = 0
+[54520.922207][ctx 0x10000000]	bit_depth_chroma_minus8 = 0
+[54520.922207][ctx 0x10000000]	num_ref_frames = 4
+[54520.922207][ctx 0x10000000]	seq fields = 32849
+[54520.922208][ctx 0x10000000]	chroma_format_idc = 1
+[54520.922208][ctx 0x10000000]	residual_colour_transform_flag = 0
+[54520.922208][ctx 0x10000000]	frame_mbs_only_flag = 1
+[54520.922208][ctx 0x10000000]	mb_adaptive_frame_field_flag = 0
+[54520.922209][ctx 0x10000000]	direct_8x8_inference_flag = 1
+[54520.922209][ctx 0x10000000]	MinLumaBiPredSize8x8 = 0
+[54520.922209][ctx 0x10000000]	pic_init_qp_minus26 = -3
+[54520.922210][ctx 0x10000000]	pic_init_qs_minus26 = 0
+[54520.922210][ctx 0x10000000]	chroma_qp_index_offset = -2
+[54520.922210][ctx 0x10000000]	second_chroma_qp_index_offset = -2
+[54520.922210][ctx 0x10000000]	pic_fields = 0x51b
+[54520.922211][ctx 0x10000000]		entropy_coding_mode_flag = 1
+[54520.922211][ctx 0x10000000]		weighted_pred_flag = 1
+[54520.922211][ctx 0x10000000]		weighted_bipred_idc = 2
+[54520.922212][ctx 0x10000000]		transform_8x8_mode_flag = 1
+[54520.922212][ctx 0x10000000]		deblocking_filter_control_present_flag = 1
+[54520.922212][ctx 0x10000000]		reference_pic_flag = 1
+[54520.922213][ctx 0x10000000]	frame_num = 10
+[54520.922215][ctx 0x10000000]	---------------------------
+[54520.922216][ctx 0x10000000]	buffers[1] = 0x00000001
+[54520.922216][ctx 0x10000000]	  type = VAIQMatrixBufferType
+[54520.922216][ctx 0x10000000]	  size = 240
+[54520.922216][ctx 0x10000000]	  num_elements = 1
+[54520.922217][ctx 0x10000000]	element[0] =
+[54520.922218][ctx 0x10000000]	--VAIQMatrixBufferH264
+[54520.922218][ctx 0x10000000]	ScalingList4x4[6][16]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.922224][ctx 0x10000000]	ScalingList8x8[2][64]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.922240][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.922241][ctx 0x10000000]	context = 0x10000000
+[54520.922241][ctx 0x10000000]	num_buffers = 2
+[54520.922242][ctx 0x10000000]	---------------------------
+[54520.922242][ctx 0x10000000]	buffers[0] = 0x00000002
+[54520.922243][ctx 0x10000000]	  type = VASliceParameterBufferType
+[54520.922243][ctx 0x10000000]	  size = 3128
+[54520.922244][ctx 0x10000000]	  num_elements = 1
+[54520.922244][ctx 0x10000000]	element[0] =
+[54520.922246][ctx 0x10000000]	--VASliceParameterBufferH264
+[54520.922247][ctx 0x10000000]	slice_data_size = 1158
+[54520.922247][ctx 0x10000000]	slice_data_offset = 0
+[54520.922248][ctx 0x10000000]	slice_data_flag = 0x00000000
+[54520.922248][ctx 0x10000000]	slice_data_bit_offset = 58
+[54520.922249][ctx 0x10000000]	first_mb_in_slice = 0
+[54520.922249][ctx 0x10000000]	slice_type = 1
+[54520.922250][ctx 0x10000000]	direct_spatial_mv_pred_flag = 1
+[54520.922250][ctx 0x10000000]	num_ref_idx_l0_active_minus1 = 2
+[54520.922250][ctx 0x10000000]	num_ref_idx_l1_active_minus1 = 0
+[54520.922251][ctx 0x10000000]	cabac_init_idc = 0
+[54520.922252][ctx 0x10000000]	slice_qp_delta = 9
+[54520.922252][ctx 0x10000000]	disable_deblocking_filter_idc = 0
+[54520.922253][ctx 0x10000000]	slice_alpha_c0_offset_div2 = 0
+[54520.922253][ctx 0x10000000]	slice_beta_offset_div2 = 0
+[54520.922254][ctx 0x10000000]	RefPicList0 =
+[54520.922254][ctx 0x10000000]00065568-00065568-0x00000010-00000007-0x00000008
+[54520.922255][ctx 0x10000000]00065564-00065564-0x00000018-00000008-0x00000008
+[54520.922256][ctx 0x10000000]00065560-00065560-0x00000013-00000005-0x00000008
+[54520.922257][ctx 0x10000000]	RefPicList1 =
+[54520.922257][ctx 0x10000000]00065576-00065576-0x0000001c-00000009-0x00000008
+[54520.922258][ctx 0x10000000]	luma_log2_weight_denom = 5
+[54520.922258][ctx 0x10000000]	chroma_log2_weight_denom = 5
+[54520.922258][ctx 0x10000000]	luma_weight_l0_flag = 0
+[54520.922259][ctx 0x10000000]		32	0
+[54520.922259][ctx 0x10000000]		32	0
+[54520.922259][ctx 0x10000000]		32	0
+[54520.922260][ctx 0x10000000]	chroma_weight_l0_flag = 0
+[54520.922260][ctx 0x10000000]		32	0	32	0
+[54520.922260][ctx 0x10000000]		32	0	32	0
+[54520.922261][ctx 0x10000000]		32	0	32	0
+[54520.922261][ctx 0x10000000]	luma_weight_l1_flag = 0
+[54520.922261][ctx 0x10000000]		32	0
+[54520.922261][ctx 0x10000000]	chroma_weight_l1_flag = 0
+[54520.922262][ctx 0x10000000]		32	0	32	0
+[54520.922265][ctx 0x10000000]	---------------------------
+[54520.922265][ctx 0x10000000]	buffers[1] = 0x00000003
+[54520.922266][ctx 0x10000000]	  type = VASliceDataBufferType
+[54520.922266][ctx 0x10000000]	  size = 1158
+[54520.922266][ctx 0x10000000]	  num_elements = 1
+[54520.922267][ctx 0x10000000]	element[0] =
+--VASliceDataBufferType
+[54520.922708][ctx 0x10000000]==========va_TraceEndPicture
+[54520.922709][ctx 0x10000000]	context = 0x10000000
+[54520.922709][ctx 0x10000000]	render_targets = 0x00000014
+[54520.927300][ctx 0x10000000]==========va_TraceBeginPicture
+[54520.927301][ctx 0x10000000]	context = 0x10000000
+[54520.927302][ctx 0x10000000]	render_targets = 0x00000013
+[54520.927302][ctx 0x10000000]	frame_count  = #27
+[54520.927313][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.927313][ctx 0x10000000]	context = 0x10000000
+[54520.927314][ctx 0x10000000]	num_buffers = 2
+[54520.927315][ctx 0x10000000]	---------------------------
+[54520.927315][ctx 0x10000000]	buffers[0] = 0x00000004
+[54520.927316][ctx 0x10000000]	  type = VAPictureParameterBufferType
+[54520.927316][ctx 0x10000000]	  size = 672
+[54520.927317][ctx 0x10000000]	  num_elements = 1
+[54520.927318][ctx 0x10000000]	element[0] =
+[54520.927319][ctx 0x10000000]	--VAPictureParameterBufferH264
+[54520.927320][ctx 0x10000000]	CurrPic.picture_id = 0x00000013
+[54520.927321][ctx 0x10000000]	CurrPic.frame_idx = 15
+[54520.927321][ctx 0x10000000]	CurrPic.flags = 0x00000000
+[54520.927322][ctx 0x10000000]	CurrPic.TopFieldOrderCnt = 65586
+[54520.927322][ctx 0x10000000]	CurrPic.BottomFieldOrderCnt = 65586
+[54520.927323][ctx 0x10000000]	ReferenceFrames (TopFieldOrderCnt-BottomFieldOrderCnt-picture_id-frame_idx-flags:
+[54520.927323][ctx 0x10000000]		00065588-00065588-0x00000015-00000014-0x00000008
+[54520.927324][ctx 0x10000000]		00065592-00065592-0x00000012-00000013-0x00000008
+[54520.927325][ctx 0x10000000]		00065584-00065584-0x0000001b-00000011-0x00000008
+[54520.927326][ctx 0x10000000]	picture_width_in_mbs_minus1 = 19
+[54520.927327][ctx 0x10000000]	picture_height_in_mbs_minus1 = 14
+[54520.927327][ctx 0x10000000]	bit_depth_luma_minus8 = 0
+[54520.927328][ctx 0x10000000]	bit_depth_chroma_minus8 = 0
+[54520.927328][ctx 0x10000000]	num_ref_frames = 4
+[54520.927328][ctx 0x10000000]	seq fields = 32849
+[54520.927329][ctx 0x10000000]	chroma_format_idc = 1
+[54520.927329][ctx 0x10000000]	residual_colour_transform_flag = 0
+[54520.927330][ctx 0x10000000]	frame_mbs_only_flag = 1
+[54520.927330][ctx 0x10000000]	mb_adaptive_frame_field_flag = 0
+[54520.927331][ctx 0x10000000]	direct_8x8_inference_flag = 1
+[54520.927331][ctx 0x10000000]	MinLumaBiPredSize8x8 = 0
+[54520.927332][ctx 0x10000000]	pic_init_qp_minus26 = -3
+[54520.927332][ctx 0x10000000]	pic_init_qs_minus26 = 0
+[54520.927332][ctx 0x10000000]	chroma_qp_index_offset = -2
+[54520.927333][ctx 0x10000000]	second_chroma_qp_index_offset = -2
+[54520.927333][ctx 0x10000000]	pic_fields = 0x11b
+[54520.927334][ctx 0x10000000]		entropy_coding_mode_flag = 1
+[54520.927334][ctx 0x10000000]		weighted_pred_flag = 1
+[54520.927335][ctx 0x10000000]		weighted_bipred_idc = 2
+[54520.927335][ctx 0x10000000]		transform_8x8_mode_flag = 1
+[54520.927336][ctx 0x10000000]		deblocking_filter_control_present_flag = 1
+[54520.927336][ctx 0x10000000]	frame_num = 15
+[54520.927347][ctx 0x10000000]	---------------------------
+[54520.927348][ctx 0x10000000]	buffers[1] = 0x00000003
+[54520.927348][ctx 0x10000000]	  type = VAIQMatrixBufferType
+[54520.927349][ctx 0x10000000]	  size = 240
+[54520.927349][ctx 0x10000000]	  num_elements = 1
+[54520.927350][ctx 0x10000000]	element[0] =
+[54520.927351][ctx 0x10000000]	--VAIQMatrixBufferH264
+[54520.927352][ctx 0x10000000]	ScalingList4x4[6][16]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.927363][ctx 0x10000000]	ScalingList8x8[2][64]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.927385][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.927386][ctx 0x10000000]	context = 0x10000000
+[54520.927386][ctx 0x10000000]	num_buffers = 2
+[54520.927387][ctx 0x10000000]	---------------------------
+[54520.927387][ctx 0x10000000]	buffers[0] = 0x00000002
+[54520.927388][ctx 0x10000000]	  type = VASliceParameterBufferType
+[54520.927388][ctx 0x10000000]	  size = 3128
+[54520.927389][ctx 0x10000000]	  num_elements = 1
+[54520.927390][ctx 0x10000000]	element[0] =
+[54520.927391][ctx 0x10000000]	--VASliceParameterBufferH264
+[54520.927392][ctx 0x10000000]	slice_data_size = 814
+[54520.927392][ctx 0x10000000]	slice_data_offset = 0
+[54520.927393][ctx 0x10000000]	slice_data_flag = 0x00000000
+[54520.927393][ctx 0x10000000]	slice_data_bit_offset = 46
+[54520.927394][ctx 0x10000000]	first_mb_in_slice = 0
+[54520.927394][ctx 0x10000000]	slice_type = 1
+[54520.927395][ctx 0x10000000]	direct_spatial_mv_pred_flag = 1
+[54520.927395][ctx 0x10000000]	num_ref_idx_l0_active_minus1 = 0
+[54520.927396][ctx 0x10000000]	num_ref_idx_l1_active_minus1 = 1
+[54520.927396][ctx 0x10000000]	cabac_init_idc = 0
+[54520.927397][ctx 0x10000000]	slice_qp_delta = 11
+[54520.927397][ctx 0x10000000]	disable_deblocking_filter_idc = 0
+[54520.927398][ctx 0x10000000]	slice_alpha_c0_offset_div2 = 0
+[54520.927398][ctx 0x10000000]	slice_beta_offset_div2 = 0
+[54520.927399][ctx 0x10000000]	RefPicList0 =
+[54520.927399][ctx 0x10000000]00065584-00065584-0x0000001b-00000011-0x00000008
+[54520.927400][ctx 0x10000000]	RefPicList1 =
+[54520.927401][ctx 0x10000000]00065588-00065588-0x00000015-00000014-0x00000008
+[54520.927402][ctx 0x10000000]00065592-00065592-0x00000012-00000013-0x00000008
+[54520.927403][ctx 0x10000000]	luma_log2_weight_denom = 5
+[54520.927403][ctx 0x10000000]	chroma_log2_weight_denom = 5
+[54520.927403][ctx 0x10000000]	luma_weight_l0_flag = 0
+[54520.927404][ctx 0x10000000]		32	0
+[54520.927404][ctx 0x10000000]	chroma_weight_l0_flag = 0
+[54520.927405][ctx 0x10000000]		32	0	32	0
+[54520.927406][ctx 0x10000000]	luma_weight_l1_flag = 0
+[54520.927406][ctx 0x10000000]		32	0
+[54520.927407][ctx 0x10000000]		32	0
+[54520.927407][ctx 0x10000000]	chroma_weight_l1_flag = 0
+[54520.927408][ctx 0x10000000]		32	0	32	0
+[54520.927408][ctx 0x10000000]		32	0	32	0
+[54520.927416][ctx 0x10000000]	---------------------------
+[54520.927416][ctx 0x10000000]	buffers[1] = 0x00000001
+[54520.927417][ctx 0x10000000]	  type = VASliceDataBufferType
+[54520.927417][ctx 0x10000000]	  size = 814
+[54520.927418][ctx 0x10000000]	  num_elements = 1
+[54520.927419][ctx 0x10000000]	element[0] =
+--VASliceDataBufferType
+[54520.927883][ctx 0x10000000]==========va_TraceEndPicture
+[54520.927885][ctx 0x10000000]	context = 0x10000000
+[54520.927885][ctx 0x10000000]	render_targets = 0x00000013
+[54520.933051][ctx 0x10000000]==========va_TraceBeginPicture
+[54520.933052][ctx 0x10000000]	context = 0x10000000
+[54520.933052][ctx 0x10000000]	render_targets = 0x00000013
+[54520.933053][ctx 0x10000000]	frame_count  = #36
+[54520.933061][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.933062][ctx 0x10000000]	context = 0x10000000
+[54520.933063][ctx 0x10000000]	num_buffers = 2
+[54520.933063][ctx 0x10000000]	---------------------------
+[54520.933064][ctx 0x10000000]	buffers[0] = 0x00000001
+[54520.933064][ctx 0x10000000]	  type = VAPictureParameterBufferType
+[54520.933065][ctx 0x10000000]	  size = 672
+[54520.933065][ctx 0x10000000]	  num_elements = 1
+[54520.933066][ctx 0x10000000]	element[0] =
+[54520.933068][ctx 0x10000000]	--VAPictureParameterBufferH264
+[54520.933068][ctx 0x10000000]	CurrPic.picture_id = 0x00000013
+[54520.933069][ctx 0x10000000]	CurrPic.frame_idx = 3
+[54520.933069][ctx 0x10000000]	CurrPic.flags = 0x00000008
+[54520.933070][ctx 0x10000000]	CurrPic.TopFieldOrderCnt = 65614
+[54520.933070][ctx 0x10000000]	CurrPic.BottomFieldOrderCnt = 65614
+[54520.933071][ctx 0x10000000]	ReferenceFrames (TopFieldOrderCnt-BottomFieldOrderCnt-picture_id-frame_idx-flags:
+[54520.933072][ctx 0x10000000]		00065602-00065602-0x00000014-00000002-0x00000008
+[54520.933073][ctx 0x10000000]		00065606-00065606-0x00000017-00000001-0x00000008
+[54520.933074][ctx 0x10000000]		00065598-00065598-0x00000018-00000015-0x00000008
+[54520.933074][ctx 0x10000000]	picture_width_in_mbs_minus1 = 19
+[54520.933075][ctx 0x10000000]	picture_height_in_mbs_minus1 = 14
+[54520.933075][ctx 0x10000000]	bit_depth_luma_minus8 = 0
+[54520.933076][ctx 0x10000000]	bit_depth_chroma_minus8 = 0
+[54520.933076][ctx 0x10000000]	num_ref_frames = 4
+[54520.933077][ctx 0x10000000]	seq fields = 32849
+[54520.933077][ctx 0x10000000]	chroma_format_idc = 1
+[54520.933078][ctx 0x10000000]	residual_colour_transform_flag = 0
+[54520.933078][ctx 0x10000000]	frame_mbs_only_flag = 1
+[54520.933079][ctx 0x10000000]	mb_adaptive_frame_field_flag = 0
+[54520.933079][ctx 0x10000000]	direct_8x8_inference_flag = 1
+[54520.933080][ctx 0x10000000]	MinLumaBiPredSize8x8 = 0
+[54520.933080][ctx 0x10000000]	pic_init_qp_minus26 = -3
+[54520.933080][ctx 0x10000000]	pic_init_qs_minus26 = 0
+[54520.933081][ctx 0x10000000]	chroma_qp_index_offset = -2
+[54520.933081][ctx 0x10000000]	second_chroma_qp_index_offset = -2
+[54520.933082][ctx 0x10000000]	pic_fields = 0x51b
+[54520.933082][ctx 0x10000000]		entropy_coding_mode_flag = 1
+[54520.933083][ctx 0x10000000]		weighted_pred_flag = 1
+[54520.933084][ctx 0x10000000]		weighted_bipred_idc = 2
+[54520.933084][ctx 0x10000000]		transform_8x8_mode_flag = 1
+[54520.933085][ctx 0x10000000]		deblocking_filter_control_present_flag = 1
+[54520.933085][ctx 0x10000000]		reference_pic_flag = 1
+[54520.933086][ctx 0x10000000]	frame_num = 3
+[54520.933095][ctx 0x10000000]	---------------------------
+[54520.933096][ctx 0x10000000]	buffers[1] = 0x00000002
+[54520.933097][ctx 0x10000000]	  type = VAIQMatrixBufferType
+[54520.933097][ctx 0x10000000]	  size = 240
+[54520.933097][ctx 0x10000000]	  num_elements = 1
+[54520.933098][ctx 0x10000000]	element[0] =
+[54520.933100][ctx 0x10000000]	--VAIQMatrixBufferH264
+[54520.933100][ctx 0x10000000]	ScalingList4x4[6][16]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.933112][ctx 0x10000000]	ScalingList8x8[2][64]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.933134][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.933134][ctx 0x10000000]	context = 0x10000000
+[54520.933135][ctx 0x10000000]	num_buffers = 2
+[54520.933135][ctx 0x10000000]	---------------------------
+[54520.933136][ctx 0x10000000]	buffers[0] = 0x00000003
+[54520.933137][ctx 0x10000000]	  type = VASliceParameterBufferType
+[54520.933137][ctx 0x10000000]	  size = 3128
+[54520.933138][ctx 0x10000000]	  num_elements = 1
+[54520.933138][ctx 0x10000000]	element[0] =
+[54520.933140][ctx 0x10000000]	--VASliceParameterBufferH264
+[54520.933140][ctx 0x10000000]	slice_data_size = 1816
+[54520.933141][ctx 0x10000000]	slice_data_offset = 0
+[54520.933141][ctx 0x10000000]	slice_data_flag = 0x00000000
+[54520.933142][ctx 0x10000000]	slice_data_bit_offset = 81
+[54520.933142][ctx 0x10000000]	first_mb_in_slice = 0
+[54520.933143][ctx 0x10000000]	slice_type = 0
+[54520.933143][ctx 0x10000000]	direct_spatial_mv_pred_flag = 0
+[54520.933144][ctx 0x10000000]	num_ref_idx_l0_active_minus1 = 3
+[54520.933144][ctx 0x10000000]	num_ref_idx_l1_active_minus1 = 0
+[54520.933145][ctx 0x10000000]	cabac_init_idc = 0
+[54520.933145][ctx 0x10000000]	slice_qp_delta = 0
+[54520.933145][ctx 0x10000000]	disable_deblocking_filter_idc = 0
+[54520.933146][ctx 0x10000000]	slice_alpha_c0_offset_div2 = 0
+[54520.933146][ctx 0x10000000]	slice_beta_offset_div2 = 0
+[54520.933147][ctx 0x10000000]	RefPicList0 =
+[54520.933147][ctx 0x10000000]00065606-00065606-0x00000017-00000001-0x00000008
+[54520.933148][ctx 0x10000000]00065606-00065606-0x00000017-00000001-0x00000008
+[54520.933149][ctx 0x10000000]00065602-00065602-0x00000014-00000002-0x00000008
+[54520.933150][ctx 0x10000000]00065598-00065598-0x00000018-00000015-0x00000008
+[54520.933151][ctx 0x10000000]	RefPicList1 =
+[54520.933151][ctx 0x10000000]	luma_log2_weight_denom = 0
+[54520.933151][ctx 0x10000000]	chroma_log2_weight_denom = 0
+[54520.933152][ctx 0x10000000]	luma_weight_l0_flag = 1
+[54520.933152][ctx 0x10000000]		1	0
+[54520.933153][ctx 0x10000000]		1	-1
+[54520.933153][ctx 0x10000000]		1	0
+[54520.933154][ctx 0x10000000]		1	0
+[54520.933155][ctx 0x10000000]	chroma_weight_l0_flag = 0
+[54520.933155][ctx 0x10000000]		1	0	1	0
+[54520.933156][ctx 0x10000000]		1	0	1	0
+[54520.933157][ctx 0x10000000]		1	0	1	0
+[54520.933157][ctx 0x10000000]		1	0	1	0
+[54520.933158][ctx 0x10000000]	luma_weight_l1_flag = 0
+[54520.933158][ctx 0x10000000]		1	0
+[54520.933159][ctx 0x10000000]	chroma_weight_l1_flag = 0
+[54520.933159][ctx 0x10000000]		1	0	1	0
+[54520.933168][ctx 0x10000000]	---------------------------
+[54520.933168][ctx 0x10000000]	buffers[1] = 0x00000004
+[54520.933169][ctx 0x10000000]	  type = VASliceDataBufferType
+[54520.933170][ctx 0x10000000]	  size = 1816
+[54520.933170][ctx 0x10000000]	  num_elements = 1
+[54520.933171][ctx 0x10000000]	element[0] =
+--VASliceDataBufferType
+[54520.933672][ctx 0x10000000]==========va_TraceEndPicture
+[54520.933673][ctx 0x10000000]	context = 0x10000000
+[54520.933674][ctx 0x10000000]	render_targets = 0x00000013
+[54520.938644][ctx 0x10000000]==========va_TraceBeginPicture
+[54520.938646][ctx 0x10000000]	context = 0x10000000
+[54520.938646][ctx 0x10000000]	render_targets = 0x0000001c
+[54520.938647][ctx 0x10000000]	frame_count  = #45
+[54520.938658][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.938658][ctx 0x10000000]	context = 0x10000000
+[54520.938659][ctx 0x10000000]	num_buffers = 2
+[54520.938659][ctx 0x10000000]	---------------------------
+[54520.938660][ctx 0x10000000]	buffers[0] = 0x00000004
+[54520.938661][ctx 0x10000000]	  type = VAPictureParameterBufferType
+[54520.938661][ctx 0x10000000]	  size = 672
+[54520.938661][ctx 0x10000000]	  num_elements = 1
+[54520.938663][ctx 0x10000000]	element[0] =
+[54520.938664][ctx 0x10000000]	--VAPictureParameterBufferH264
+[54520.938665][ctx 0x10000000]	CurrPic.picture_id = 0x0000001c
+[54520.938665][ctx 0x10000000]	CurrPic.frame_idx = 8
+[54520.938666][ctx 0x10000000]	CurrPic.flags = 0x00000008
+[54520.938666][ctx 0x10000000]	CurrPic.TopFieldOrderCnt = 65624
+[54520.938666][ctx 0x10000000]	CurrPic.BottomFieldOrderCnt = 65624
+[54520.938667][ctx 0x10000000]	ReferenceFrames (TopFieldOrderCnt-BottomFieldOrderCnt-picture_id-frame_idx-flags:
+[54520.938667][ctx 0x10000000]		00065626-00065626-0x00000011-00000007-0x00000008
+[54520.938669][ctx 0x10000000]		00065618-00065618-0x00000010-00000006-0x00000008
+[54520.938669][ctx 0x10000000]		00065622-00065622-0x00000015-00000005-0x00000008
+[54520.938670][ctx 0x10000000]	picture_width_in_mbs_minus1 = 19
+[54520.938671][ctx 0x10000000]	picture_height_in_mbs_minus1 = 14
+[54520.938671][ctx 0x10000000]	bit_depth_luma_minus8 = 0
+[54520.938672][ctx 0x10000000]	bit_depth_chroma_minus8 = 0
+[54520.938672][ctx 0x10000000]	num_ref_frames = 4
+[54520.938673][ctx 0x10000000]	seq fields = 32849
+[54520.938673][ctx 0x10000000]	chroma_format_idc = 1
+[54520.938674][ctx 0x10000000]	residual_colour_transform_flag = 0
+[54520.938674][ctx 0x10000000]	frame_mbs_only_flag = 1
+[54520.938675][ctx 0x10000000]	mb_adaptive_frame_field_flag = 0
+[54520.938675][ctx 0x10000000]	direct_8x8_inference_flag = 1
+[54520.938676][ctx 0x10000000]	MinLumaBiPredSize8x8 = 0
+[54520.938676][ctx 0x10000000]	pic_init_qp_minus26 = -3
+[54520.938676][ctx 0x10000000]	pic_init_qs_minus26 = 0
+[54520.938677][ctx 0x10000000]	chroma_qp_index_offset = -2
+[54520.938677][ctx 0x10000000]	second_chroma_qp_index_offset = -2
+[54520.938678][ctx 0x10000000]	pic_fields = 0x11b
+[54520.938678][ctx 0x10000000]		entropy_coding_mode_flag = 1
+[54520.938679][ctx 0x10000000]		weighted_pred_flag = 1
+[54520.938679][ctx 0x10000000]		weighted_bipred_idc = 2
+[54520.938680][ctx 0x10000000]		transform_8x8_mode_flag = 1
+[54520.938680][ctx 0x10000000]		deblocking_filter_control_present_flag = 1
+[54520.938681][ctx 0x10000000]	frame_num = 8
+[54520.938686][ctx 0x10000000]	---------------------------
+[54520.938687][ctx 0x10000000]	buffers[1] = 0x00000003
+[54520.938688][ctx 0x10000000]	  type = VAIQMatrixBufferType
+[54520.938688][ctx 0x10000000]	  size = 240
+[54520.938688][ctx 0x10000000]	  num_elements = 1
+[54520.938689][ctx 0x10000000]	element[0] =
+[54520.938691][ctx 0x10000000]	--VAIQMatrixBufferH264
+[54520.938691][ctx 0x10000000]	ScalingList4x4[6][16]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.938701][ctx 0x10000000]	ScalingList8x8[2][64]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.938724][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.938725][ctx 0x10000000]	context = 0x10000000
+[54520.938725][ctx 0x10000000]	num_buffers = 2
+[54520.938725][ctx 0x10000000]	---------------------------
+[54520.938726][ctx 0x10000000]	buffers[0] = 0x00000002
+[54520.938727][ctx 0x10000000]	  type = VASliceParameterBufferType
+[54520.938727][ctx 0x10000000]	  size = 3128
+[54520.938727][ctx 0x10000000]	  num_elements = 1
+[54520.938728][ctx 0x10000000]	element[0] =
+[54520.938729][ctx 0x10000000]	--VASliceParameterBufferH264
+[54520.938730][ctx 0x10000000]	slice_data_size = 981
+[54520.938730][ctx 0x10000000]	slice_data_offset = 0
+[54520.938731][ctx 0x10000000]	slice_data_flag = 0x00000000
+[54520.938731][ctx 0x10000000]	slice_data_bit_offset = 46
+[54520.938732][ctx 0x10000000]	first_mb_in_slice = 0
+[54520.938732][ctx 0x10000000]	slice_type = 1
+[54520.938733][ctx 0x10000000]	direct_spatial_mv_pred_flag = 1
+[54520.938733][ctx 0x10000000]	num_ref_idx_l0_active_minus1 = 1
+[54520.938734][ctx 0x10000000]	num_ref_idx_l1_active_minus1 = 0
+[54520.938734][ctx 0x10000000]	cabac_init_idc = 0
+[54520.938735][ctx 0x10000000]	slice_qp_delta = 11
+[54520.938735][ctx 0x10000000]	disable_deblocking_filter_idc = 0
+[54520.938736][ctx 0x10000000]	slice_alpha_c0_offset_div2 = 0
+[54520.938736][ctx 0x10000000]	slice_beta_offset_div2 = 0
+[54520.938737][ctx 0x10000000]	RefPicList0 =
+[54520.938737][ctx 0x10000000]00065622-00065622-0x00000015-00000005-0x00000008
+[54520.938738][ctx 0x10000000]00065618-00065618-0x00000010-00000006-0x00000008
+[54520.938739][ctx 0x10000000]	RefPicList1 =
+[54520.938739][ctx 0x10000000]00065626-00065626-0x00000011-00000007-0x00000008
+[54520.938740][ctx 0x10000000]	luma_log2_weight_denom = 5
+[54520.938741][ctx 0x10000000]	chroma_log2_weight_denom = 5
+[54520.938741][ctx 0x10000000]	luma_weight_l0_flag = 0
+[54520.938742][ctx 0x10000000]		32	0
+[54520.938742][ctx 0x10000000]		32	0
+[54520.938743][ctx 0x10000000]	chroma_weight_l0_flag = 0
+[54520.938743][ctx 0x10000000]		32	0	32	0
+[54520.938744][ctx 0x10000000]		32	0	32	0
+[54520.938745][ctx 0x10000000]	luma_weight_l1_flag = 0
+[54520.938745][ctx 0x10000000]		32	0
+[54520.938746][ctx 0x10000000]	chroma_weight_l1_flag = 0
+[54520.938746][ctx 0x10000000]		32	0	32	0
+[54520.938751][ctx 0x10000000]	---------------------------
+[54520.938751][ctx 0x10000000]	buffers[1] = 0x00000001
+[54520.938752][ctx 0x10000000]	  type = VASliceDataBufferType
+[54520.938752][ctx 0x10000000]	  size = 981
+[54520.938753][ctx 0x10000000]	  num_elements = 1
+[54520.938753][ctx 0x10000000]	element[0] =
+--VASliceDataBufferType
+[54520.938827][ctx 0x10000000]==========va_TraceEndPicture
+[54520.938828][ctx 0x10000000]	context = 0x10000000
+[54520.938828][ctx 0x10000000]	render_targets = 0x0000001c
+[54520.943654][ctx 0x10000000]==========va_TraceBeginPicture
+[54520.943656][ctx 0x10000000]	context = 0x10000000
+[54520.943656][ctx 0x10000000]	render_targets = 0x0000001a
+[54520.943657][ctx 0x10000000]	frame_count  = #54
+[54520.943666][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.943667][ctx 0x10000000]	context = 0x10000000
+[54520.943667][ctx 0x10000000]	num_buffers = 2
+[54520.943668][ctx 0x10000000]	---------------------------
+[54520.943668][ctx 0x10000000]	buffers[0] = 0x00000000
+[54520.943669][ctx 0x10000000]	  type = VAPictureParameterBufferType
+[54520.943670][ctx 0x10000000]	  size = 672
+[54520.943670][ctx 0x10000000]	  num_elements = 1
+[54520.943671][ctx 0x10000000]	element[0] =
+[54520.943673][ctx 0x10000000]	--VAPictureParameterBufferH264
+[54520.943673][ctx 0x10000000]	CurrPic.picture_id = 0x0000001a
+[54520.943674][ctx 0x10000000]	CurrPic.frame_idx = 14
+[54520.943674][ctx 0x10000000]	CurrPic.flags = 0x00000000
+[54520.943675][ctx 0x10000000]	CurrPic.TopFieldOrderCnt = 65640
+[54520.943675][ctx 0x10000000]	CurrPic.BottomFieldOrderCnt = 65640
+[54520.943676][ctx 0x10000000]	ReferenceFrames (TopFieldOrderCnt-BottomFieldOrderCnt-picture_id-frame_idx-flags:
+[54520.943676][ctx 0x10000000]		00065642-00065642-0x00000013-00000013-0x00000008
+[54520.943677][ctx 0x10000000]		00065646-00065646-0x00000019-00000012-0x00000008
+[54520.943678][ctx 0x10000000]		00065638-00065638-0x00000014-00000010-0x00000008
+[54520.943679][ctx 0x10000000]	picture_width_in_mbs_minus1 = 19
+[54520.943679][ctx 0x10000000]	picture_height_in_mbs_minus1 = 14
+[54520.943680][ctx 0x10000000]	bit_depth_luma_minus8 = 0
+[54520.943680][ctx 0x10000000]	bit_depth_chroma_minus8 = 0
+[54520.943681][ctx 0x10000000]	num_ref_frames = 4
+[54520.943681][ctx 0x10000000]	seq fields = 32849
+[54520.943682][ctx 0x10000000]	chroma_format_idc = 1
+[54520.943682][ctx 0x10000000]	residual_colour_transform_flag = 0
+[54520.943683][ctx 0x10000000]	frame_mbs_only_flag = 1
+[54520.943683][ctx 0x10000000]	mb_adaptive_frame_field_flag = 0
+[54520.943684][ctx 0x10000000]	direct_8x8_inference_flag = 1
+[54520.943684][ctx 0x10000000]	MinLumaBiPredSize8x8 = 0
+[54520.943684][ctx 0x10000000]	pic_init_qp_minus26 = -3
+[54520.943685][ctx 0x10000000]	pic_init_qs_minus26 = 0
+[54520.943685][ctx 0x10000000]	chroma_qp_index_offset = -2
+[54520.943686][ctx 0x10000000]	second_chroma_qp_index_offset = -2
+[54520.943686][ctx 0x10000000]	pic_fields = 0x11b
+[54520.943687][ctx 0x10000000]		entropy_coding_mode_flag = 1
+[54520.943687][ctx 0x10000000]		weighted_pred_flag = 1
+[54520.943688][ctx 0x10000000]		weighted_bipred_idc = 2
+[54520.943688][ctx 0x10000000]		transform_8x8_mode_flag = 1
+[54520.943689][ctx 0x10000000]		deblocking_filter_control_present_flag = 1
+[54520.943689][ctx 0x10000000]	frame_num = 14
+[54520.943700][ctx 0x10000000]	---------------------------
+[54520.943701][ctx 0x10000000]	buffers[1] = 0x00000001
+[54520.943701][ctx 0x10000000]	  type = VAIQMatrixBufferType
+[54520.943702][ctx 0x10000000]	  size = 240
+[54520.943702][ctx 0x10000000]	  num_elements = 1
+[54520.943703][ctx 0x10000000]	element[0] =
+[54520.943704][ctx 0x10000000]	--VAIQMatrixBufferH264
+[54520.943705][ctx 0x10000000]	ScalingList4x4[6][16]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.943714][ctx 0x10000000]	ScalingList8x8[2][64]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.943732][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.943733][ctx 0x10000000]	context = 0x10000000
+[54520.943733][ctx 0x10000000]	num_buffers = 2
+[54520.943734][ctx 0x10000000]	---------------------------
+[54520.943734][ctx 0x10000000]	buffers[0] = 0x00000002
+[54520.943735][ctx 0x10000000]	  type = VASliceParameterBufferType
+[54520.943735][ctx 0x10000000]	  size = 3128
+[54520.943736][ctx 0x10000000]	  num_elements = 1
+[54520.943737][ctx 0x10000000]	element[0] =
+[54520.943738][ctx 0x10000000]	--VASliceParameterBufferH264
+[54520.943738][ctx 0x10000000]	slice_data_size = 968
+[54520.943739][ctx 0x10000000]	slice_data_offset = 0
+[54520.943739][ctx 0x10000000]	slice_data_flag = 0x00000000
+[54520.943740][ctx 0x10000000]	slice_data_bit_offset = 46
+[54520.943740][ctx 0x10000000]	first_mb_in_slice = 0
+[54520.943741][ctx 0x10000000]	slice_type = 1
+[54520.943741][ctx 0x10000000]	direct_spatial_mv_pred_flag = 1
+[54520.943742][ctx 0x10000000]	num_ref_idx_l0_active_minus1 = 0
+[54520.943742][ctx 0x10000000]	num_ref_idx_l1_active_minus1 = 1
+[54520.943742][ctx 0x10000000]	cabac_init_idc = 0
+[54520.943743][ctx 0x10000000]	slice_qp_delta = 11
+[54520.943743][ctx 0x10000000]	disable_deblocking_filter_idc = 0
+[54520.943744][ctx 0x10000000]	slice_alpha_c0_offset_div2 = 0
+[54520.943744][ctx 0x10000000]	slice_beta_offset_div2 = 0
+[54520.943745][ctx 0x10000000]	RefPicList0 =
+[54520.943745][ctx 0x10000000]00065638-00065638-0x00000014-00000010-0x00000008
+[54520.943746][ctx 0x10000000]	RefPicList1 =
+[54520.943747][ctx 0x10000000]00065642-00065642-0x00000013-00000013-0x00000008
+[54520.943747][ctx 0x10000000]00065646-00065646-0x00000019-00000012-0x00000008
+[54520.943748][ctx 0x10000000]	luma_log2_weight_denom = 5
+[54520.943749][ctx 0x10000000]	chroma_log2_weight_denom = 5
+[54520.943749][ctx 0x10000000]	luma_weight_l0_flag = 0
+[54520.943749][ctx 0x10000000]		32	0
+[54520.943750][ctx 0x10000000]	chroma_weight_l0_flag = 0
+[54520.943751][ctx 0x10000000]		32	0	32	0
+[54520.943751][ctx 0x10000000]	luma_weight_l1_flag = 0
+[54520.943752][ctx 0x10000000]		32	0
+[54520.943752][ctx 0x10000000]		32	0
+[54520.943753][ctx 0x10000000]	chroma_weight_l1_flag = 0
+[54520.943753][ctx 0x10000000]		32	0	32	0
+[54520.943754][ctx 0x10000000]		32	0	32	0
+[54520.943762][ctx 0x10000000]	---------------------------
+[54520.943763][ctx 0x10000000]	buffers[1] = 0x00000003
+[54520.943763][ctx 0x10000000]	  type = VASliceDataBufferType
+[54520.943764][ctx 0x10000000]	  size = 968
+[54520.943764][ctx 0x10000000]	  num_elements = 1
+[54520.943765][ctx 0x10000000]	element[0] =
+--VASliceDataBufferType
+[54520.944225][ctx 0x10000000]==========va_TraceEndPicture
+[54520.944226][ctx 0x10000000]	context = 0x10000000
+[54520.944226][ctx 0x10000000]	render_targets = 0x0000001a
+[54520.948501][ctx 0x10000000]==========va_TraceBeginPicture
+[54520.948502][ctx 0x10000000]	context = 0x10000000
+[54520.948503][ctx 0x10000000]	render_targets = 0x0000001a
+[54520.948503][ctx 0x10000000]	frame_count  = #63
+[54520.948512][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.948513][ctx 0x10000000]	context = 0x10000000
+[54520.948513][ctx 0x10000000]	num_buffers = 2
+[54520.948514][ctx 0x10000000]	---------------------------
+[54520.948514][ctx 0x10000000]	buffers[0] = 0x00000003
+[54520.948515][ctx 0x10000000]	  type = VAPictureParameterBufferType
+[54520.948516][ctx 0x10000000]	  size = 672
+[54520.948516][ctx 0x10000000]	  num_elements = 1
+[54520.948517][ctx 0x10000000]	element[0] =
+[54520.948518][ctx 0x10000000]	--VAPictureParameterBufferH264
+[54520.948519][ctx 0x10000000]	CurrPic.picture_id = 0x0000001a
+[54520.948519][ctx 0x10000000]	CurrPic.frame_idx = 2
+[54520.948520][ctx 0x10000000]	CurrPic.flags = 0x00000008
+[54520.948520][ctx 0x10000000]	CurrPic.TopFieldOrderCnt = 65660
+[54520.948521][ctx 0x10000000]	CurrPic.BottomFieldOrderCnt = 65660
+[54520.948521][ctx 0x10000000]	ReferenceFrames (TopFieldOrderCnt-BottomFieldOrderCnt-picture_id-frame_idx-flags:
+[54520.948522][ctx 0x10000000]		00065658-00065658-0x00000012-00000001-0x00000008
+[54520.948523][ctx 0x10000000]		00065662-00065662-0x00000011-00000000-0x00000008
+[54520.948524][ctx 0x10000000]		00065654-00065654-0x00000015-00000014-0x00000008
+[54520.948525][ctx 0x10000000]	picture_width_in_mbs_minus1 = 19
+[54520.948525][ctx 0x10000000]	picture_height_in_mbs_minus1 = 14
+[54520.948526][ctx 0x10000000]	bit_depth_luma_minus8 = 0
+[54520.948526][ctx 0x10000000]	bit_depth_chroma_minus8 = 0
+[54520.948527][ctx 0x10000000]	num_ref_frames = 4
+[54520.948527][ctx 0x10000000]	seq fields = 32849
+[54520.948528][ctx 0x10000000]	chroma_format_idc = 1
+[54520.948528][ctx 0x10000000]	residual_colour_transform_flag = 0
+[54520.948528][ctx 0x10000000]	frame_mbs_only_flag = 1
+[54520.948529][ctx 0x10000000]	mb_adaptive_frame_field_flag = 0
+[54520.948529][ctx 0x10000000]	direct_8x8_inference_flag = 1
+[54520.948530][ctx 0x10000000]	MinLumaBiPredSize8x8 = 0
+[54520.948530][ctx 0x10000000]	pic_init_qp_minus26 = -3
+[54520.948531][ctx 0x10000000]	pic_init_qs_minus26 = 0
+[54520.948531][ctx 0x10000000]	chroma_qp_index_offset = -2
+[54520.948532][ctx 0x10000000]	second_chroma_qp_index_offset = -2
+[54520.948532][ctx 0x10000000]	pic_fields = 0x11b
+[54520.948533][ctx 0x10000000]		entropy_coding_mode_flag = 1
+[54520.948533][ctx 0x10000000]		weighted_pred_flag = 1
+[54520.948534][ctx 0x10000000]		weighted_bipred_idc = 2
+[54520.948534][ctx 0x10000000]		transform_8x8_mode_flag = 1
+[54520.948535][ctx 0x10000000]		deblocking_filter_control_present_flag = 1
+[54520.948535][ctx 0x10000000]	frame_num = 2
+[54520.948545][ctx 0x10000000]	---------------------------
+[54520.948546][ctx 0x10000000]	buffers[1] = 0x00000002
+[54520.948546][ctx 0x10000000]	  type = VAIQMatrixBufferType
+[54520.948547][ctx 0x10000000]	  size = 240
+[54520.948547][ctx 0x10000000]	  num_elements = 1
+[54520.948548][ctx 0x10000000]	element[0] =
+[54520.948550][ctx 0x10000000]	--VAIQMatrixBufferH264
+[54520.948550][ctx 0x10000000]	ScalingList4x4[6][16]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.948558][ctx 0x10000000]	ScalingList8x8[2][64]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.948576][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.948577][ctx 0x10000000]	context = 0x10000000
+[54520.948577][ctx 0x10000000]	num_buffers = 2
+[54520.948578][ctx 0x10000000]	---------------------------
+[54520.948578][ctx 0x10000000]	buffers[0] = 0x00000001
+[54520.948579][ctx 0x10000000]	  type = VASliceParameterBufferType
+[54520.948579][ctx 0x10000000]	  size = 3128
+[54520.948580][ctx 0x10000000]	  num_elements = 1
+[54520.948580][ctx 0x10000000]	element[0] =
+[54520.948582][ctx 0x10000000]	--VASliceParameterBufferH264
+[54520.948582][ctx 0x10000000]	slice_data_size = 949
+[54520.948583][ctx 0x10000000]	slice_data_offset = 0
+[54520.948583][ctx 0x10000000]	slice_data_flag = 0x00000000
+[54520.948584][ctx 0x10000000]	slice_data_bit_offset = 46
+[54520.948584][ctx 0x10000000]	first_mb_in_slice = 0
+[54520.948585][ctx 0x10000000]	slice_type = 1
+[54520.948585][ctx 0x10000000]	direct_spatial_mv_pred_flag = 1
+[54520.948586][ctx 0x10000000]	num_ref_idx_l0_active_minus1 = 1
+[54520.948586][ctx 0x10000000]	num_ref_idx_l1_active_minus1 = 0
+[54520.948587][ctx 0x10000000]	cabac_init_idc = 0
+[54520.948587][ctx 0x10000000]	slice_qp_delta = 11
+[54520.948588][ctx 0x10000000]	disable_deblocking_filter_idc = 0
+[54520.948588][ctx 0x10000000]	slice_alpha_c0_offset_div2 = 0
+[54520.948589][ctx 0x10000000]	slice_beta_offset_div2 = 0
+[54520.948589][ctx 0x10000000]	RefPicList0 =
+[54520.948589][ctx 0x10000000]00065658-00065658-0x00000012-00000001-0x00000008
+[54520.948590][ctx 0x10000000]00065654-00065654-0x00000015-00000014-0x00000008
+[54520.948591][ctx 0x10000000]	RefPicList1 =
+[54520.948591][ctx 0x10000000]00065662-00065662-0x00000011-00000000-0x00000008
+[54520.948592][ctx 0x10000000]	luma_log2_weight_denom = 5
+[54520.948593][ctx 0x10000000]	chroma_log2_weight_denom = 5
+[54520.948593][ctx 0x10000000]	luma_weight_l0_flag = 0
+[54520.948594][ctx 0x10000000]		32	0
+[54520.948594][ctx 0x10000000]		32	0
+[54520.948595][ctx 0x10000000]	chroma_weight_l0_flag = 0
+[54520.948595][ctx 0x10000000]		32	0	32	0
+[54520.948596][ctx 0x10000000]		32	0	32	0
+[54520.948597][ctx 0x10000000]	luma_weight_l1_flag = 0
+[54520.948597][ctx 0x10000000]		32	0
+[54520.948598][ctx 0x10000000]	chroma_weight_l1_flag = 0
+[54520.948598][ctx 0x10000000]		32	0	32	0
+[54520.948603][ctx 0x10000000]	---------------------------
+[54520.948603][ctx 0x10000000]	buffers[1] = 0x00000000
+[54520.948604][ctx 0x10000000]	  type = VASliceDataBufferType
+[54520.948604][ctx 0x10000000]	  size = 949
+[54520.948605][ctx 0x10000000]	  num_elements = 1
+[54520.948606][ctx 0x10000000]	element[0] =
+--VASliceDataBufferType
+[54520.949074][ctx 0x10000000]==========va_TraceEndPicture
+[54520.949075][ctx 0x10000000]	context = 0x10000000
+[54520.949075][ctx 0x10000000]	render_targets = 0x0000001a
+[54520.952556][ctx 0x10000000]==========va_TraceBeginPicture
+[54520.952557][ctx 0x10000000]	context = 0x10000000
+[54520.952558][ctx 0x10000000]	render_targets = 0x00000010
+[54520.952558][ctx 0x10000000]	frame_count  = #72
+[54520.952567][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.952567][ctx 0x10000000]	context = 0x10000000
+[54520.952567][ctx 0x10000000]	num_buffers = 2
+[54520.952568][ctx 0x10000000]	---------------------------
+[54520.952568][ctx 0x10000000]	buffers[0] = 0x00000000
+[54520.952568][ctx 0x10000000]	  type = VAPictureParameterBufferType
+[54520.952569][ctx 0x10000000]	  size = 672
+[54520.952569][ctx 0x10000000]	  num_elements = 1
+[54520.952570][ctx 0x10000000]	element[0] =
+[54520.952571][ctx 0x10000000]	--VAPictureParameterBufferH264
+[54520.952571][ctx 0x10000000]	CurrPic.picture_id = 0x00000010
+[54520.952571][ctx 0x10000000]	CurrPic.frame_idx = 7
+[54520.952572][ctx 0x10000000]	CurrPic.flags = 0x00000008
+[54520.952572][ctx 0x10000000]	CurrPic.TopFieldOrderCnt = 65678
+[54520.952572][ctx 0x10000000]	CurrPic.BottomFieldOrderCnt = 65678
+[54520.952572][ctx 0x10000000]	ReferenceFrames (TopFieldOrderCnt-BottomFieldOrderCnt-picture_id-frame_idx-flags:
+[54520.952573][ctx 0x10000000]		00065680-00065680-0x00000016-00000006-0x00000008
+[54520.952573][ctx 0x10000000]		00065672-00065672-0x00000017-00000005-0x00000008
+[54520.952574][ctx 0x10000000]		00065676-00065676-0x00000013-00000004-0x00000008
+[54520.952574][ctx 0x10000000]	picture_width_in_mbs_minus1 = 19
+[54520.952575][ctx 0x10000000]	picture_height_in_mbs_minus1 = 14
+[54520.952575][ctx 0x10000000]	bit_depth_luma_minus8 = 0
+[54520.952575][ctx 0x10000000]	bit_depth_chroma_minus8 = 0
+[54520.952575][ctx 0x10000000]	num_ref_frames = 4
+[54520.952576][ctx 0x10000000]	seq fields = 32849
+[54520.952576][ctx 0x10000000]	chroma_format_idc = 1
+[54520.952576][ctx 0x10000000]	residual_colour_transform_flag = 0
+[54520.952576][ctx 0x10000000]	frame_mbs_only_flag = 1
+[54520.952577][ctx 0x10000000]	mb_adaptive_frame_field_flag = 0
+[54520.952577][ctx 0x10000000]	direct_8x8_inference_flag = 1
+[54520.952577][ctx 0x10000000]	MinLumaBiPredSize8x8 = 0
+[54520.952577][ctx 0x10000000]	pic_init_qp_minus26 = -3
+[54520.952578][ctx 0x10000000]	pic_init_qs_minus26 = 0
+[54520.952578][ctx 0x10000000]	chroma_qp_index_offset = -2
+[54520.952578][ctx 0x10000000]	second_chroma_qp_index_offset = -2
+[54520.952579][ctx 0x10000000]	pic_fields = 0x11b
+[54520.952579][ctx 0x10000000]		entropy_coding_mode_flag = 1
+[54520.952579][ctx 0x10000000]		weighted_pred_flag = 1
+[54520.952580][ctx 0x10000000]		weighted_bipred_idc = 2
+[54520.952580][ctx 0x10000000]		transform_8x8_mode_flag = 1
+[54520.952580][ctx 0x10000000]		deblocking_filter_control_present_flag = 1
+[54520.952580][ctx 0x10000000]	frame_num = 7
+[54520.952583][ctx 0x10000000]	---------------------------
+[54520.952584][ctx 0x10000000]	buffers[1] = 0x00000001
+[54520.952584][ctx 0x10000000]	  type = VAIQMatrixBufferType
+[54520.952584][ctx 0x10000000]	  size = 240
+[54520.952584][ctx 0x10000000]	  num_elements = 1
+[54520.952585][ctx 0x10000000]	element[0] =
+[54520.952586][ctx 0x10000000]	--VAIQMatrixBufferH264
+[54520.952586][ctx 0x10000000]	ScalingList4x4[6][16]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.952592][ctx 0x10000000]	ScalingList8x8[2][64]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.952607][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.952607][ctx 0x10000000]	context = 0x10000000
+[54520.952608][ctx 0x10000000]	num_buffers = 2
+[54520.952608][ctx 0x10000000]	---------------------------
+[54520.952608][ctx 0x10000000]	buffers[0] = 0x00000002
+[54520.952609][ctx 0x10000000]	  type = VASliceParameterBufferType
+[54520.952609][ctx 0x10000000]	  size = 3128
+[54520.952609][ctx 0x10000000]	  num_elements = 1
+[54520.952610][ctx 0x10000000]	element[0] =
+[54520.952611][ctx 0x10000000]	--VASliceParameterBufferH264
+[54520.952611][ctx 0x10000000]	slice_data_size = 1127
+[54520.952611][ctx 0x10000000]	slice_data_offset = 0
+[54520.952612][ctx 0x10000000]	slice_data_flag = 0x00000000
+[54520.952612][ctx 0x10000000]	slice_data_bit_offset = 46
+[54520.952612][ctx 0x10000000]	first_mb_in_slice = 0
+[54520.952612][ctx 0x10000000]	slice_type = 1
+[54520.952613][ctx 0x10000000]	direct_spatial_mv_pred_flag = 1
+[54520.952613][ctx 0x10000000]	num_ref_idx_l0_active_minus1 = 1
+[54520.952613][ctx 0x10000000]	num_ref_idx_l1_active_minus1 = 0
+[54520.952613][ctx 0x10000000]	cabac_init_idc = 0
+[54520.952614][ctx 0x10000000]	slice_qp_delta = 11
+[54520.952614][ctx 0x10000000]	disable_deblocking_filter_idc = 0
+[54520.952614][ctx 0x10000000]	slice_alpha_c0_offset_div2 = 0
+[54520.952614][ctx 0x10000000]	slice_beta_offset_div2 = 0
+[54520.952615][ctx 0x10000000]	RefPicList0 =
+[54520.952615][ctx 0x10000000]00065676-00065676-0x00000013-00000004-0x00000008
+[54520.952616][ctx 0x10000000]00065672-00065672-0x00000017-00000005-0x00000008
+[54520.952616][ctx 0x10000000]	RefPicList1 =
+[54520.952616][ctx 0x10000000]00065680-00065680-0x00000016-00000006-0x00000008
+[54520.952617][ctx 0x10000000]	luma_log2_weight_denom = 5
+[54520.952617][ctx 0x10000000]	chroma_log2_weight_denom = 5
+[54520.952617][ctx 0x10000000]	luma_weight_l0_flag = 0
+[54520.952618][ctx 0x10000000]		32	0
+[54520.952618][ctx 0x10000000]		32	0
+[54520.952618][ctx 0x10000000]	chroma_weight_l0_flag = 0
+[54520.952618][ctx 0x10000000]		32	0	32	0
+[54520.952619][ctx 0x10000000]		32	0	32	0
+[54520.952619][ctx 0x10000000]	luma_weight_l1_flag = 0
+[54520.952619][ctx 0x10000000]		32	0
+[54520.952620][ctx 0x10000000]	chroma_weight_l1_flag = 0
+[54520.952620][ctx 0x10000000]		32	0	32	0
+[54520.952622][ctx 0x10000000]	---------------------------
+[54520.952623][ctx 0x10000000]	buffers[1] = 0x00000003
+[54520.952623][ctx 0x10000000]	  type = VASliceDataBufferType
+[54520.952623][ctx 0x10000000]	  size = 1127
+[54520.952624][ctx 0x10000000]	  num_elements = 1
+[54520.952624][ctx 0x10000000]	element[0] =
+--VASliceDataBufferType
+[54520.953101][ctx 0x10000000]==========va_TraceEndPicture
+[54520.953102][ctx 0x10000000]	context = 0x10000000
+[54520.953102][ctx 0x10000000]	render_targets = 0x00000010
+[54520.958492][ctx 0x10000000]==========va_TraceBeginPicture
+[54520.958493][ctx 0x10000000]	context = 0x10000000
+[54520.958494][ctx 0x10000000]	render_targets = 0x00000019
+[54520.958494][ctx 0x10000000]	frame_count  = #81
+[54520.958503][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.958503][ctx 0x10000000]	context = 0x10000000
+[54520.958504][ctx 0x10000000]	num_buffers = 2
+[54520.958504][ctx 0x10000000]	---------------------------
+[54520.958504][ctx 0x10000000]	buffers[0] = 0x00000003
+[54520.958505][ctx 0x10000000]	  type = VAPictureParameterBufferType
+[54520.958505][ctx 0x10000000]	  size = 672
+[54520.958505][ctx 0x10000000]	  num_elements = 1
+[54520.958506][ctx 0x10000000]	element[0] =
+[54520.958507][ctx 0x10000000]	--VAPictureParameterBufferH264
+[54520.958508][ctx 0x10000000]	CurrPic.picture_id = 0x00000019
+[54520.958508][ctx 0x10000000]	CurrPic.frame_idx = 12
+[54520.958508][ctx 0x10000000]	CurrPic.flags = 0x00000008
+[54520.958508][ctx 0x10000000]	CurrPic.TopFieldOrderCnt = 65696
+[54520.958509][ctx 0x10000000]	CurrPic.BottomFieldOrderCnt = 65696
+[54520.958509][ctx 0x10000000]	ReferenceFrames (TopFieldOrderCnt-BottomFieldOrderCnt-picture_id-frame_idx-flags:
+[54520.958509][ctx 0x10000000]		00065698-00065698-0x0000001b-00000011-0x00000008
+[54520.958510][ctx 0x10000000]		00065690-00065690-0x00000011-00000010-0x00000008
+[54520.958511][ctx 0x10000000]		00065694-00065694-0x00000018-00000009-0x00000008
+[54520.958511][ctx 0x10000000]	picture_width_in_mbs_minus1 = 19
+[54520.958511][ctx 0x10000000]	picture_height_in_mbs_minus1 = 14
+[54520.958512][ctx 0x10000000]	bit_depth_luma_minus8 = 0
+[54520.958512][ctx 0x10000000]	bit_depth_chroma_minus8 = 0
+[54520.958512][ctx 0x10000000]	num_ref_frames = 4
+[54520.958512][ctx 0x10000000]	seq fields = 32849
+[54520.958513][ctx 0x10000000]	chroma_format_idc = 1
+[54520.958513][ctx 0x10000000]	residual_colour_transform_flag = 0
+[54520.958513][ctx 0x10000000]	frame_mbs_only_flag = 1
+[54520.958514][ctx 0x10000000]	mb_adaptive_frame_field_flag = 0
+[54520.958514][ctx 0x10000000]	direct_8x8_inference_flag = 1
+[54520.958514][ctx 0x10000000]	MinLumaBiPredSize8x8 = 0
+[54520.958514][ctx 0x10000000]	pic_init_qp_minus26 = -3
+[54520.958515][ctx 0x10000000]	pic_init_qs_minus26 = 0
+[54520.958515][ctx 0x10000000]	chroma_qp_index_offset = -2
+[54520.958515][ctx 0x10000000]	second_chroma_qp_index_offset = -2
+[54520.958516][ctx 0x10000000]	pic_fields = 0x11b
+[54520.958516][ctx 0x10000000]		entropy_coding_mode_flag = 1
+[54520.958516][ctx 0x10000000]		weighted_pred_flag = 1
+[54520.958516][ctx 0x10000000]		weighted_bipred_idc = 2
+[54520.958517][ctx 0x10000000]		transform_8x8_mode_flag = 1
+[54520.958517][ctx 0x10000000]		deblocking_filter_control_present_flag = 1
+[54520.958517][ctx 0x10000000]	frame_num = 12
+[54520.958525][ctx 0x10000000]	---------------------------
+[54520.958525][ctx 0x10000000]	buffers[1] = 0x00000002
+[54520.958526][ctx 0x10000000]	  type = VAIQMatrixBufferType
+[54520.958526][ctx 0x10000000]	  size = 240
+[54520.958526][ctx 0x10000000]	  num_elements = 1
+[54520.958527][ctx 0x10000000]	element[0] =
+[54520.958528][ctx 0x10000000]	--VAIQMatrixBufferH264
+[54520.958528][ctx 0x10000000]	ScalingList4x4[6][16]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.958534][ctx 0x10000000]	ScalingList8x8[2][64]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.958546][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.958546][ctx 0x10000000]	context = 0x10000000
+[54520.958546][ctx 0x10000000]	num_buffers = 2
+[54520.958547][ctx 0x10000000]	---------------------------
+[54520.958547][ctx 0x10000000]	buffers[0] = 0x00000001
+[54520.958547][ctx 0x10000000]	  type = VASliceParameterBufferType
+[54520.958547][ctx 0x10000000]	  size = 3128
+[54520.958548][ctx 0x10000000]	  num_elements = 1
+[54520.958548][ctx 0x10000000]	element[0] =
+[54520.958549][ctx 0x10000000]	--VASliceParameterBufferH264
+[54520.958549][ctx 0x10000000]	slice_data_size = 1213
+[54520.958550][ctx 0x10000000]	slice_data_offset = 0
+[54520.958550][ctx 0x10000000]	slice_data_flag = 0x00000000
+[54520.958550][ctx 0x10000000]	slice_data_bit_offset = 46
+[54520.958551][ctx 0x10000000]	first_mb_in_slice = 0
+[54520.958551][ctx 0x10000000]	slice_type = 1
+[54520.958551][ctx 0x10000000]	direct_spatial_mv_pred_flag = 1
+[54520.958551][ctx 0x10000000]	num_ref_idx_l0_active_minus1 = 1
+[54520.958552][ctx 0x10000000]	num_ref_idx_l1_active_minus1 = 0
+[54520.958552][ctx 0x10000000]	cabac_init_idc = 0
+[54520.958552][ctx 0x10000000]	slice_qp_delta = 11
+[54520.958552][ctx 0x10000000]	disable_deblocking_filter_idc = 0
+[54520.958553][ctx 0x10000000]	slice_alpha_c0_offset_div2 = 0
+[54520.958553][ctx 0x10000000]	slice_beta_offset_div2 = 0
+[54520.958553][ctx 0x10000000]	RefPicList0 =
+[54520.958553][ctx 0x10000000]00065694-00065694-0x00000018-00000009-0x00000008
+[54520.958554][ctx 0x10000000]00065690-00065690-0x00000011-00000010-0x00000008
+[54520.958554][ctx 0x10000000]	RefPicList1 =
+[54520.958555][ctx 0x10000000]00065698-00065698-0x0000001b-00000011-0x00000008
+[54520.958555][ctx 0x10000000]	luma_log2_weight_denom = 5
+[54520.958555][ctx 0x10000000]	chroma_log2_weight_denom = 5
+[54520.958556][ctx 0x10000000]	luma_weight_l0_flag = 0
+[54520.958556][ctx 0x10000000]		32	0
+[54520.958556][ctx 0x10000000]		32	0
+[54520.958557][ctx 0x10000000]	chroma_weight_l0_flag = 0
+[54520.958557][ctx 0x10000000]		32	0	32	0
+[54520.958557][ctx 0x10000000]		32	0	32	0
+[54520.958558][ctx 0x10000000]	luma_weight_l1_flag = 0
+[54520.958558][ctx 0x10000000]		32	0
+[54520.958558][ctx 0x10000000]	chroma_weight_l1_flag = 0
+[54520.958558][ctx 0x10000000]		32	0	32	0
+[54520.958562][ctx 0x10000000]	---------------------------
+[54520.958563][ctx 0x10000000]	buffers[1] = 0x00000000
+[54520.958563][ctx 0x10000000]	  type = VASliceDataBufferType
+[54520.958563][ctx 0x10000000]	  size = 1213
+[54520.958564][ctx 0x10000000]	  num_elements = 1
+[54520.958564][ctx 0x10000000]	element[0] =
+--VASliceDataBufferType
+[54520.959072][ctx 0x10000000]==========va_TraceEndPicture
+[54520.959073][ctx 0x10000000]	context = 0x10000000
+[54520.959073][ctx 0x10000000]	render_targets = 0x00000019
+[54520.964085][ctx 0x10000000]==========va_TraceBeginPicture
+[54520.964086][ctx 0x10000000]	context = 0x10000000
+[54520.964087][ctx 0x10000000]	render_targets = 0x0000001c
+[54520.964087][ctx 0x10000000]	frame_count  = #90
+[54520.964093][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.964094][ctx 0x10000000]	context = 0x10000000
+[54520.964094][ctx 0x10000000]	num_buffers = 2
+[54520.964094][ctx 0x10000000]	---------------------------
+[54520.964095][ctx 0x10000000]	buffers[0] = 0x00000004
+[54520.964095][ctx 0x10000000]	  type = VAPictureParameterBufferType
+[54520.964095][ctx 0x10000000]	  size = 672
+[54520.964095][ctx 0x10000000]	  num_elements = 1
+[54520.964096][ctx 0x10000000]	element[0] =
+[54520.964097][ctx 0x10000000]	--VAPictureParameterBufferH264
+[54520.964097][ctx 0x10000000]	CurrPic.picture_id = 0x0000001c
+[54520.964098][ctx 0x10000000]	CurrPic.frame_idx = 0
+[54520.964098][ctx 0x10000000]	CurrPic.flags = 0x00000008
+[54520.964098][ctx 0x10000000]	CurrPic.TopFieldOrderCnt = 65722
+[54520.964098][ctx 0x10000000]	CurrPic.BottomFieldOrderCnt = 65722
+[54520.964099][ctx 0x10000000]	ReferenceFrames (TopFieldOrderCnt-BottomFieldOrderCnt-picture_id-frame_idx-flags:
+[54520.964099][ctx 0x10000000]		00065710-00065710-0x00000016-00000015-0x00000008
+[54520.964100][ctx 0x10000000]		00065714-00065714-0x00000015-00000014-0x00000008
+[54520.964100][ctx 0x10000000]		00065706-00065706-0x00000010-00000012-0x00000008
+[54520.964101][ctx 0x10000000]	picture_width_in_mbs_minus1 = 19
+[54520.964101][ctx 0x10000000]	picture_height_in_mbs_minus1 = 14
+[54520.964101][ctx 0x10000000]	bit_depth_luma_minus8 = 0
+[54520.964101][ctx 0x10000000]	bit_depth_chroma_minus8 = 0
+[54520.964102][ctx 0x10000000]	num_ref_frames = 4
+[54520.964102][ctx 0x10000000]	seq fields = 32849
+[54520.964102][ctx 0x10000000]	chroma_format_idc = 1
+[54520.964102][ctx 0x10000000]	residual_colour_transform_flag = 0
+[54520.964103][ctx 0x10000000]	frame_mbs_only_flag = 1
+[54520.964103][ctx 0x10000000]	mb_adaptive_frame_field_flag = 0
+[54520.964103][ctx 0x10000000]	direct_8x8_inference_flag = 1
+[54520.964103][ctx 0x10000000]	MinLumaBiPredSize8x8 = 0
+[54520.964104][ctx 0x10000000]	pic_init_qp_minus26 = -3
+[54520.964104][ctx 0x10000000]	pic_init_qs_minus26 = 0
+[54520.964104][ctx 0x10000000]	chroma_qp_index_offset = -2
+[54520.964104][ctx 0x10000000]	second_chroma_qp_index_offset = -2
+[54520.964105][ctx 0x10000000]	pic_fields = 0x51b
+[54520.964105][ctx 0x10000000]		entropy_coding_mode_flag = 1
+[54520.964105][ctx 0x10000000]		weighted_pred_flag = 1
+[54520.964106][ctx 0x10000000]		weighted_bipred_idc = 2
+[54520.964106][ctx 0x10000000]		transform_8x8_mode_flag = 1
+[54520.964106][ctx 0x10000000]		deblocking_filter_control_present_flag = 1
+[54520.964107][ctx 0x10000000]		reference_pic_flag = 1
+[54520.964107][ctx 0x10000000]	frame_num = 0
+[54520.964113][ctx 0x10000000]	---------------------------
+[54520.964113][ctx 0x10000000]	buffers[1] = 0x00000000
+[54520.964114][ctx 0x10000000]	  type = VAIQMatrixBufferType
+[54520.964114][ctx 0x10000000]	  size = 240
+[54520.964114][ctx 0x10000000]	  num_elements = 1
+[54520.964115][ctx 0x10000000]	element[0] =
+[54520.964116][ctx 0x10000000]	--VAIQMatrixBufferH264
+[54520.964116][ctx 0x10000000]	ScalingList4x4[6][16]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.964122][ctx 0x10000000]	ScalingList8x8[2][64]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.964133][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.964133][ctx 0x10000000]	context = 0x10000000
+[54520.964133][ctx 0x10000000]	num_buffers = 2
+[54520.964134][ctx 0x10000000]	---------------------------
+[54520.964134][ctx 0x10000000]	buffers[0] = 0x00000001
+[54520.964134][ctx 0x10000000]	  type = VASliceParameterBufferType
+[54520.964135][ctx 0x10000000]	  size = 3128
+[54520.964135][ctx 0x10000000]	  num_elements = 1
+[54520.964135][ctx 0x10000000]	element[0] =
+[54520.964136][ctx 0x10000000]	--VASliceParameterBufferH264
+[54520.964137][ctx 0x10000000]	slice_data_size = 2223
+[54520.964137][ctx 0x10000000]	slice_data_offset = 0
+[54520.964137][ctx 0x10000000]	slice_data_flag = 0x00000000
+[54520.964137][ctx 0x10000000]	slice_data_bit_offset = 87
+[54520.964138][ctx 0x10000000]	first_mb_in_slice = 0
+[54520.964138][ctx 0x10000000]	slice_type = 0
+[54520.964138][ctx 0x10000000]	direct_spatial_mv_pred_flag = 0
+[54520.964139][ctx 0x10000000]	num_ref_idx_l0_active_minus1 = 3
+[54520.964139][ctx 0x10000000]	num_ref_idx_l1_active_minus1 = 0
+[54520.964139][ctx 0x10000000]	cabac_init_idc = 0
+[54520.964139][ctx 0x10000000]	slice_qp_delta = 6
+[54520.964140][ctx 0x10000000]	disable_deblocking_filter_idc = 0
+[54520.964140][ctx 0x10000000]	slice_alpha_c0_offset_div2 = 0
+[54520.964140][ctx 0x10000000]	slice_beta_offset_div2 = 0
+[54520.964140][ctx 0x10000000]	RefPicList0 =
+[54520.964141][ctx 0x10000000]00065714-00065714-0x00000015-00000014-0x00000008
+[54520.964141][ctx 0x10000000]00065714-00065714-0x00000015-00000014-0x00000008
+[54520.964142][ctx 0x10000000]00065710-00065710-0x00000016-00000015-0x00000008
+[54520.964142][ctx 0x10000000]00065706-00065706-0x00000010-00000012-0x00000008
+[54520.964142][ctx 0x10000000]	RefPicList1 =
+[54520.964143][ctx 0x10000000]	luma_log2_weight_denom = 0
+[54520.964143][ctx 0x10000000]	chroma_log2_weight_denom = 0
+[54520.964143][ctx 0x10000000]	luma_weight_l0_flag = 1
+[54520.964143][ctx 0x10000000]		1	0
+[54520.964144][ctx 0x10000000]		1	-1
+[54520.964144][ctx 0x10000000]		1	0
+[54520.964144][ctx 0x10000000]		1	0
+[54520.964145][ctx 0x10000000]	chroma_weight_l0_flag = 0
+[54520.964145][ctx 0x10000000]		1	0	1	0
+[54520.964145][ctx 0x10000000]		1	0	1	0
+[54520.964146][ctx 0x10000000]		1	0	1	0
+[54520.964146][ctx 0x10000000]		1	0	1	0
+[54520.964146][ctx 0x10000000]	luma_weight_l1_flag = 0
+[54520.964147][ctx 0x10000000]		1	0
+[54520.964147][ctx 0x10000000]	chroma_weight_l1_flag = 0
+[54520.964147][ctx 0x10000000]		1	0	1	0
+[54520.964149][ctx 0x10000000]	---------------------------
+[54520.964150][ctx 0x10000000]	buffers[1] = 0x00000002
+[54520.964150][ctx 0x10000000]	  type = VASliceDataBufferType
+[54520.964150][ctx 0x10000000]	  size = 2223
+[54520.964151][ctx 0x10000000]	  num_elements = 1
+[54520.964151][ctx 0x10000000]	element[0] =
+--VASliceDataBufferType
+[54520.964253][ctx 0x10000000]==========va_TraceEndPicture
+[54520.964254][ctx 0x10000000]	context = 0x10000000
+[54520.964254][ctx 0x10000000]	render_targets = 0x0000001c
+[54520.969057][ctx 0x10000000]==========va_TraceBeginPicture
+[54520.969058][ctx 0x10000000]	context = 0x10000000
+[54520.969058][ctx 0x10000000]	render_targets = 0x0000001a
+[54520.969059][ctx 0x10000000]	frame_count  = #99
+[54520.969064][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.969065][ctx 0x10000000]	context = 0x10000000
+[54520.969065][ctx 0x10000000]	num_buffers = 2
+[54520.969065][ctx 0x10000000]	---------------------------
+[54520.969066][ctx 0x10000000]	buffers[0] = 0x00000002
+[54520.969066][ctx 0x10000000]	  type = VAPictureParameterBufferType
+[54520.969066][ctx 0x10000000]	  size = 672
+[54520.969066][ctx 0x10000000]	  num_elements = 1
+[54520.969067][ctx 0x10000000]	element[0] =
+[54520.969068][ctx 0x10000000]	--VAPictureParameterBufferH264
+[54520.969068][ctx 0x10000000]	CurrPic.picture_id = 0x0000001a
+[54520.969069][ctx 0x10000000]	CurrPic.frame_idx = 5
+[54520.969069][ctx 0x10000000]	CurrPic.flags = 0x00000008
+[54520.969069][ctx 0x10000000]	CurrPic.TopFieldOrderCnt = 65732
+[54520.969069][ctx 0x10000000]	CurrPic.BottomFieldOrderCnt = 65732
+[54520.969070][ctx 0x10000000]	ReferenceFrames (TopFieldOrderCnt-BottomFieldOrderCnt-picture_id-frame_idx-flags:
+[54520.969070][ctx 0x10000000]		00065734-00065734-0x00000013-00000004-0x00000008
+[54520.969070][ctx 0x10000000]		00065726-00065726-0x00000017-00000003-0x00000008
+[54520.969071][ctx 0x10000000]		00065730-00065730-0x00000011-00000002-0x00000008
+[54520.969089][ctx 0x10000000]	picture_width_in_mbs_minus1 = 19
+[54520.969089][ctx 0x10000000]	picture_height_in_mbs_minus1 = 14
+[54520.969089][ctx 0x10000000]	bit_depth_luma_minus8 = 0
+[54520.969090][ctx 0x10000000]	bit_depth_chroma_minus8 = 0
+[54520.969090][ctx 0x10000000]	num_ref_frames = 4
+[54520.969090][ctx 0x10000000]	seq fields = 32849
+[54520.969091][ctx 0x10000000]	chroma_format_idc = 1
+[54520.969091][ctx 0x10000000]	residual_colour_transform_flag = 0
+[54520.969091][ctx 0x10000000]	frame_mbs_only_flag = 1
+[54520.969091][ctx 0x10000000]	mb_adaptive_frame_field_flag = 0
+[54520.969092][ctx 0x10000000]	direct_8x8_inference_flag = 1
+[54520.969092][ctx 0x10000000]	MinLumaBiPredSize8x8 = 0
+[54520.969092][ctx 0x10000000]	pic_init_qp_minus26 = -3
+[54520.969092][ctx 0x10000000]	pic_init_qs_minus26 = 0
+[54520.969093][ctx 0x10000000]	chroma_qp_index_offset = -2
+[54520.969093][ctx 0x10000000]	second_chroma_qp_index_offset = -2
+[54520.969093][ctx 0x10000000]	pic_fields = 0x11b
+[54520.969093][ctx 0x10000000]		entropy_coding_mode_flag = 1
+[54520.969094][ctx 0x10000000]		weighted_pred_flag = 1
+[54520.969094][ctx 0x10000000]		weighted_bipred_idc = 2
+[54520.969094][ctx 0x10000000]		transform_8x8_mode_flag = 1
+[54520.969095][ctx 0x10000000]		deblocking_filter_control_present_flag = 1
+[54520.969095][ctx 0x10000000]	frame_num = 5
+[54520.969097][ctx 0x10000000]	---------------------------
+[54520.969098][ctx 0x10000000]	buffers[1] = 0x00000001
+[54520.969098][ctx 0x10000000]	  type = VAIQMatrixBufferType
+[54520.969098][ctx 0x10000000]	  size = 240
+[54520.969099][ctx 0x10000000]	  num_elements = 1
+[54520.969099][ctx 0x10000000]	element[0] =
+[54520.969100][ctx 0x10000000]	--VAIQMatrixBufferH264
+[54520.969100][ctx 0x10000000]	ScalingList4x4[6][16]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.969106][ctx 0x10000000]	ScalingList8x8[2][64]=
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+	16	16	16	16	16	16	16	16
+[54520.969134][ctx 0x10000000]==========va_TraceRenderPicture
+[54520.969134][ctx 0x10000000]	context = 0x10000000
+[54520.969135][ctx 0x10000000]	num_buffers = 2
+[54520.969135][ctx 0x10000000]	---------------------------
+[54520.969135][ctx 0x10000000]	buffers[0] = 0x00000000
+[54520.969135][ctx 0x10000000]	  type = VASliceParameterBufferType
+[54520.969136][ctx 0x10000000]	  size = 3128
+[54520.969136][ctx 0x10000000]	  num_elements = 1
+[54520.969136][ctx 0x10000000]	element[0] =
+[54520.969137][ctx 0x10000000]	--VASliceParameterBufferH264
+[54520.969138][ctx 0x10000000]	slice_data_size = 1057
+[54520.969138][ctx 0x10000000]	slice_data_offset = 0
+[54520.969138][ctx 0x10000000]	slice_data_flag = 0x00000000
+[54520.969138][ctx 0x10000000]	slice_data_bit_offset = 46
+[54520.969139][ctx 0x10000000]	first_mb_in_slice = 0
+[54520.969139][ctx 0x10000000]	slice_type = 1
+[54520.969139][ctx 0x10000000]	direct_spatial_mv_pred_flag = 1
+[54520.969139][ctx 0x10000000]	num_ref_idx_l0_active_minus1 = 1
+[54520.969140][ctx 0x10000000]	num_ref_idx_l1_active_minus1 = 0
+[54520.969140][ctx 0x10000000]	cabac_init_idc = 0
+[54520.969140][ctx 0x10000000]	slice_qp_delta = 11
+[54520.969140][ctx 0x10000000]	disable_deblocking_filter_idc = 0
+[54520.969141][ctx 0x10000000]	slice_alpha_c0_offset_div2 = 0
+[54520.969141][ctx 0x10000000]	slice_beta_offset_div2 = 0
+[54520.969141][ctx 0x10000000]	RefPicList0 =
+[54520.969141][ctx 0x10000000]00065730-00065730-0x00000011-00000002-0x00000008
+[54520.969142][ctx 0x10000000]00065726-00065726-0x00000017-00000003-0x00000008
+[54520.969142][ctx 0x10000000]	RefPicList1 =
+[54520.969143][ctx 0x10000000]00065734-00065734-0x00000013-00000004-0x00000008
+[54520.969143][ctx 0x10000000]	luma_log2_weight_denom = 5
+[54520.969143][ctx 0x10000000]	chroma_log2_weight_denom = 5
+[54520.969144][ctx 0x10000000]	luma_weight_l0_flag = 0
+[54520.969144][ctx 0x10000000]		32	0
+[54520.969144][ctx 0x10000000]		32	0
+[54520.969144][ctx 0x10000000]	chroma_weight_l0_flag = 0
+[54520.969145][ctx 0x10000000]		32	0	32	0
+[54520.969145][ctx 0x10000000]		32	0	32	0
+[54520.969145][ctx 0x10000000]	luma_weight_l1_flag = 0
+[54520.969146][ctx 0x10000000]		32	0
+[54520.969146][ctx 0x10000000]	chroma_weight_l1_flag = 0
+[54520.969146][ctx 0x10000000]		32	0	32	0
+[54520.969153][ctx 0x10000000]	---------------------------
+[54520.969154][ctx 0x10000000]	buffers[1] = 0x00000004
+[54520.969154][ctx 0x10000000]	  type = VASliceDataBufferType
+[54520.969155][ctx 0x10000000]	  size = 1057
+[54520.969155][ctx 0x10000000]	  num_elements = 1
+[54520.969156][ctx 0x10000000]	element[0] =
+--VASliceDataBufferType
+[54520.969673][ctx 0x10000000]==========va_TraceEndPicture
+[54520.969673][ctx 0x10000000]	context = 0x10000000
+[54520.969674][ctx 0x10000000]	render_targets = 0x0000001a

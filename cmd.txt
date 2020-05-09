@@ -1,0 +1,20 @@
+
+
+ffmpeg -f lavfi -i testsrc2 -vframes 100 test.264
+
+ffmpeg -loglevel verbose -hwaccel vaapi -i test.264 -f null -
+
+LIBVA_TRACE=./trace/ffmpeg_decode ffmpeg -loglevel verbose -hwaccel vaapi -i test.264 -f null -
+
+
+
+
+
+
+
+
+
+
+
+
+
