@@ -42,29 +42,32 @@ class EventX():
         out = out + '}, \n'
         return out
 
-trace_files = []
+def process_file(tracefile, pid):
+    trace_logs = []
+    with open(path+'/'+tracefile, 'rt') as f:
+        trace_logs = f.readlines()
+    
+    event_list = []
+    for line in trace_logs:
+        if line.find('==========') != -1:
+            e = EventItem(line)
+            event_list.append(e)
 
-path = './trace'
+    for e in event_list:
+        x = EventX(e.eventname, str(pid), '2', e.timestamp, "10", '')
+        outjson.append(x.toString())
+
+outjson = []
+trace_files = []
+path = './test'
 file_list = os.listdir(path)
 for file in file_list:
     if file.find('thd-') != -1:
         tid = int(file.split('thd-')[1], 16)
         trace_files.append((file, tid))
 
-trace_logs = []
-with open(path+'/'+trace_files[0][0], 'rt') as f:
-    trace_logs = f.readlines()
-
-event_list = []
-for line in trace_logs:
-    if line.find('==========') != -1:
-        e = EventItem(line)
-        event_list.append(e)
-
-outjson = []
-for e in event_list:
-    x = EventX(e.eventname, '1', '2', e.timestamp, "10", '')
-    outjson.append(x.toString())
+for file, pid in trace_files:
+    process_file(file, pid)
 
 with open('out.json', 'wt') as f:
     f.writelines('[\n')

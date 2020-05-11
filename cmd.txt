@@ -9,12 +9,12 @@ LIBVA_TRACE=./trace/ffmpeg ffmpeg -loglevel verbose -threads 1 -hwaccel vaapi -i
 
 LIBVA_TRACE=./trace/ffmpeg_decode ffmpeg -loglevel verbose -hwaccel vaapi -i test.264 -f null -
 
+# transcode
+
+LIBVA_TRACE=./trace/ffmpeg_xcode ffmpeg -loglevel verbose -hwaccel vaapi -i test.264 -
 
 
-
-
-
-
+ffmpeg -loglevel verbose -hwaccel vaapi -i test.264 -v:c h264_vaapi out.264
 
 
 
