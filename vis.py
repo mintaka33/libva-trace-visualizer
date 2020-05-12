@@ -1,5 +1,5 @@
 import os
-
+import sys
 class EventItem():
     def __init__(self, line):
         self.line = line
@@ -44,7 +44,7 @@ class EventX():
 
 def process_file(tracefile, pid):
     trace_logs = []
-    with open(path+'/'+tracefile, 'rt') as f:
+    with open(tracefile, 'rt') as f:
         trace_logs = f.readlines()
     
     event_list = []
@@ -57,22 +57,34 @@ def process_file(tracefile, pid):
         x = EventX(e.eventname, str(pid), '2', e.timestamp, "10", '')
         outjson.append(x.toString())
 
+def get_trace_files(path, trace_files):
+    file_list = os.listdir(path)
+    for file in file_list:
+        if file.find('thd-') != -1:
+            tid = int(file.split('thd-')[1], 16)
+            trace_files.append((file, tid))
+    return len(trace_files)
+
+
 outjson = []
 trace_files = []
-path = './test'
-file_list = os.listdir(path)
-for file in file_list:
-    if file.find('thd-') != -1:
-        tid = int(file.split('thd-')[1], 16)
-        trace_files.append((file, tid))
+
+if len(sys.argv) != 2:
+    print('ERROR: Invalid command line!')
+    exit()
+
+trace_folder = sys.argv[1]
+if get_trace_files(trace_folder, trace_files) == 0:
+    print('ERROR: No trace file found!')
+    exit()
 
 for file, pid in trace_files:
-    process_file(file, pid)
+    process_file(trace_folder+'/'+file, pid)
 
-with open('out.json', 'wt') as f:
+outfile = trace_folder + '/' + trace_files[0][0].split('thd-')[0] + 'json'
+with open(outfile, 'wt') as f:
     f.writelines('[\n')
     f.writelines(outjson)
 
 print('done')
-
-
+print(outfile, 'generated')
