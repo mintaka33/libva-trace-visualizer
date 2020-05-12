@@ -16,7 +16,8 @@ LIBVA_TRACE=./trace/ffmpeg_xcode ffmpeg -loglevel verbose -hwaccel vaapi -i test
 
 ffmpeg -loglevel verbose -hwaccel vaapi -i test.264 -v:c h264_vaapi out.264
 
-
+ffmpeg -v verbose -init_hw_device vaapi=hw:/dev/dri/renderD128 -filter_hw_device hw -hwaccel_output_format vaapi -hwaccel vaapi -c:v h264 \
+-i test.264 -an -vf 'hwupload,scale_vaapi=w=640:h=480' -c:v hevc_vaapi -y out.265
 
 
 
