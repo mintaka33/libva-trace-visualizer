@@ -1,10 +1,65 @@
 import os
 import sys
 
+libva_profile = [
+"VAProfileMPEG2Simple", 
+"VAProfileMPEG2Main", 
+"VAProfileMPEG4Simple", 
+"VAProfileMPEG4AdvancedSimple", 
+"VAProfileMPEG4Main", 
+"VAProfileH264Baselineva_deprecated_enum", 
+"VAProfileH264Main", 
+"VAProfileH264High", 
+"VAProfileVC1Simple", 
+"VAProfileVC1Main", 
+"VAProfileVC1Advanced", 
+"VAProfileH263Baseline", 
+"VAProfileJPEGBaseline", 
+"VAProfileH264ConstrainedBaseline", 
+"VAProfileVP8Version0_3", 
+"VAProfileH264MultiviewHigh", 
+"VAProfileH264StereoHigh", 
+"VAProfileHEVCMain", 
+"VAProfileHEVCMain10", 
+"VAProfileVP9Profile0", 
+"VAProfileVP9Profile1", 
+"VAProfileVP9Profile2", 
+"VAProfileVP9Profile3", 
+"VAProfileHEVCMain12", 
+"VAProfileHEVCMain422_10", 
+"VAProfileHEVCMain422_12", 
+"VAProfileHEVCMain444", 
+"VAProfileHEVCMain444_10", 
+"VAProfileHEVCMain444_12", 
+"VAProfileHEVCSccMain", 
+"VAProfileHEVCSccMain10", 
+"VAProfileHEVCSccMain444", 
+"VAProfileAV1Profile0", 
+"VAProfileAV1Profile1", 
+"VAProfileHEVCSccMain444_10", 
+"VAProfile", 
+]
+
+libva_entrypoint = [
+    "VAEntrypointNULL",
+    "VAEntrypointDecode_VLD", 
+    "VAEntrypointDecode_IZZ", 
+    "VAEntrypointDecode_IDCT", 
+    "VAEntrypointDecode_MoComp", 
+    "VAEntrypointDecode_Deblocking", 
+    "VAEntrypointEncode_Slice", 
+    "VAEntrypointEncode_Picture", 
+    "VAEntrypointEncode_SliceLP", 
+    "VAEntrypointNone", 
+    "VAEntrypointVideoProc", 
+    "VAEntrypointFEI", 
+    "VAEntrypointStats", 
+]
+
 class ContextInfo():
     def __init__(self):
         self.ctx = 0
-        self.profile = 0
+        self.profile = -1
         self.entrypoint = 0 
         self.config = 0
         self.width = 0
@@ -52,6 +107,24 @@ class EventItem():
                 elif c.find('num_render_targets = ') != -1:
                     self.ctxinfo.num_rt = int(c.split('num_render_targets = ')[1], 10)
             context_list.append((self.ctxinfo, []))
+
+class EventMeta():
+    def __init__(self, name, pid, tid, args):
+        self.type = 'M'
+        self.name = name
+        self.pid = pid
+        self.tid = tid
+        self.args = args
+        self.string = self.toString()
+    def toString(self):
+        out = '{'
+        out = out + '"ph":"' + self.type + '", '
+        out = out + '"name":"' + self.name + '", '
+        out = out + '"pid":"' + self.pid + '", '
+        out = out + '"tid":"' + self.tid + '", '
+        arg = '"args":{"name": "' +self.args + '"}'
+        out = out + arg + '}, \n'
+        return out
 
 class EventX():
     def __init__(self, name, pid, tid, ts, dur, meta):
@@ -126,8 +199,13 @@ def gen_json_process(event_list, outjson):
 def gen_json_context(context_list, outjson):
     pid = 0
     for cl in context_list:
+        proc_name =  libva_profile[cl[0].profile].split('VAProfile')[1] + '_'
+        proc_name += libva_entrypoint[cl[0].entrypoint].split('VAEntrypoint')[1]
+        proc_meta = EventMeta('process_name', str(pid), '1', proc_name)
+        thread_name = hex(cl[0].ctx) + ' (' + str(cl[0].width) + 'x' + str(cl[0].height) + ', ' + str(cl[0].num_rt) + ')'
+        outjson.append(proc_meta.toString())
         for e in cl[1]:
-            x = EventX(e.eventname, str(pid), '2', e.timestamp, "10", '')
+            x = EventX(e.eventname, str(pid), thread_name, e.timestamp, "10", '')
             outjson.append(x.toString())
         pid += 1
 
