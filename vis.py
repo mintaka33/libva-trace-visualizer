@@ -117,7 +117,7 @@ class EventItem():
                     self.ctxinfo.flag = int(c.split('flag = ')[1], 16)
                 elif c.find('num_render_targets = ') != -1:
                     self.ctxinfo.num_rt = int(c.split('num_render_targets = ')[1], 10)
-            context_list.append((self.ctxinfo, []))
+            context_events.append((self.ctxinfo, []))
 
 class EventMeta():
     def __init__(self, name, pid, tid, args):
@@ -170,13 +170,15 @@ def get_tracefiles(path, trace_files):
             trace_files.append((file, pid))
     return len(trace_files)
 
-def parse_trace(trace_files, event_list):
+def parse_trace(trace_files, proc_events):
+    total_events = 0
     for file, pid in trace_files:
         trace_logs = []
         tracefile = trace_folder+'/'+file
         with open(tracefile, 'rt') as f:
             trace_logs = f.readlines()
-
+        # parse each trace file
+        event_list = []
         i, maxlen = 0, len(trace_logs)
         while True:
             if i >= maxlen:
@@ -213,20 +215,23 @@ def parse_trace(trace_files, event_list):
                 e = EventItem(line, pid, ctx_info, endline)
                 event_list.append(e)
                 # save event in context list
-                for cl in context_list:
+                for cl in context_events:
                     if cl[0].ctx == e.context:
                         cl[1].append(e)
             i += 1
-    return len(event_list)
+        proc_events.append((pid, event_list))
+        total_events += len(event_list)
+    return total_events
 
-def gen_json_process(event_list, outjson):
-    for e in event_list:
-        x = EventX(e.eventname, str(e.pid), '2', e.timestamp, str(e.dur), '')
-        outjson.append(x.toString())
+def gen_json_process(proc_events, outjson):
+    for p in proc_events:
+        for e in p[1]:
+            x = EventX(e.eventname, str(e.pid), '2', e.timestamp, str(e.dur), '')
+            outjson.append(x.toString())
 
-def gen_json_context(context_list, outjson):
+def gen_json_context(context_events, outjson):
     pid = 0
-    for cl in context_list:
+    for cl in context_events:
         proc_name =  libva_profile[cl[0].profile].split('VAProfile')[1] + '_'
         proc_name += libva_entrypoint[cl[0].entrypoint].split('VAEntrypoint')[1]
         proc_meta = EventMeta('process_name', str(pid), '1', proc_name)
@@ -247,8 +252,8 @@ if __name__ == "__main__":
         exit()
 
     trace_files = []
-    event_list = []
-    context_list = []
+    proc_events = []
+    context_events = []
     outjson = []
 
     # find libva trace files
@@ -261,8 +266,8 @@ if __name__ == "__main__":
 
     # parse trace
     none_ctx = ContextInfo()
-    context_list.append((none_ctx, []))
-    event_num = parse_trace(trace_files, event_list)
+    context_events.append((none_ctx, []))
+    event_num = parse_trace(trace_files, proc_events)
     if event_num == 0:
         print('ERROR: No valid events parsed!')
         exit()
@@ -270,8 +275,8 @@ if __name__ == "__main__":
         print('INFO: parsed', event_num, 'events')
 
     # generate json
-    gen_json_process(event_list, outjson)
-    gen_json_context(context_list, outjson)
+    gen_json_process(proc_events, outjson)
+    gen_json_context(context_events, outjson)
 
     # dump json to file
     outfile = trace_folder + '/' + trace_files[0][0].split('thd-')[0] + 'json'
