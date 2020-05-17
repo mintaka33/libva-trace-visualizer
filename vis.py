@@ -2,7 +2,8 @@ import os
 import sys
 
 class ContextInfo():
-    def __init__(self):
+    def __init__(self, info_lines):
+        self.info_lines = info_lines
         self.ctx = 0
         self.profile = -1
         self.entrypoint = 0 
@@ -11,15 +12,32 @@ class ContextInfo():
         self.height = 0
         self.flag = 0
         self.num_rt = 0
+        self.parse()
+    def parse(self):
+        for c in self.info_lines:
+            if c.find('context = ') != -1:
+                self.ctx = int(c.split('context = ')[1].split(' ')[0], 16)
+            elif c.find('profile = ') != -1:
+                self.profile = int(c.split('profile = ')[1].split(' ')[0], 10)
+                self.entrypoint = int(c.split('entrypoint = ')[1], 10)
+            elif c.find('config = ') != -1:
+                self.config = int(c.split('config = ')[1], 16)
+            elif c.find('width = ') != -1:
+                self.width = int(c.split('width = ')[1], 10)
+            elif c.find('height = ') != -1:
+                self.height = int(c.split('height = ')[1], 10)
+            elif c.find('flag = ') != -1:
+                self.flag = int(c.split('flag = ')[1], 16)
+            elif c.find('num_render_targets = ') != -1:
+                self.num_rt = int(c.split('num_render_targets = ')[1], 10)
 
 class EventItem():
-    def __init__(self, line, pid, ctx_info, endline):
+    def __init__(self, line, pid, ctxinfo, endline):
         self.line = line
         self.pid = pid
         self.timestamp = ''
         self.context = 0
-        self.ctxinfo = ContextInfo()
-        self.infolist = ctx_info
+        self.ctxinfo = ctxinfo
         self.eventname = ''
         self.endline = endline
         self.dur = 1
@@ -45,24 +63,6 @@ class EventItem():
                 self.context = 0
             else:
                 self.context = int(ctx_str, 16)
-        if len(self.infolist) > 0:
-            for c in self.infolist:
-                if c.find('context = ') != -1:
-                    self.ctxinfo.ctx = int(c.split('context = ')[1].split(' ')[0], 16)
-                elif c.find('profile = ') != -1:
-                    self.ctxinfo.profile = int(c.split('profile = ')[1].split(' ')[0], 10)
-                    self.ctxinfo.entrypoint = int(c.split('entrypoint = ')[1], 10)
-                elif c.find('config = ') != -1:
-                    self.ctxinfo.config = int(c.split('config = ')[1], 16)
-                elif c.find('width = ') != -1:
-                    self.ctxinfo.width = int(c.split('width = ')[1], 10)
-                elif c.find('height = ') != -1:
-                    self.ctxinfo.height = int(c.split('height = ')[1], 10)
-                elif c.find('flag = ') != -1:
-                    self.ctxinfo.flag = int(c.split('flag = ')[1], 16)
-                elif c.find('num_render_targets = ') != -1:
-                    self.ctxinfo.num_rt = int(c.split('num_render_targets = ')[1], 10)
-            context_events.append((self.ctxinfo, []))
 
 class EventMeta():
     def __init__(self, name, pid, tid, args):
@@ -115,7 +115,7 @@ def get_tracefiles(path, trace_files):
             trace_files.append((file, pid))
     return len(trace_files)
 
-def parse_trace(trace_files, proc_events):
+def parse_trace(trace_files, proc_events, context_events):
     total_events = 0
     for file, pid in trace_files:
         trace_logs = []
@@ -133,7 +133,8 @@ def parse_trace(trace_files, proc_events):
                 segline = line.split('==========')
                 eventname = segline[1].strip()
                 # get extra context info
-                ctx_info = []
+                ctx_lines = []
+                ctxinfo = ContextInfo([])
                 if line.find('va_TraceCreateContext') != -1:
                     while True:
                         if (i+1) >= maxlen:
@@ -141,8 +142,11 @@ def parse_trace(trace_files, proc_events):
                         cline = trace_logs[i+1]
                         if cline.find('==========') != -1 or cline.find('=========va') != -1:
                             break
-                        ctx_info.append(cline)
+                        ctx_lines.append(cline)
                         i += 1
+                    ctxinfo = ContextInfo(ctx_lines)
+                    # save new context in context list
+                    context_events.append((ctxinfo, []))
                 # find timestamp of end event
                 endevent = '=========' + eventname.replace('_Trace', '')
                 endline = ''
@@ -157,16 +161,20 @@ def parse_trace(trace_files, proc_events):
                         i += 1
                         break
                     i += 1
-                e = EventItem(line, pid, ctx_info, endline)
+                e = EventItem(line, pid, ctxinfo, endline)
                 event_list.append(e)
-                # save event in context list
-                for cl in context_events:
-                    if cl[0].ctx == e.context:
-                        cl[1].append(e)
             i += 1
         proc_events.append((pid, event_list))
         total_events += len(event_list)
     return total_events
+
+def build_contex_events(proc_events, context_events):
+    for p in proc_events:
+        for e in p[1]:
+            for c in context_events:
+                if c[0].ctx == e.context:
+                    c[1].append(e)
+    return len(context_events)
 
 def gen_json_process(proc_events, outjson):
     for p in proc_events:
@@ -252,7 +260,7 @@ libva_entrypoint = [
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
-        trace_folder = './'
+        trace_folder = '.'
     elif len(sys.argv) == 2:
         trace_folder = sys.argv[1]
     else:
@@ -273,14 +281,16 @@ if __name__ == "__main__":
         print('INFO: found', file_num, 'trace files')
 
     # parse trace
-    none_ctx = ContextInfo()
+    none_ctx = ContextInfo([])
     context_events.append((none_ctx, []))
-    event_num = parse_trace(trace_files, proc_events)
+    event_num = parse_trace(trace_files, proc_events, context_events)
     if event_num == 0:
         print('ERROR: No valid events parsed!')
         exit()
     else:
         print('INFO: parsed', event_num, 'events')
+    ctx_num = build_contex_events(proc_events, context_events)
+    print('INFO: found', ctx_num, 'contexts')
 
     # generate json
     gen_json_process(proc_events, outjson)
