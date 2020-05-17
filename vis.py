@@ -68,7 +68,7 @@ class ContextInfo():
         self.num_rt = 0
 
 class EventItem():
-    def __init__(self, line, pid, ctx_info):
+    def __init__(self, line, pid, ctx_info, endline):
         self.line = line
         self.pid = pid
         self.timestamp = ''
@@ -76,6 +76,8 @@ class EventItem():
         self.ctxinfo = ContextInfo()
         self.infolist = ctx_info
         self.eventname = ''
+        self.endline = endline
+        self.dur = 1
         self.parse(line)
     def parse(self, line):
         seg = line.split('==========')
@@ -83,6 +85,12 @@ class EventItem():
         self.eventname = seg[1].strip()
         a, b = s1[1:].split('.')
         self.timestamp = a + b
+        if len(self.endline) > 0:
+            elseg = self.endline.split('==========')
+            e1, e2 = elseg[0].split('][')
+            a, b = e1[1:].split('.')
+            endtime = a + b
+            self.dur = int(endtime) - int(self.timestamp)
         if s2.find('ctx') != -1 and s2.find(']') != -1:
             ctx_str = s2.split('ctx')[1].split(']')[0].strip()
             if ctx_str == 'none':
@@ -172,17 +180,34 @@ def parse_trace(trace_files, event_list):
                 break
             line = trace_logs[i]
             if line.find('==========') != -1:
+                segline = line.split('==========')
+                eventname = segline[1].strip()
+                # get extra context info
                 ctx_info = []
                 if line.find('va_TraceCreateContext') != -1:
                     while True:
                         if (i+1) >= maxlen:
                             break
-                        line = trace_logs[i+1]
-                        if line.find('==========') != -1:
+                        cline = trace_logs[i+1]
+                        if cline.find('==========') != -1 or cline.find('=========va') != -1:
                             break
-                        ctx_info.append(line)
+                        ctx_info.append(cline)
                         i += 1
-                e = EventItem(line, pid, ctx_info)
+                # find timestamp of end event
+                endevent = '=========' + eventname.replace('_Trace', '')
+                endline = ''
+                while True:
+                    if (i+1) >= maxlen:
+                        break
+                    eline = trace_logs[i+1]
+                    if eline.find('==========') != -1:
+                        break
+                    if eline.find(endevent) != -1:
+                        endline = eline
+                        i += 1
+                        break
+                    i += 1
+                e = EventItem(line, pid, ctx_info, endline)
                 event_list.append(e)
                 # save event in context list
                 for cl in context_list:
@@ -193,7 +218,7 @@ def parse_trace(trace_files, event_list):
 
 def gen_json_process(event_list, outjson):
     for e in event_list:
-        x = EventX(e.eventname, str(e.pid), '2', e.timestamp, "10", '')
+        x = EventX(e.eventname, str(e.pid), '2', e.timestamp, str(e.dur), '')
         outjson.append(x.toString())
 
 def gen_json_context(context_list, outjson):
@@ -205,13 +230,13 @@ def gen_json_context(context_list, outjson):
         thread_name = hex(cl[0].ctx) + ' (' + str(cl[0].width) + 'x' + str(cl[0].height) + ', ' + str(cl[0].num_rt) + ')'
         outjson.append(proc_meta.toString())
         for e in cl[1]:
-            x = EventX(e.eventname, str(pid), thread_name, e.timestamp, "10", '')
+            x = EventX(e.eventname, str(pid), thread_name, e.timestamp, str(e.dur), '')
             outjson.append(x.toString())
         pid += 1
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
-        trace_folder = './test'
+        trace_folder = './'
     elif len(sys.argv) == 2:
         trace_folder = sys.argv[1]
     else:
