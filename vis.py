@@ -72,7 +72,7 @@ class EventItem():
         self.line = line
         self.pid = pid
         self.timestamp = ''
-        self.context = ''
+        self.context = 0
         self.ctxinfo = ContextInfo()
         self.infolist = ctx_info
         self.eventname = ''
@@ -225,8 +225,15 @@ def parse_trace(trace_files, proc_events):
 
 def gen_json_process(proc_events, outjson):
     for p in proc_events:
+        ctx_list = []
         for e in p[1]:
-            x = EventX(e.eventname, str(e.pid), '2', e.timestamp, str(e.dur), '')
+            tid = str(e.context)
+            if e.context not in ctx_list:
+                thread_name = 'Context = ' + hex(e.context)
+                thread_meta = EventMeta('thread_name', str(e.pid), tid, thread_name)
+                outjson.append(thread_meta.toString())
+                ctx_list.append(e.context)
+            x = EventX(e.eventname, str(e.pid), tid, e.timestamp, str(e.dur), '')
             outjson.append(x.toString())
 
 def gen_json_context(context_events, outjson):
