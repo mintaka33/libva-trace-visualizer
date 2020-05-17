@@ -2,42 +2,42 @@ import os
 import sys
 
 libva_profile = [
-"VAProfileMPEG2Simple", 
-"VAProfileMPEG2Main", 
-"VAProfileMPEG4Simple", 
-"VAProfileMPEG4AdvancedSimple", 
-"VAProfileMPEG4Main", 
-"VAProfileH264Baselineva_deprecated_enum", 
-"VAProfileH264Main", 
-"VAProfileH264High", 
-"VAProfileVC1Simple", 
-"VAProfileVC1Main", 
-"VAProfileVC1Advanced", 
-"VAProfileH263Baseline", 
-"VAProfileJPEGBaseline", 
-"VAProfileH264ConstrainedBaseline", 
-"VAProfileVP8Version0_3", 
-"VAProfileH264MultiviewHigh", 
-"VAProfileH264StereoHigh", 
-"VAProfileHEVCMain", 
-"VAProfileHEVCMain10", 
-"VAProfileVP9Profile0", 
-"VAProfileVP9Profile1", 
-"VAProfileVP9Profile2", 
-"VAProfileVP9Profile3", 
-"VAProfileHEVCMain12", 
-"VAProfileHEVCMain422_10", 
-"VAProfileHEVCMain422_12", 
-"VAProfileHEVCMain444", 
-"VAProfileHEVCMain444_10", 
-"VAProfileHEVCMain444_12", 
-"VAProfileHEVCSccMain", 
-"VAProfileHEVCSccMain10", 
-"VAProfileHEVCSccMain444", 
-"VAProfileAV1Profile0", 
-"VAProfileAV1Profile1", 
-"VAProfileHEVCSccMain444_10", 
-"VAProfile", 
+    "VAProfileMPEG2Simple", 
+    "VAProfileMPEG2Main", 
+    "VAProfileMPEG4Simple", 
+    "VAProfileMPEG4AdvancedSimple", 
+    "VAProfileMPEG4Main", 
+    "VAProfileH264Baselineva_deprecated_enum", 
+    "VAProfileH264Main", 
+    "VAProfileH264High", 
+    "VAProfileVC1Simple", 
+    "VAProfileVC1Main", 
+    "VAProfileVC1Advanced", 
+    "VAProfileH263Baseline", 
+    "VAProfileJPEGBaseline", 
+    "VAProfileH264ConstrainedBaseline", 
+    "VAProfileVP8Version0_3", 
+    "VAProfileH264MultiviewHigh", 
+    "VAProfileH264StereoHigh", 
+    "VAProfileHEVCMain", 
+    "VAProfileHEVCMain10", 
+    "VAProfileVP9Profile0", 
+    "VAProfileVP9Profile1", 
+    "VAProfileVP9Profile2", 
+    "VAProfileVP9Profile3", 
+    "VAProfileHEVCMain12", 
+    "VAProfileHEVCMain422_10", 
+    "VAProfileHEVCMain422_12", 
+    "VAProfileHEVCMain444", 
+    "VAProfileHEVCMain444_10", 
+    "VAProfileHEVCMain444_12", 
+    "VAProfileHEVCSccMain", 
+    "VAProfileHEVCSccMain10", 
+    "VAProfileHEVCSccMain444", 
+    "VAProfileAV1Profile0", 
+    "VAProfileAV1Profile1", 
+    "VAProfileHEVCSccMain444_10", 
+    "VAProfile", 
 ]
 
 libva_entrypoint = [
@@ -82,7 +82,10 @@ class EventItem():
     def parse(self, line):
         seg = line.split('==========')
         s1, s2 = seg[0].split('][')
-        self.eventname = seg[1].strip()
+        if seg[1].strip() == 'va_TraceEndPicture':
+            self.eventname = 'va_EndPicture'
+        else: 
+            self.eventname = seg[1].strip()
         a, b = s1[1:].split('.')
         self.timestamp = a + b
         if len(self.endline) > 0:
