@@ -1,27 +1,24 @@
 
-
+# generate vide stream
 ffmpeg -f lavfi -i testsrc2 -vframes 100 test.264
 
+# decode
 ffmpeg -loglevel verbose -hwaccel vaapi -i test.264 -f null -
 
-# ffmpeg single thread
-LIBVA_TRACE=./trace/ffmpeg ffmpeg -loglevel verbose -threads 1 -hwaccel vaapi -i test.264 -f null -
+# decode single thread
+LIBVA_TRACE=./tmp ffmpeg -loglevel verbose -threads 1 -hwaccel vaapi -i test.264 -f null -
 
-LIBVA_TRACE=./trace/ffmpeg_decode ffmpeg -loglevel verbose -hwaccel vaapi -i test.264 -f null -
+LIBVA_TRACE=./tmp ffmpeg -loglevel verbose -hwaccel vaapi -i test.264 -f null -
 
-# transcode
+# transcode 1:1
 
-LIBVA_TRACE=./trace/ffmpeg_xcode ffmpeg -loglevel verbose -hwaccel vaapi -i test.264 -
+LIBVA_TRACE=./tmp ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -v verbose -hwaccel_output_format vaapi -i test.264 \
+-vf scale_vaapi=w=300:h=200 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out.265
 
+# transcode 1:4
 
-ffmpeg -loglevel verbose -hwaccel vaapi -i test.264 -v:c h264_vaapi out.264
-
-ffmpeg -v verbose -init_hw_device vaapi=hw:/dev/dri/renderD128 -filter_hw_device hw \
--hwaccel_output_format vaapi -hwaccel vaapi -c:v h264 -i test.264 \
--an -vf 'hwupload,scale_vaapi=w=640:h=480' -c:v hevc_vaapi -y out.265
-
-
-LIBVA_TRACE=./ffmpeg_xcode ffmpeg -v verbose -init_hw_device vaapi=hw:/dev/dri/renderD128 -filter_hw_device hw \
--hwaccel_output_format vaapi -hwaccel vaapi -c:v h264 -i test.264 \
--an -vf 'hwupload,scale_vaapi=w=640:h=480' -c:v hevc_vaapi -y out.265
-
+LIBVA_TRACE=./tmp ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -v verbose -hwaccel_output_format vaapi -i test.264 \
+-vf scale_vaapi=w=330:h=230 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out1.265 \
+-vf scale_vaapi=w=340:h=240 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out2.265 \
+-vf scale_vaapi=w=350:h=250 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out3.265 \
+-vf scale_vaapi=w=360:h=260 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out4.265
