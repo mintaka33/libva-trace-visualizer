@@ -1,0 +1,32 @@
+diff --git a/va/va.c b/va/va.c
+index 633377b..2fb8a84 100644
+--- a/va/va.c
++++ b/va/va.c
+@@ -1581,10 +1581,13 @@ VAStatus vaEndPicture (
+ 
+   VA_FOOL_FUNC(va_FoolCheckContinuity, dpy);
+ 
++  VA_TRACE_ALL(va_TraceEndPicture, dpy, context, 1);
++
+   va_status = ctx->vtable->vaEndPicture( ctx, context );
+ 
+   /* dump surface content */
+-  VA_TRACE_ALL(va_TraceEndPicture, dpy, context, 1);
++  //VA_TRACE_ALL(va_TraceEndPicture, dpy, context, 1);
++
+   VA_TRACE_RET(dpy, va_status);
+ 
+   return va_status;
+diff --git a/va/va_trace.c b/va/va_trace.c
+index d34fc40..5ed865b 100755
+--- a/va/va_trace.c
++++ b/va/va_trace.c
+@@ -5294,7 +5294,7 @@ void va_TracePutSurface (
+ void va_TraceStatus(VADisplay dpy, const char * funcName, VAStatus status)
+ {
+     if(status == VA_STATUS_SUCCESS)
+-        return;
++        ;//return;
+ 
+     DPY2TRACE_VIRCTX(dpy);
+ 
