@@ -16,7 +16,19 @@ LIBVA_TRACE=./tmp ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -v ver
 # transcode 1:4
 
 LIBVA_TRACE=./tmp ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -v verbose -hwaccel_output_format vaapi -i test.264 \
--vf scale_vaapi=w=330:h=230 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out1.265 \
--vf scale_vaapi=w=340:h=240 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out2.265 \
--vf scale_vaapi=w=350:h=250 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out3.265 \
--vf scale_vaapi=w=360:h=260 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out4.265
+-vf scale_vaapi=w=160:h=120 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out1.265 \
+-vf scale_vaapi=w=240:h=160 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out2.265 \
+-vf scale_vaapi=w=320:h=240 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out3.265 \
+-vf scale_vaapi=w=480:h=320 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out4.265
+
+# transcode 1:8
+
+LIBVA_TRACE=./tmp ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -v verbose -hwaccel_output_format vaapi -i test.264 \
+-vf scale_vaapi=w=160:h=120 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out1.265 \
+-vf scale_vaapi=w=240:h=160 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out2.265 \
+-vf scale_vaapi=w=320:h=240 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out3.265 \
+-vf scale_vaapi=w=480:h=320 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out4.265 \
+-vf scale_vaapi=w=640:h=480 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out5.265 \
+-vf scale_vaapi=w=720:h=480 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out6.265 \
+-vf scale_vaapi=w=800:h=600 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out7.265 \
+-vf scale_vaapi=w=960:h=640 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out8.265
