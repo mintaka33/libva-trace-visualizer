@@ -4,7 +4,7 @@ import sys
 class ContextInfo():
     def __init__(self, info_lines):
         self.info_lines = info_lines
-        self.ctx = 0
+        self.ctx = 1
         self.profile = -1
         self.entrypoint = 0 
         self.config = 0
@@ -36,7 +36,7 @@ class EventItem():
         self.line = line
         self.pid = pid
         self.timestamp = ''
-        self.context = 0
+        self.context = 1
         self.ctxinfo = ctxinfo
         self.eventname = ''
         self.endline = endline
@@ -60,7 +60,7 @@ class EventItem():
         if s2.find('ctx') != -1 and s2.find(']') != -1:
             ctx_str = s2.split('ctx')[1].split(']')[0].strip()
             if ctx_str == 'none':
-                self.context = 0
+                self.context = 1
             else:
                 self.context = int(ctx_str, 16)
 
@@ -180,13 +180,22 @@ def gen_json_process(proc_events, outjson):
     for p in proc_events:
         ctx_list = []
         for e in p[1]:
-            tid = str(e.context)
+            pid, tid = str(e.pid), str(e.context)
             if e.context not in ctx_list:
                 thread_name = 'Context = ' + hex(e.context)
-                thread_meta = EventMeta('thread_name', str(e.pid), tid, thread_name)
+                thread_meta = EventMeta('thread_name', pid, tid, thread_name)
                 outjson.append(thread_meta.toString())
                 ctx_list.append(e.context)
-            x = EventX(e.eventname, str(e.pid), tid, e.timestamp, str(e.dur), '')
+            x = EventX(e.eventname, pid, tid, e.timestamp, str(e.dur), '')
+            outjson.append(x.toString())
+
+def gen_json_process2(proc_events, outjson):
+    for p in proc_events:
+        pid, tid = str(p[0]), '0'
+        thread_meta = EventMeta('thread_name', pid, tid, 'All events')
+        outjson.append(thread_meta.toString())
+        for e in p[1]:
+            x = EventX(e.eventname, pid, tid, e.timestamp, str(e.dur), '')
             outjson.append(x.toString())
 
 def gen_json_context(context_events, outjson):
@@ -309,6 +318,7 @@ if __name__ == "__main__":
 
     # generate json
     gen_json_process(proc_events, outjson)
+    gen_json_process2(proc_events, outjson)
     gen_json_context(context_events, outjson)
 
     # dump json to file
