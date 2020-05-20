@@ -195,7 +195,22 @@ def gen_json_context(context_events, outjson):
         proc_name =  libva_profile[cl[0].profile].split('VAProfile')[1] + '_'
         proc_name += libva_entrypoint[cl[0].entrypoint].split('VAEntrypoint')[1]
         proc_meta = EventMeta('process_name', str(pid), '1', proc_name)
-        thread_name = hex(cl[0].ctx) + ' (' + str(cl[0].width) + 'x' + str(cl[0].height) + ', ' + str(cl[0].num_rt) + ')'
+        thread_prefix = ''
+        if proc_name.find('Decode') != -1:
+            thread_prefix = 'Dec'
+        elif proc_name.find('Encode') != -1:
+            thread_prefix = 'Enc'
+        elif proc_name.find('VideoProcess') != -1:
+            thread_prefix = 'VPP'
+        elif proc_name.find('FEI') != -1:
+            thread_prefix = 'FEI'
+        elif proc_name.find('Stats') != -1:
+            thread_prefix = 'Stats'
+        elif proc_name.find('None') != -1:
+            thread_prefix = 'None'
+        elif proc_name.find('NULL') != -1:
+            thread_prefix = 'NULL'
+        thread_name = thread_prefix + ' ' + hex(cl[0].ctx) + ' (' + str(cl[0].width) + 'x' + str(cl[0].height) + ', ' + str(cl[0].num_rt) + ')'
         outjson.append(proc_meta.toString())
         for e in cl[1]:
             x = EventX(e.eventname, str(pid), thread_name, e.timestamp, str(e.dur), '')
