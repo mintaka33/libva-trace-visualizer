@@ -1,0 +1,5 @@
+-i::h264 /home/fresh/test.264 -join -n 1000 -hw -o::sink 
+-o::h265 /tmp/out1.h265 -join -cqp -hw -w 640 -h 480 -i::source -fps 30 -b 10
+-o::h265 /tmp/out2.h265 -join -cqp -hw -w 320 -h 240 -i::source -fps 30 -b 10
+-o::h265 /tmp/out3.h265 -join -cqp -hw -w 160 -h 120 -i::source -fps 30 -b 10
+-o::h265 /tmp/out4.h265 -join -cqp -hw -w 80  -h  60 -i::source -fps 30 -b 10
