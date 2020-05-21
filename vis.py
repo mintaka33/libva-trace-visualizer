@@ -176,11 +176,11 @@ def build_contex_events(proc_events, context_events):
                     c[1].append(e)
     return len(context_events)
 
-def gen_json_process(proc_events, outjson):
+def gen_json_process_ctx(proc_events, outjson):
     for p in proc_events:
         ctx_list = []
         for e in p[1]:
-            pid, tid = str(e.pid), str(e.context)
+            pid, tid = str(e.pid)+'-ctx', str(e.context)
             if e.context not in ctx_list:
                 thread_name = 'Context = ' + hex(e.context)
                 thread_meta = EventMeta('thread_name', pid, tid, thread_name)
@@ -189,7 +189,7 @@ def gen_json_process(proc_events, outjson):
             x = EventX(e.eventname, pid, tid, e.timestamp, str(e.dur), '')
             outjson.append(x.toString())
 
-def gen_json_process2(proc_events, outjson):
+def gen_json_process_all(proc_events, outjson):
     for p in proc_events:
         pid, tid = str(p[0]), '0'
         thread_meta = EventMeta('thread_name', pid, tid, 'All events')
@@ -317,8 +317,8 @@ if __name__ == "__main__":
     print('INFO: found', ctx_num, 'contexts')
 
     # generate json
-    gen_json_process(proc_events, outjson)
-    gen_json_process2(proc_events, outjson)
+    gen_json_process_all(proc_events, outjson)
+    gen_json_process_ctx(proc_events, outjson)
     gen_json_context(context_events, outjson)
 
     # dump json to file
