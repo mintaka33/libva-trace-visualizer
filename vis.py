@@ -145,8 +145,14 @@ def parse_trace(trace_files, proc_events, context_events):
                         ctx_lines.append(cline)
                         i += 1
                     ctxinfo = ContextInfo(ctx_lines)
-                    # save new context in context list
-                    context_events.append((ctxinfo, []))
+                    # save new context in context list (don't save dumplicate ctx)
+                    find_ctx = False
+                    for c in context_events:
+                        if c[0].ctx == ctxinfo.ctx:
+                            find_ctx = True
+                            break
+                    if find_ctx == False:
+                        context_events.append((ctxinfo, []))
                 # find timestamp of end event
                 endevent = '=========' + eventname.replace('_Trace', '')
                 endline = ''
@@ -225,7 +231,6 @@ def gen_json_context(context_events, outjson):
             x = EventX(e.eventname, str(pid), thread_name, e.timestamp, str(e.dur), '')
             outjson.append(x.toString())
         pid += 1
-
 
 libva_profile = [
     "VAProfileMPEG2Simple", 
