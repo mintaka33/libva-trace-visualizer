@@ -120,7 +120,7 @@ def get_stracefiles(path, strace_files):
     for file in file_list:
         if file.find('.strace.') != -1:
             pid = int(file.split('.strace.')[1], 10)
-            strace_files.append((file, pid))
+            strace_files.append((file, str(pid)))
     return len(strace_files)
 
 def parse_libva_trace(libva_trace_files, proc_events, context_events):
@@ -208,13 +208,18 @@ class DrmEvent():
         self.ret = t1
 
 def parse_strace(files, events):
+    events_num = 0
     for file, pid in files:
+        elist = []
         with open(file, 'rt') as f:
             for line in f:
                 if line.find(' ioctl(') != -1 and line.find(') = ') != -1:
                     e = DrmEvent(line, pid)
-                    events.append(e)
-    return len(events)
+                    elist.append(e)
+        if len(elist) > 0:
+            events.append((pid, elist))
+            events_num += len(elist)
+    return events_num
 
 def build_contex_events(proc_events, context_events):
     for p in proc_events:
@@ -240,19 +245,20 @@ def gen_json_process_ctx(proc_events, outjson):
 def gen_json_process_all(proc_events, outjson):
     for p in proc_events:
         pid, tid = str(p[0]), '0'
-        thread_meta = EventMeta('thread_name', pid, tid, 'All events')
+        thread_meta = EventMeta('thread_name', pid, tid, '_LIBVA events')
         outjson.append(thread_meta.toString())
         for e in p[1]:
             x = EventX(e.eventname, pid, tid, e.timestamp, str(e.dur), '')
             outjson.append(x.toString())
 
 def gen_json_strace_proc(strace_events, outjson):
-    pid, tid = strace_events[0].pid, '1'
-    thread_meta = EventMeta('thread_name', pid, tid, 'DRM_IOCTL_I915')
-    outjson.append(thread_meta.toString())
-    for e in strace_events:
-        x = EventX(e.eventname, pid, tid, e.timestamp, str(e.dur), '')
-        outjson.append(x.toString())
+    for pid, elist in strace_events:
+        pid, tid = pid, '1'
+        thread_meta = EventMeta('thread_name', pid, tid, 'DRM_IOCTL_I915')
+        outjson.append(thread_meta.toString())
+        for e in elist:
+            x = EventX(e.eventname, pid, tid, e.timestamp, str(e.dur), '')
+            outjson.append(x.toString())
 
 def gen_json_context(context_events, outjson):
     pid = 0
@@ -359,15 +365,6 @@ if __name__ == "__main__":
     else:
         print('INFO: found', file_num, 'libva trace files')
 
-    # find strace files
-    strace_files = []
-    file_num = get_stracefiles(trace_folder, strace_files)
-    if file_num == 0:
-        print('ERROR: No strace file found!')
-        exit()
-    else:
-        print('INFO: found', file_num, 'strace files')
-
     # parse trace
     none_ctx = ContextInfo([])
     context_events.append((none_ctx, []))
@@ -380,20 +377,28 @@ if __name__ == "__main__":
     ctx_num = build_contex_events(proc_events, context_events)
     print('INFO: found', ctx_num, 'contexts')
 
+    # find strace files
+    strace_files = []
+    strace_file_num = get_stracefiles(trace_folder, strace_files)
+    if strace_file_num == 0:
+        print('WARNING: No strace file found!')
+    else:
+        print('INFO: found', strace_file_num, 'strace files')
+
     # parse strace drm ioctl events
     strace_events = []
-    event_num = parse_strace(strace_files, strace_events)
-    if event_num == 0:
-        print('ERROR: No valid drm events parsed!')
-        exit()
+    strace_event_num = parse_strace(strace_files, strace_events)
+    if strace_event_num == 0:
+        print('WARNING: No valid drm events parsed!')
     else:
-        print('INFO: parsed', event_num, 'drm events')
+        print('INFO: parsed', strace_event_num, 'drm events')
     
     # generate json
     gen_json_context(context_events, outjson)
     gen_json_process_all(proc_events, outjson)
     gen_json_process_ctx(proc_events, outjson)
-    #gen_json_strace_proc(strace_events, outjson)
+    if strace_event_num > 0:
+        gen_json_strace_proc(strace_events, outjson)
 
     # dump json to file
     outfile = trace_folder + '/' + libva_trace_files[0][0].split('thd-')[0] + 'json'
