@@ -4,7 +4,8 @@
 ### multi-xcode
 ```bash
 export MFX_PATH=~/data/work/intel_gpu_stack/build/msdk/__bin/Debug
-LIBVA_TRACE=./tmp $MFX_PATH/sample_multi_transcode -par xcode.par
+export LIBVA_TRACE=./tmp
+$MFX_PATH/sample_multi_transcode -par xcode.par
 ```
 
 # FFmpeg
@@ -21,7 +22,7 @@ LIBVA_TRACE=./tmp ffmpeg -loglevel verbose -hwaccel vaapi -i test.264 -f null -
 
 ### decode single thread
 ```bash
-LIBVA_TRACE=./tmp ffmpeg -loglevel verbose -threads 1 -hwaccel vaapi -i test.264 -f null -
+strace -ff -o strace -ttt -e trace=ioctl ffmpeg -loglevel verbose -threads 1 -hwaccel vaapi -i test.264 -f null -
 ```
 
 ### transcode 1:1
@@ -84,3 +85,7 @@ vaapih265enc rate-control=cbr bitrate=1500 ! \
 gvafpscounter ! filesink location=/tmp/out.265
 ```
 
+# Enable strace
+```bash
+strace -ff -o strace_ioctl -ttt -e trace=ioctl Test_APP_Command_Line 
+```
