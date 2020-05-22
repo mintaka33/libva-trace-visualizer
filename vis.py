@@ -31,7 +31,7 @@ class ContextInfo():
             elif c.find('num_render_targets = ') != -1:
                 self.num_rt = int(c.split('num_render_targets = ')[1], 10)
 
-class EventItem():
+class VAEvent():
     def __init__(self, line, pid, ctxinfo, endline):
         self.line = line
         self.pid = pid
@@ -115,6 +115,14 @@ def get_libva_tracefiles(path, libva_trace_files):
             libva_trace_files.append((file, pid))
     return len(libva_trace_files)
 
+def get_stracefiles(path, strace_files):
+    file_list = os.listdir(path)
+    for file in file_list:
+        if file.find('.strace.') != -1:
+            pid = int(file.split('.strace.')[1], 10)
+            strace_files.append((file, pid))
+    return len(strace_files)
+
 def parse_libva_trace(libva_trace_files, proc_events, context_events):
     total_events = 0
     for file, pid in libva_trace_files:
@@ -167,12 +175,46 @@ def parse_libva_trace(libva_trace_files, proc_events, context_events):
                         i += 1
                         break
                     i += 1
-                e = EventItem(line, pid, ctxinfo, endline)
+                e = VAEvent(line, pid, ctxinfo, endline)
                 event_list.append(e)
             i += 1
         proc_events.append((pid, event_list))
         total_events += len(event_list)
     return total_events
+
+class DrmEvent():
+    def __init__(self, line, pid):
+        self.line = line
+        self.eventname = ''
+        self.timestamp = ''
+        self.dur = '1'
+        self.pid = str(pid)
+        self.fd = ''
+        self.ret = ''
+        self.params = ''
+        self.parse()
+    def parse(self):
+        s0, s1 = self.line.split(' ioctl(')
+        t0, t1 = s1.split(') = ')
+        sec, us = s0.split('.') # epoch time since 1970
+        th = hex(int(sec, 10))
+        # use last 4 digits of hex value (0xffff) to align with libva time stamp
+        time = '0x' + th[-4] + th[-3] + th[-2] + th[-1] 
+        self.timestamp = str(int(time, 16)) + us
+        tv0 = t0.split(', ')
+        self.fd = tv0[0]
+        self.eventname = tv0[1].replace('DRM_IOCTL_', '')
+        self.params = tv0[2]
+        self.ret = t1
+
+def parse_strace(files, events):
+    for file, pid in files:
+        with open(file, 'rt') as f:
+            for line in f:
+                if line.find(' ioctl(') != -1 and line.find(') = ') != -1:
+                    e = DrmEvent(line, pid)
+                    events.append(e)
+    return len(events)
 
 def build_contex_events(proc_events, context_events):
     for p in proc_events:
@@ -203,6 +245,14 @@ def gen_json_process_all(proc_events, outjson):
         for e in p[1]:
             x = EventX(e.eventname, pid, tid, e.timestamp, str(e.dur), '')
             outjson.append(x.toString())
+
+def gen_json_strace_proc(strace_events, outjson):
+    pid, tid = strace_events[0].pid, '1'
+    thread_meta = EventMeta('thread_name', pid, tid, 'DRM_IOCTL_I915')
+    outjson.append(thread_meta.toString())
+    for e in strace_events:
+        x = EventX(e.eventname, pid, tid, e.timestamp, str(e.dur), '')
+        outjson.append(x.toString())
 
 def gen_json_context(context_events, outjson):
     pid = 0
@@ -304,10 +354,19 @@ if __name__ == "__main__":
     # find libva trace files
     file_num = get_libva_tracefiles(trace_folder, libva_trace_files)
     if file_num == 0:
-        print('ERROR: No trace file found!')
+        print('ERROR: No libva trace file found!')
         exit()
     else:
-        print('INFO: found', file_num, 'trace files')
+        print('INFO: found', file_num, 'libva trace files')
+
+    # find strace files
+    strace_files = []
+    file_num = get_stracefiles(trace_folder, strace_files)
+    if file_num == 0:
+        print('ERROR: No strace file found!')
+        exit()
+    else:
+        print('INFO: found', file_num, 'strace files')
 
     # parse trace
     none_ctx = ContextInfo([])
@@ -321,10 +380,20 @@ if __name__ == "__main__":
     ctx_num = build_contex_events(proc_events, context_events)
     print('INFO: found', ctx_num, 'contexts')
 
+    # parse strace drm ioctl events
+    strace_events = []
+    event_num = parse_strace(strace_files, strace_events)
+    if event_num == 0:
+        print('ERROR: No valid drm events parsed!')
+        exit()
+    else:
+        print('INFO: parsed', event_num, 'drm events')
+    
     # generate json
+    gen_json_context(context_events, outjson)
     gen_json_process_all(proc_events, outjson)
     gen_json_process_ctx(proc_events, outjson)
-    gen_json_context(context_events, outjson)
+    #gen_json_strace_proc(strace_events, outjson)
 
     # dump json to file
     outfile = trace_folder + '/' + libva_trace_files[0][0].split('thd-')[0] + 'json'

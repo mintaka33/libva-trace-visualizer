@@ -7,7 +7,7 @@
 
 ```bash
 export LIBVA_TRACE=./tmp
-strace -ff -o tmp.ioctl -tt -e trace=ioctl mpeg2vldemo
+strace -ff -o tmp.strace -ttt -e trace=ioctl mpeg2vldemo
 ```
 
 ## MSDK
