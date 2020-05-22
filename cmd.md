@@ -23,7 +23,7 @@ strace -ff -o tmp.strace -ttt -e trace=ioctl h264encode
 ```bash
 export MFX_PATH=~/data/work/intel_gpu_stack/build/msdk/__bin/Debug
 export LIBVA_TRACE=./tmp
-$MFX_PATH/sample_multi_transcode -par xcode.par
+strace -ff -o tmp.strace -ttt -e trace=ioctl $MFX_PATH/sample_multi_transcode -par xcode.par
 ```
 
 ## FFmpeg

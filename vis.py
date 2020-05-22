@@ -260,6 +260,16 @@ def gen_json_strace_proc(strace_events, outjson):
             x = EventX(e.eventname, pid, tid, e.timestamp, str(e.dur), '')
             outjson.append(x.toString())
 
+def gen_json_strace_execbuf2(strace_events, outjson):
+    for pid, elist in strace_events:
+        pid, tid = pid, '0'
+        #thread_meta = EventMeta('thread_name', pid, tid, 'ExecBuf2')
+        #outjson.append(thread_meta.toString())
+        for e in elist:
+            if e.eventname.find('EXECBUFFER2') != -1:
+                x = EventX(e.eventname, pid, tid, e.timestamp, str(e.dur), '')
+                outjson.append(x.toString())
+
 def gen_json_context(context_events, outjson):
     pid = 0
     for cl in context_events:
@@ -398,6 +408,7 @@ if __name__ == "__main__":
     gen_json_process_all(proc_events, outjson)
     gen_json_process_ctx(proc_events, outjson)
     if strace_event_num > 0:
+        gen_json_strace_execbuf2(strace_events, outjson)
         gen_json_strace_proc(strace_events, outjson)
 
     # dump json to file
