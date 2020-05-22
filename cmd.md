@@ -1,37 +1,48 @@
 
-# MSDK
+# test commands
 
-### multi-xcode
+## libva-utils
+
+#### decode
+
+```bash
+export LIBVA_TRACE=./tmp
+strace -ff -o tmp.ioctl -tt -e trace=ioctl mpeg2vldemo
+```
+
+## MSDK
+
+#### multi-xcode
 ```bash
 export MFX_PATH=~/data/work/intel_gpu_stack/build/msdk/__bin/Debug
 export LIBVA_TRACE=./tmp
 $MFX_PATH/sample_multi_transcode -par xcode.par
 ```
 
-# FFmpeg
+## FFmpeg
 
-### generate vide stream
+#### generate vide stream
 ```bash
 ffmpeg -f lavfi -i testsrc2 -vframes 100 test.264
 ```
 
-### decode
+#### decode
 ```bash
 LIBVA_TRACE=./tmp ffmpeg -loglevel verbose -hwaccel vaapi -i test.264 -f null -
 ```
 
-### decode single thread
+#### decode single thread
 ```bash
 strace -ff -o strace -ttt -e trace=ioctl ffmpeg -loglevel verbose -threads 1 -hwaccel vaapi -i test.264 -f null -
 ```
 
-### transcode 1:1
+#### transcode 1:1
 ```bash
 LIBVA_TRACE=./tmp ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -v verbose -hwaccel_output_format vaapi -i test.264 \
 -vf scale_vaapi=w=300:h=200 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out.265
 ```
 
-### transcode 1:4
+#### transcode 1:4
 ```bash
 LIBVA_TRACE=./tmp ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -v verbose -hwaccel_output_format vaapi -i test.264 \
 -vf scale_vaapi=w=160:h=120 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out1.265 \
@@ -40,7 +51,7 @@ LIBVA_TRACE=./tmp ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -v ver
 -vf scale_vaapi=w=480:h=320 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out4.265
 ```
 
-### transcode 1:8
+#### transcode 1:8
 ```bash
 LIBVA_TRACE=./tmp ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -v verbose -hwaccel_output_format vaapi -i test.264 \
 -vf scale_vaapi=w=160:h=120 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out1.265 \
@@ -53,22 +64,22 @@ LIBVA_TRACE=./tmp ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -v ver
 -vf scale_vaapi=w=960:h=640 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out8.265
 ```
 
-# Gstreamer 
+## Gstreamer 
 
-### check capabilities
+#### check capabilities
 ```bash
 gst-inspect-1.0 | grep vaapi
 gst-inspect-1.0 | grep gva
 ```
 
-### h264 decode
+#### h264 decode
 ```bash
 gst-launch-1.0 filesrc location=/home/fresh/data/video/test.mp4 ! decodebin ! fakesink
 gst-launch-1.0 filesrc location=/home/fresh/data/video/test.mp4 ! qtdemux ! h264parse ! vaapih264dec ! fakesink sync=false
 gst-launch-1.0 filesrc location=/home/fresh/data/video/test.mp4 ! qtdemux ! h264parse ! vaapih264dec ! gvafpscounter ! fakesink sync=false
 ```
 
-### decode + VPP
+#### decode + VPP
 ```bash
 gst-launch-1.0 filesrc location=/home/fresh/data/video/test.mp4 ! qtdemux ! h264parse ! vaapih264dec ! \
 vaapipostproc ! videoconvert ! video/x-raw, format=BGR ! gvafpscounter ! fakesink sync=false
@@ -76,7 +87,7 @@ gst-launch-1.0 filesrc location=/home/fresh/data/video/test2.mp4 ! qtdemux ! h26
 vaapipostproc ! videoconvert ! video/x-raw, format=BGR ! filesink location=out.yuv
 ```
 
-### 1:1 transcode
+#### 1:1 transcode
 ```bash
 LIBVA_TRACE=./tmp gst-launch-1.0 filesrc location=/home/fresh/data/video/test.mp4 ! \
 qtdemux ! h264parse ! vaapih264dec ! \

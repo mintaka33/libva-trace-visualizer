@@ -1,2 +1,4 @@
 *.json
 *.thd-*
+*.strace.*
+*.ioctl.*
