@@ -107,17 +107,17 @@ class EventX():
         out = out + '}, \n'
         return out
 
-def get_tracefiles(path, trace_files):
+def get_libva_tracefiles(path, libva_trace_files):
     file_list = os.listdir(path)
     for file in file_list:
         if file.find('thd-') != -1:
             pid = int(file.split('thd-')[1], 16)
-            trace_files.append((file, pid))
-    return len(trace_files)
+            libva_trace_files.append((file, pid))
+    return len(libva_trace_files)
 
-def parse_trace(trace_files, proc_events, context_events):
+def parse_libva_trace(libva_trace_files, proc_events, context_events):
     total_events = 0
-    for file, pid in trace_files:
+    for file, pid in libva_trace_files:
         trace_logs = []
         tracefile = trace_folder+'/'+file
         with open(tracefile, 'rt') as f:
@@ -296,13 +296,13 @@ if __name__ == "__main__":
         print('ERROR: Invalid command line!')
         exit()
 
-    trace_files = []
+    libva_trace_files = []
     proc_events = []
     context_events = []
     outjson = []
 
     # find libva trace files
-    file_num = get_tracefiles(trace_folder, trace_files)
+    file_num = get_libva_tracefiles(trace_folder, libva_trace_files)
     if file_num == 0:
         print('ERROR: No trace file found!')
         exit()
@@ -312,7 +312,7 @@ if __name__ == "__main__":
     # parse trace
     none_ctx = ContextInfo([])
     context_events.append((none_ctx, []))
-    event_num = parse_trace(trace_files, proc_events, context_events)
+    event_num = parse_libva_trace(libva_trace_files, proc_events, context_events)
     if event_num == 0:
         print('ERROR: No valid events parsed!')
         exit()
@@ -327,7 +327,7 @@ if __name__ == "__main__":
     gen_json_context(context_events, outjson)
 
     # dump json to file
-    outfile = trace_folder + '/' + trace_files[0][0].split('thd-')[0] + 'json'
+    outfile = trace_folder + '/' + libva_trace_files[0][0].split('thd-')[0] + 'json'
     with open(outfile, 'wt') as f:
         f.writelines('[\n')
         f.writelines(outjson)
