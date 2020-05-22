@@ -3,7 +3,8 @@
 
 ### multi-xcode
 ```bash
-./sample_multi_transcode -par xcode.par
+export MFX_PATH=~/data/work/intel_gpu_stack/build/msdk/__bin/Debug
+LIBVA_TRACE=./tmp $MFX_PATH/sample_multi_transcode -par xcode.par
 ```
 
 # FFmpeg

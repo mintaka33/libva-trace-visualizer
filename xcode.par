@@ -1,5 +1,9 @@
 -i::h264 /home/fresh/test.264 -join -n 1000 -hw -o::sink 
--o::h265 /tmp/out1.h265 -join -cqp -hw -w 640 -h 480 -i::source -fps 30 -b 10
--o::h265 /tmp/out2.h265 -join -cqp -hw -w 320 -h 240 -i::source -fps 30 -b 10
--o::h265 /tmp/out3.h265 -join -cqp -hw -w 160 -h 120 -i::source -fps 30 -b 10
--o::h265 /tmp/out4.h265 -join -cqp -hw -w 80  -h  60 -i::source -fps 30 -b 10
+-o::h265 /tmp/out1.h265 -join -cqp -hw -w 300 -h 200 -i::source -fps 30 -b 10
+-o::h265 /tmp/out2.h265 -join -cqp -hw -w 320 -h 220 -i::source -fps 30 -b 10
+-o::h265 /tmp/out3.h265 -join -cqp -hw -w 340 -h 240 -i::source -fps 30 -b 10
+-o::h265 /tmp/out4.h265 -join -cqp -hw -w 360 -h 260 -i::source -fps 30 -b 10
+-o::h265 /tmp/out5.h265 -join -cqp -hw -w 380 -h 280 -i::source -fps 30 -b 10
+-o::h265 /tmp/out6.h265 -join -cqp -hw -w 400 -h 300 -i::source -fps 30 -b 10
+-o::h265 /tmp/out7.h265 -join -cqp -hw -w 420 -h 320 -i::source -fps 30 -b 10
+-o::h265 /tmp/out8.h265 -join -cqp -hw -w 440 -h 340 -i::source -fps 30 -b 10
