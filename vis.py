@@ -32,7 +32,7 @@ class ContextInfo():
                 self.num_rt = int(c.split('num_render_targets = ')[1], 10)
 
 class VAEvent():
-    def __init__(self, line, pid, ctxinfo, endline, framecount):
+    def __init__(self, line, pid, ctxinfo, endline, framecount, rt_handle):
         self.line = line
         self.pid = pid
         self.timestamp = ''
@@ -40,6 +40,7 @@ class VAEvent():
         self.ctxinfo = ctxinfo
         self.eventname = ''
         self.frame_count = framecount
+        self.rt_handle = rt_handle
         self.endline = endline
         self.dur = 1
         self.parse(line)
@@ -52,6 +53,8 @@ class VAEvent():
             self.eventname = seg[1].strip()
         if self.eventname == 'va_TraceBeginPicture' and len(self.frame_count) > 0: 
             self.eventname = 'va_BeginPicture ' + '(' + self.frame_count + ')'
+        if self.eventname == 'va_TraceSyncSurface' and len(self.rt_handle) > 0: 
+            self.eventname = 'va_SyncSurface ' + '(' + self.rt_handle + ')'
         a, b = s1[1:].split('.')
         self.timestamp = a + b
         if len(self.endline) > 0:
@@ -140,7 +143,7 @@ def parse_libva_trace(libva_trace_files, proc_events, context_events):
             if i >= maxlen:
                 break
             line = trace_logs[i]
-            framecount = ''
+            framecount, rt_handle = '', ''
             if line.find('==========') != -1:
                 segline = line.split('==========')
                 eventname = segline[1].strip()
@@ -169,6 +172,11 @@ def parse_libva_trace(libva_trace_files, proc_events, context_events):
                     new_line = trace_logs[i+3]
                     if new_line.find(']	frame_count  = #') != -1:
                         framecount = new_line.split(']	frame_count  = #')[1].strip()
+                elif line.find('va_TraceSyncSurface') != -1:
+                    new_line = trace_logs[i+1]
+                    if new_line.find('render_target = ') != -1:
+                        hexstr = new_line.split('render_target = ')[1].strip()
+                        rt_handle = str(int(hexstr, 16))
                 # find timestamp of end event
                 endevent = '=========' + eventname.replace('_Trace', '')
                 endline = ''
@@ -183,7 +191,7 @@ def parse_libva_trace(libva_trace_files, proc_events, context_events):
                         i += 1
                         break
                     i += 1
-                e = VAEvent(line, pid, ctxinfo, endline, framecount)
+                e = VAEvent(line, pid, ctxinfo, endline, framecount, rt_handle)
                 event_list.append(e)
             i += 1
         proc_events.append((pid, event_list))
