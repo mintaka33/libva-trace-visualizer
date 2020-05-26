@@ -277,7 +277,7 @@ def gen_json_process_ctx(proc_events, outjson):
 def gen_json_process_all(proc_events, outjson):
     for p in proc_events:
         pid, tid = str(p[0]), '0'
-        thread_meta = EventMeta('thread_name', pid, tid, '_LIBVA events')
+        thread_meta = EventMeta('thread_name', pid, tid, ' LIBVA events')
         outjson.append(thread_meta.toString())
         for e in p[1]:
             x = EventX(e.eventname, pid, tid, e.timestamp, str(e.dur), '')
