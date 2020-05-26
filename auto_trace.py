@@ -18,6 +18,12 @@ def get_subfolder_name():
 
 if len(sys.argv) == 2:
     app_cmd = sys.argv[1]
+    app_name = app_cmd.split()[0]
+    if len(app_name) > 0:
+        print('****INFO: App name****', app_name)
+        strace_file_prefix = app_name + '.strace'
+        libva_trace_prefix = app_name
+        print(strace_file_prefix, libva_trace_prefix)
     print('****INFO: app cmd line ****', app_cmd)
 else:
     print('bad command line')
