@@ -81,23 +81,30 @@ class VAEvent():
             self.metadata["render_target"] = self.rt_handle
         self.metastring = json.dumps(self.metadata)
 
-class EventMeta():
-    def __init__(self, name, pid, tid, args):
-        self.type = 'M'
-        self.name = name
-        self.pid = pid
-        self.tid = tid
-        self.args = args
-        self.string = self.toString()
-    def toString(self):
-        out = '{'
-        out = out + '"ph":"' + self.type + '", '
-        out = out + '"name":"' + self.name + '", '
-        out = out + '"pid":"' + self.pid + '", '
-        out = out + '"tid":"' + self.tid + '", '
-        arg = '"args":{"name": "' + self.args + '"}'
-        out = out + arg + '}, \n'
-        return out
+class DrmEvent():
+    def __init__(self, line, pid):
+        self.line = line
+        self.eventname = ''
+        self.timestamp = ''
+        self.dur = '1'
+        self.pid = str(pid)
+        self.fd = ''
+        self.ret = ''
+        self.params = ''
+        self.parse()
+    def parse(self):
+        s0, s1 = self.line.split(' ioctl(')
+        t0, t1 = s1.split(') = ')
+        sec, us = s0.split('.') # epoch time since 1970
+        th = hex(int(sec, 10))
+        # use last 4 digits of hex value (0xffff) to align with libva time stamp
+        time = '0x' + th[-4] + th[-3] + th[-2] + th[-1] 
+        self.timestamp = str(int(time, 16)) + us
+        tv0 = t0.split(', ')
+        self.fd = tv0[0]
+        self.eventname = tv0[1].replace('DRM_IOCTL_', '')
+        self.params = tv0[2]
+        self.ret = t1
 
 class EventX():
     def __init__(self, name, pid, tid, ts, dur, meta):
@@ -122,6 +129,24 @@ class EventX():
             out = out + '"dur":' + self.dur + ', '
             out = out + '"args":' + self.meta
         out = out + '}, \n'
+        return out
+
+class EventMeta():
+    def __init__(self, name, pid, tid, args):
+        self.type = 'M'
+        self.name = name
+        self.pid = pid
+        self.tid = tid
+        self.args = args
+        self.string = self.toString()
+    def toString(self):
+        out = '{'
+        out = out + '"ph":"' + self.type + '", '
+        out = out + '"name":"' + self.name + '", '
+        out = out + '"pid":"' + self.pid + '", '
+        out = out + '"tid":"' + self.tid + '", '
+        arg = '"args":{"name": "' + self.args + '"}'
+        out = out + arg + '}, \n'
         return out
 
 def get_libva_tracefiles(path, libva_trace_files):
@@ -214,30 +239,13 @@ def parse_libva_trace(libva_trace_files, proc_events, context_events):
         total_events += len(event_list)
     return total_events
 
-class DrmEvent():
-    def __init__(self, line, pid):
-        self.line = line
-        self.eventname = ''
-        self.timestamp = ''
-        self.dur = '1'
-        self.pid = str(pid)
-        self.fd = ''
-        self.ret = ''
-        self.params = ''
-        self.parse()
-    def parse(self):
-        s0, s1 = self.line.split(' ioctl(')
-        t0, t1 = s1.split(') = ')
-        sec, us = s0.split('.') # epoch time since 1970
-        th = hex(int(sec, 10))
-        # use last 4 digits of hex value (0xffff) to align with libva time stamp
-        time = '0x' + th[-4] + th[-3] + th[-2] + th[-1] 
-        self.timestamp = str(int(time, 16)) + us
-        tv0 = t0.split(', ')
-        self.fd = tv0[0]
-        self.eventname = tv0[1].replace('DRM_IOCTL_', '')
-        self.params = tv0[2]
-        self.ret = t1
+def build_contex_events(proc_events, context_events):
+    for p in proc_events:
+        for e in p[1]:
+            for c in context_events:
+                if c[0].ctx == e.context:
+                    c[1].append(e)
+    return len(context_events)
 
 def parse_strace(files, events):
     events_num = 0
@@ -252,14 +260,6 @@ def parse_strace(files, events):
             events.append((pid, elist))
             events_num += len(elist)
     return events_num
-
-def build_contex_events(proc_events, context_events):
-    for p in proc_events:
-        for e in p[1]:
-            for c in context_events:
-                if c[0].ctx == e.context:
-                    c[1].append(e)
-    return len(context_events)
 
 def gen_json_process_ctx(proc_events, outjson):
     for p in proc_events:
@@ -282,25 +282,6 @@ def gen_json_process_all(proc_events, outjson):
         for e in p[1]:
             x = EventX(e.eventname, pid, tid, e.timestamp, str(e.dur), '')
             outjson.append(x.toString())
-
-def gen_json_strace_proc(strace_events, outjson):
-    for pid, elist in strace_events:
-        pid, tid = pid, '1'
-        thread_meta = EventMeta('thread_name', pid, tid, 'DRM_IOCTL_I915')
-        outjson.append(thread_meta.toString())
-        for e in elist:
-            x = EventX(e.eventname, pid, tid, e.timestamp, str(e.dur), '')
-            outjson.append(x.toString())
-
-def gen_json_strace_execbuf2(strace_events, outjson):
-    for pid, elist in strace_events:
-        pid, tid = pid, '0'
-        #thread_meta = EventMeta('thread_name', pid, tid, 'ExecBuf2')
-        #outjson.append(thread_meta.toString())
-        for e in elist:
-            if e.eventname.find('EXECBUFFER2') != -1:
-                x = EventX(e.eventname, pid, tid, e.timestamp, str(e.dur), '')
-                outjson.append(x.toString())
 
 def gen_json_context(context_events, outjson):
     pid = 0
@@ -329,6 +310,25 @@ def gen_json_context(context_events, outjson):
             x = EventX(e.eventname, str(pid), thread_name, e.timestamp, str(e.dur), e.metastring)
             outjson.append(x.toString())
         pid += 1
+
+def gen_json_strace_proc(strace_events, outjson):
+    for pid, elist in strace_events:
+        pid, tid = pid, '1'
+        thread_meta = EventMeta('thread_name', pid, tid, 'DRM_IOCTL_I915')
+        outjson.append(thread_meta.toString())
+        for e in elist:
+            x = EventX(e.eventname, pid, tid, e.timestamp, str(e.dur), '')
+            outjson.append(x.toString())
+
+def gen_json_strace_execbuf2(strace_events, outjson):
+    for pid, elist in strace_events:
+        pid, tid = pid, '0'
+        #thread_meta = EventMeta('thread_name', pid, tid, 'ExecBuf2')
+        #outjson.append(thread_meta.toString())
+        for e in elist:
+            if e.eventname.find('EXECBUFFER2') != -1:
+                x = EventX(e.eventname, pid, tid, e.timestamp, str(e.dur), '')
+                outjson.append(x.toString())
 
 libva_profile = [
     "VAProfileMPEG2Simple", 
@@ -407,7 +407,7 @@ if __name__ == "__main__":
     else:
         print('INFO: found', file_num, 'libva trace files')
 
-    # parse trace
+    # parse libva trace
     none_ctx = ContextInfo([])
     context_events.append((none_ctx, []))
     event_num = parse_libva_trace(libva_trace_files, proc_events, context_events)
@@ -418,6 +418,11 @@ if __name__ == "__main__":
         print('INFO: parsed', event_num, 'events')
     ctx_num = build_contex_events(proc_events, context_events)
     print('INFO: found', ctx_num, 'contexts')
+    
+    # generate json
+    gen_json_context(context_events, outjson)
+    gen_json_process_all(proc_events, outjson)
+    gen_json_process_ctx(proc_events, outjson)
 
     # find strace files
     strace_files = []
@@ -434,11 +439,8 @@ if __name__ == "__main__":
         print('WARNING: No valid drm events parsed!')
     else:
         print('INFO: parsed', strace_event_num, 'drm events')
-    
-    # generate json
-    gen_json_context(context_events, outjson)
-    gen_json_process_all(proc_events, outjson)
-    gen_json_process_ctx(proc_events, outjson)
+
+    # generate json for strace events
     if strace_event_num > 0:
         gen_json_strace_execbuf2(strace_events, outjson)
         gen_json_strace_proc(strace_events, outjson)
