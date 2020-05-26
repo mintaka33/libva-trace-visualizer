@@ -45,7 +45,14 @@ export LIBVA_TRACE=./tmp
 strace -ff -o tmp.strace -ttt -e trace=ioctl ffmpeg -loglevel verbose -threads 1 -hwaccel vaapi -i test.264 -f null -
 ```
 
-#### transcode 1:1
+#### transcode 1:1 AVC -> AVC
+```bash
+export LIBVA_TRACE=./tmp
+strace -ff -o tmp.strace -ttt -e trace=ioctl ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -v verbose -hwaccel_output_format vaapi -i test.264 \
+-vf scale_vaapi=w=300:h=200 -c:v h264_vaapi -vframes 100 -an -y /tmp/out.264
+```
+
+#### transcode 1:1 AVC -> HEVC
 ```bash
 export LIBVA_TRACE=./tmp
 strace -ff -o tmp.strace -ttt -e trace=ioctl ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -v verbose -hwaccel_output_format vaapi -i test.264 \
