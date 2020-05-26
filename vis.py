@@ -149,7 +149,7 @@ class EventMeta():
         out = out + arg + '}, \n'
         return out
 
-def get_libva_tracefiles(path, libva_trace_files):
+def find_libva_tracefiles(path, libva_trace_files):
     file_list = os.listdir(path)
     for file in file_list:
         if file.find('thd-') != -1:
@@ -157,7 +157,7 @@ def get_libva_tracefiles(path, libva_trace_files):
             libva_trace_files.append((file, pid))
     return len(libva_trace_files)
 
-def get_stracefiles(path, strace_files):
+def find_stracefiles(path, strace_files):
     file_list = os.listdir(path)
     for file in file_list:
         if file.find('.strace.') != -1:
@@ -247,11 +247,12 @@ def build_contex_events(proc_events, context_events):
                     c[1].append(e)
     return len(context_events)
 
-def parse_strace(files, events):
+def parse_strace(folder, files, events):
     events_num = 0
     for file, pid in files:
         elist = []
-        with open(file, 'rt') as f:
+        strace_file = folder + '/' + file
+        with open(strace_file, 'rt') as f:
             for line in f:
                 if line.find(' ioctl(') != -1 and line.find(') = ') != -1:
                     e = DrmEvent(line, pid)
@@ -385,22 +386,14 @@ libva_entrypoint = [
     "VAEntrypointStats", 
 ]
 
-if __name__ == "__main__":
-    if len(sys.argv) == 1:
-        trace_folder = '.'
-    elif len(sys.argv) == 2:
-        trace_folder = sys.argv[1]
-    else:
-        print('ERROR: Invalid command line!')
-        exit()
-
+def vis_execute(trace_folder):
     libva_trace_files = []
     proc_events = []
     context_events = []
     outjson = []
 
     # find libva trace files
-    file_num = get_libva_tracefiles(trace_folder, libva_trace_files)
+    file_num = find_libva_tracefiles(trace_folder, libva_trace_files)
     if file_num == 0:
         print('ERROR: No libva trace file found!')
         exit()
@@ -426,7 +419,7 @@ if __name__ == "__main__":
 
     # find strace files
     strace_files = []
-    strace_file_num = get_stracefiles(trace_folder, strace_files)
+    strace_file_num = find_stracefiles(trace_folder, strace_files)
     if strace_file_num == 0:
         print('WARNING: No strace file found!')
     else:
@@ -434,7 +427,7 @@ if __name__ == "__main__":
 
     # parse strace drm ioctl events
     strace_events = []
-    strace_event_num = parse_strace(strace_files, strace_events)
+    strace_event_num = parse_strace(trace_folder, strace_files, strace_events)
     if strace_event_num == 0:
         print('WARNING: No valid drm events parsed!')
     else:
@@ -452,4 +445,16 @@ if __name__ == "__main__":
         f.writelines(outjson)
 
     print('INFO:', outfile, 'generated')
+
+if __name__ == "__main__":
+    if len(sys.argv) == 1:
+        trace_folder = '.'
+    elif len(sys.argv) == 2:
+        trace_folder = sys.argv[1]
+    else:
+        print('ERROR: Invalid command line!')
+        exit()
+
+    vis_execute(trace_folder)
+
     print('done')
