@@ -1,5 +1,6 @@
 import os
 import sys
+import json
 
 class ContextInfo():
     def __init__(self, info_lines):
@@ -32,18 +33,21 @@ class ContextInfo():
                 self.num_rt = int(c.split('num_render_targets = ')[1], 10)
 
 class VAEvent():
-    def __init__(self, line, pid, ctxinfo, endline, framecount, rt_handle):
+    def __init__(self, line, pid, ctxinfo, endline, frame_count, rt_handle):
         self.line = line
         self.pid = pid
         self.timestamp = ''
         self.context = 1
         self.ctxinfo = ctxinfo
         self.eventname = ''
-        self.frame_count = framecount
+        self.frame_count = frame_count
         self.rt_handle = rt_handle
         self.endline = endline
         self.dur = 1
+        self.metadata = {}
+        self.metastring = ""
         self.parse(line)
+
     def parse(self, line):
         seg = line.split('==========')
         s1, s2 = seg[0].split('][')
@@ -51,6 +55,7 @@ class VAEvent():
             self.eventname = 'va_EndPicture'
         else: 
             self.eventname = seg[1].strip()
+        # rename events
         if self.eventname == 'va_TraceBeginPicture' and len(self.frame_count) > 0: 
             self.eventname = 'va_BeginPicture ' + '(' + self.frame_count + ')'
         if self.eventname == 'va_TraceSyncSurface' and len(self.rt_handle) > 0: 
@@ -69,6 +74,12 @@ class VAEvent():
                 self.context = 1
             else:
                 self.context = int(ctx_str, 16)
+        self.setMeta()
+
+    def setMeta(self):
+        if len(self.rt_handle) > 0:
+            self.metadata["render_target"] = self.rt_handle
+        self.metastring = json.dumps(self.metadata)
 
 class EventMeta():
     def __init__(self, name, pid, tid, args):
@@ -84,7 +95,7 @@ class EventMeta():
         out = out + '"name":"' + self.name + '", '
         out = out + '"pid":"' + self.pid + '", '
         out = out + '"tid":"' + self.tid + '", '
-        arg = '"args":{"name": "' +self.args + '"}'
+        arg = '"args":{"name": "' + self.args + '"}'
         out = out + arg + '}, \n'
         return out
 
@@ -143,7 +154,7 @@ def parse_libva_trace(libva_trace_files, proc_events, context_events):
             if i >= maxlen:
                 break
             line = trace_logs[i]
-            framecount, rt_handle = '', ''
+            frame_count, rt_handle = '', ''
             if line.find('==========') != -1:
                 segline = line.split('==========')
                 eventname = segline[1].strip()
@@ -171,7 +182,12 @@ def parse_libva_trace(libva_trace_files, proc_events, context_events):
                 elif line.find('va_TraceBeginPicture') != -1:
                     new_line = trace_logs[i+3]
                     if new_line.find(']	frame_count  = #') != -1:
-                        framecount = new_line.split(']	frame_count  = #')[1].strip()
+                        frame_count = new_line.split(']	frame_count  = #')[1].strip()
+                elif line.find('va_TraceEndPicture') != -1:
+                    new_line = trace_logs[i+2]
+                    if new_line.find('render_targets = ') != -1:
+                        hexstr = new_line.split('render_targets = ')[1].strip()
+                        rt_handle = str(int(hexstr, 16))
                 elif line.find('va_TraceSyncSurface') != -1:
                     new_line = trace_logs[i+1]
                     if new_line.find('render_target = ') != -1:
@@ -191,7 +207,7 @@ def parse_libva_trace(libva_trace_files, proc_events, context_events):
                         i += 1
                         break
                     i += 1
-                e = VAEvent(line, pid, ctxinfo, endline, framecount, rt_handle)
+                e = VAEvent(line, pid, ctxinfo, endline, frame_count, rt_handle)
                 event_list.append(e)
             i += 1
         proc_events.append((pid, event_list))
@@ -310,7 +326,7 @@ def gen_json_context(context_events, outjson):
         thread_name = thread_prefix + ' ' + hex(cl[0].ctx) + ' (' + str(cl[0].width) + 'x' + str(cl[0].height) + ', ' + str(cl[0].num_rt) + ')'
         outjson.append(proc_meta.toString())
         for e in cl[1]:
-            x = EventX(e.eventname, str(pid), thread_name, e.timestamp, str(e.dur), '')
+            x = EventX(e.eventname, str(pid), thread_name, e.timestamp, str(e.dur), e.metastring)
             outjson.append(x.toString())
         pid += 1
 
