@@ -165,7 +165,7 @@ def find_stracefiles(path, strace_files):
             strace_files.append((file, str(pid)))
     return len(strace_files)
 
-def parse_libva_trace(libva_trace_files, proc_events, context_events):
+def parse_libva_trace(trace_folder, libva_trace_files, proc_events, context_events):
     total_events = 0
     for file, pid in libva_trace_files:
         trace_logs = []
@@ -396,17 +396,17 @@ def vis_execute(trace_folder):
     file_num = find_libva_tracefiles(trace_folder, libva_trace_files)
     if file_num == 0:
         print('ERROR: No libva trace file found!')
-        exit()
+        return ''
     else:
         print('INFO: found', file_num, 'libva trace files')
 
     # parse libva trace
     none_ctx = ContextInfo([])
     context_events.append((none_ctx, []))
-    event_num = parse_libva_trace(libva_trace_files, proc_events, context_events)
+    event_num = parse_libva_trace(trace_folder, libva_trace_files, proc_events, context_events)
     if event_num == 0:
         print('ERROR: No valid events parsed!')
-        exit()
+        return ''
     else:
         print('INFO: parsed', event_num, 'events')
     ctx_num = build_contex_events(proc_events, context_events)
@@ -445,6 +445,7 @@ def vis_execute(trace_folder):
         f.writelines(outjson)
 
     print('INFO:', outfile, 'generated')
+    return outfile
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:

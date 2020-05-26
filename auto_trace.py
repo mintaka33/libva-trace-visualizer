@@ -3,6 +3,7 @@ import sys
 import pathlib
 import time
 from datetime import datetime
+import vis
 
 app_cmd = ''
 strace_file_prefix = 'tmp.strace'
@@ -40,5 +41,13 @@ print('****INFO: full cmd line ****', app_cmd_with_strace)
 
 os.system(app_cmd_with_strace)
 os.system('ls -al ' + fullpath)
+
+json_file = vis.vis_execute(fullpath)
+if len(json_file) > 0:
+    copy_cmd = 'cp ' + json_file + ' ./'
+    os.system(copy_cmd)
+    print('****INFO: json file', json_file.split(fullpath)[1].strip('/'), 'generated****')
+else:
+    print('****ERROR: failed to generate json file****')
 
 print('****INFO: app execution done****')

@@ -2,3 +2,4 @@
 *.thd-*
 *.strace.*
 *.ioctl.*
+__pycache__
