@@ -386,7 +386,7 @@ libva_entrypoint = [
     "VAEntrypointStats", 
 ]
 
-def vis_execute(trace_folder):
+def vis_execute(trace_folder, level):
     libva_trace_files = []
     proc_events = []
     context_events = []
@@ -412,31 +412,36 @@ def vis_execute(trace_folder):
     ctx_num = build_contex_events(proc_events, context_events)
     print('INFO: found', ctx_num, 'contexts')
     
-    # generate json
+    # libva basic trace graph
     gen_json_context(context_events, outjson)
     gen_json_process_all(proc_events, outjson)
-    gen_json_process_ctx(proc_events, outjson)
 
-    # find strace files
-    strace_files = []
-    strace_file_num = find_stracefiles(trace_folder, strace_files)
-    if strace_file_num == 0:
-        print('WARNING: No strace file found!')
-    else:
-        print('INFO: found', strace_file_num, 'strace files')
+    # libva process-ctx trace graph
+    if level > 1:
+        gen_json_process_ctx(proc_events, outjson)
 
-    # parse strace drm ioctl events
-    strace_events = []
-    strace_event_num = parse_strace(trace_folder, strace_files, strace_events)
-    if strace_event_num == 0:
-        print('WARNING: No valid drm events parsed!')
-    else:
-        print('INFO: parsed', strace_event_num, 'drm events')
-
-    # generate json for strace events
-    if strace_event_num > 0:
-        gen_json_strace_execbuf2(strace_events, outjson)
-        gen_json_strace_proc(strace_events, outjson)
+    # strace graph
+    if level > 2:
+        # find strace files
+        strace_files = []
+        strace_file_num = find_stracefiles(trace_folder, strace_files)
+        if strace_file_num == 0:
+            print('WARNING: No strace file found!')
+        else:
+            print('INFO: found', strace_file_num, 'strace files')
+    
+        # parse strace drm ioctl events
+        strace_events = []
+        strace_event_num = parse_strace(trace_folder, strace_files, strace_events)
+        if strace_event_num == 0:
+            print('WARNING: No valid drm events parsed!')
+        else:
+            print('INFO: parsed', strace_event_num, 'drm events')
+    
+        # generate json for strace events
+        if strace_event_num > 0:
+            gen_json_strace_execbuf2(strace_events, outjson)
+            gen_json_strace_proc(strace_events, outjson)
 
     # dump json to file
     outfile = trace_folder + '/' + libva_trace_files[0][0].split('thd-')[0] + 'json'
@@ -447,15 +452,26 @@ def vis_execute(trace_folder):
     print('INFO:', outfile, 'generated')
     return outfile
 
+def check_int(astring):
+    try: int(astring)
+    except ValueError: return 0
+    else: return 1
+
 if __name__ == "__main__":
+    trace_level = 1
     if len(sys.argv) == 1:
         trace_folder = '.'
     elif len(sys.argv) == 2:
         trace_folder = sys.argv[1]
+    elif len(sys.argv) == 3:
+        if check_int(sys.argv[2]):
+            level = int(sys.argv[2])
+            if level == 1 or level == 2 or level == 3:
+                trace_level = level
     else:
         print('ERROR: Invalid command line!')
         exit()
 
-    vis_execute(trace_folder)
+    vis_execute(trace_folder, trace_level)
 
     print('done')

@@ -8,6 +8,7 @@ import vis
 app_cmd = ''
 strace_file_prefix = 'tmp.strace'
 libva_trace_prefix = 'tmp'
+trace_level = 1
 
 def get_subfolder_name():
     n = datetime.now()
@@ -16,7 +17,7 @@ def get_subfolder_name():
     time_str += '_' + str(n.microsecond).zfill(6)
     return time_str
 
-if len(sys.argv) == 2:
+if len(sys.argv) == 2 or len(sys.argv) == 3:
     app_cmd = sys.argv[1]
     app_name = app_cmd.split()[0]
     if '/' in app_name:
@@ -27,6 +28,11 @@ if len(sys.argv) == 2:
         libva_trace_prefix = app_name
         print(strace_file_prefix, libva_trace_prefix)
     print('****INFO: app cmd line ****', app_cmd)
+    if len(sys.argv) == 3:
+        if vis.check_int(sys.argv[2]):
+            level = int(sys.argv[2])
+            if level == 1 or level == 2 or level == 3:
+                trace_level = level
 else:
     print('bad command line')
     #exit()
@@ -50,7 +56,7 @@ print('****INFO: full cmd line ****', app_cmd_with_strace)
 os.system(app_cmd_with_strace)
 os.system('ls -al ' + fullpath)
 
-json_file = vis.vis_execute(fullpath)
+json_file = vis.vis_execute(fullpath, trace_level)
 if len(json_file) > 0:
     copy_cmd = 'cp ' + json_file + ' ./'
     os.system(copy_cmd)
