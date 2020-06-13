@@ -15,5 +15,5 @@ python3 vis.py "mpeg2vldemo"
 python3 vis.py "h264encode"
 python3 vis.py "ffmpeg -loglevel verbose -hwaccel vaapi -i test.264 -f null -"
 ```
-more examples in ![cmd](https://github.com/mintaka33/libva-trace-visualizer/blob/master/cmd.md)
+more examples in [cmd.md](https://github.com/mintaka33/libva-trace-visualizer/blob/master/cmd.md)
 
