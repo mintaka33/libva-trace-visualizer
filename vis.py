@@ -334,61 +334,6 @@ def gen_json_strace_execbuf2(strace_events, outjson):
                 x = EventX(e.eventname, pid, tid, e.timestamp, str(e.dur), '')
                 outjson.append(x.toString())
 
-libva_profile = [
-    "VAProfileMPEG2Simple", 
-    "VAProfileMPEG2Main", 
-    "VAProfileMPEG4Simple", 
-    "VAProfileMPEG4AdvancedSimple", 
-    "VAProfileMPEG4Main", 
-    "VAProfileH264Baselineva_deprecated_enum", 
-    "VAProfileH264Main", 
-    "VAProfileH264High", 
-    "VAProfileVC1Simple", 
-    "VAProfileVC1Main", 
-    "VAProfileVC1Advanced", 
-    "VAProfileH263Baseline", 
-    "VAProfileJPEGBaseline", 
-    "VAProfileH264ConstrainedBaseline", 
-    "VAProfileVP8Version0_3", 
-    "VAProfileH264MultiviewHigh", 
-    "VAProfileH264StereoHigh", 
-    "VAProfileHEVCMain", 
-    "VAProfileHEVCMain10", 
-    "VAProfileVP9Profile0", 
-    "VAProfileVP9Profile1", 
-    "VAProfileVP9Profile2", 
-    "VAProfileVP9Profile3", 
-    "VAProfileHEVCMain12", 
-    "VAProfileHEVCMain422_10", 
-    "VAProfileHEVCMain422_12", 
-    "VAProfileHEVCMain444", 
-    "VAProfileHEVCMain444_10", 
-    "VAProfileHEVCMain444_12", 
-    "VAProfileHEVCSccMain", 
-    "VAProfileHEVCSccMain10", 
-    "VAProfileHEVCSccMain444", 
-    "VAProfileAV1Profile0", 
-    "VAProfileAV1Profile1", 
-    "VAProfileHEVCSccMain444_10", 
-    "VAProfile", 
-]
-
-libva_entrypoint = [
-    "VAEntrypointNULL",
-    "VAEntrypointDecode_VLD", 
-    "VAEntrypointDecode_IZZ", 
-    "VAEntrypointDecode_IDCT", 
-    "VAEntrypointDecode_MoComp", 
-    "VAEntrypointDecode_Deblocking", 
-    "VAEntrypointEncode_VME", 
-    "VAEntrypointEncode_Picture", 
-    "VAEntrypointEncode_VDEnc", 
-    "VAEntrypointNone", 
-    "VAEntrypointVideoProcess", 
-    "VAEntrypointFEI", 
-    "VAEntrypointStats", 
-]
-
 def vis_execute(trace_folder, level):
     libva_trace_files = []
     proc_events = []
@@ -466,6 +411,61 @@ def get_subfolder_name():
     time_str += '_' + str(n.hour).zfill(2) + '-' + str(n.minute).zfill(2) + '-' + str(n.second).zfill(2)
     time_str += '_' + str(n.microsecond).zfill(6)
     return time_str
+
+libva_profile = [
+    "VAProfileMPEG2Simple", 
+    "VAProfileMPEG2Main", 
+    "VAProfileMPEG4Simple", 
+    "VAProfileMPEG4AdvancedSimple", 
+    "VAProfileMPEG4Main", 
+    "VAProfileH264Baselineva_deprecated_enum", 
+    "VAProfileH264Main", 
+    "VAProfileH264High", 
+    "VAProfileVC1Simple", 
+    "VAProfileVC1Main", 
+    "VAProfileVC1Advanced", 
+    "VAProfileH263Baseline", 
+    "VAProfileJPEGBaseline", 
+    "VAProfileH264ConstrainedBaseline", 
+    "VAProfileVP8Version0_3", 
+    "VAProfileH264MultiviewHigh", 
+    "VAProfileH264StereoHigh", 
+    "VAProfileHEVCMain", 
+    "VAProfileHEVCMain10", 
+    "VAProfileVP9Profile0", 
+    "VAProfileVP9Profile1", 
+    "VAProfileVP9Profile2", 
+    "VAProfileVP9Profile3", 
+    "VAProfileHEVCMain12", 
+    "VAProfileHEVCMain422_10", 
+    "VAProfileHEVCMain422_12", 
+    "VAProfileHEVCMain444", 
+    "VAProfileHEVCMain444_10", 
+    "VAProfileHEVCMain444_12", 
+    "VAProfileHEVCSccMain", 
+    "VAProfileHEVCSccMain10", 
+    "VAProfileHEVCSccMain444", 
+    "VAProfileAV1Profile0", 
+    "VAProfileAV1Profile1", 
+    "VAProfileHEVCSccMain444_10", 
+    "VAProfile", 
+]
+
+libva_entrypoint = [
+    "VAEntrypointNULL",
+    "VAEntrypointDecode_VLD", 
+    "VAEntrypointDecode_IZZ", 
+    "VAEntrypointDecode_IDCT", 
+    "VAEntrypointDecode_MoComp", 
+    "VAEntrypointDecode_Deblocking", 
+    "VAEntrypointEncode_VME", 
+    "VAEntrypointEncode_Picture", 
+    "VAEntrypointEncode_VDEnc", 
+    "VAEntrypointNone", 
+    "VAEntrypointVideoProcess", 
+    "VAEntrypointFEI", 
+    "VAEntrypointStats", 
+]
 
 if __name__ == "__main__":
     app_cmd = ''
