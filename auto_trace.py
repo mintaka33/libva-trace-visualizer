@@ -19,6 +19,8 @@ def get_subfolder_name():
 if len(sys.argv) == 2:
     app_cmd = sys.argv[1]
     app_name = app_cmd.split()[0]
+    if '/' in app_name:
+        app_name = app_name.split('/')[-1]
     if len(app_name) > 0:
         print('****INFO: App name****', app_name)
         strace_file_prefix = app_name + '.strace'
