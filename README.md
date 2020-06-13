@@ -11,8 +11,8 @@ python3 vis.py "application command line" trace_level
 ### example
 
 ```bash
-python3 vis.py "mpeg2vldemo"
-python3 vis.py "h264encode"
+python3 vis.py "mpeg2vldemo" 3
+python3 vis.py "h264encode" 2
 python3 vis.py "ffmpeg -loglevel verbose -hwaccel vaapi -i test.264 -f null -"
 ```
 more examples in [cmd.md](https://github.com/mintaka33/libva-trace-visualizer/blob/master/cmd.md)
