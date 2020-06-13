@@ -51,7 +51,7 @@ python3 auto.py "ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -v verb
 
 #### transcode 1:1 AVC -> HEVC
 ```bash
-python3 auto.py "ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -v verbose -hwaccel_output_format vaapi -i test.264 -vf scale_vaapi=w=300:h=200 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out.265"
+python3 vis.py "ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -v verbose -hwaccel_output_format vaapi -i test.264 -vf scale_vaapi=w=300:h=200 -c:v hevc_vaapi -vframes 100 -an -y /tmp/out.265"
 ```
 
 #### transcode 1:4
