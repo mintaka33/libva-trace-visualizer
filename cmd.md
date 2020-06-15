@@ -1,10 +1,5 @@
-# Enable strace
-```bash
-export LIBVA_TRACE=./tmp
-strace -ff -o tmp.strace -ttt -e trace=ioctl Test_APP_Command_Line
-```
 
-# Test Example
+# Examples
 
 ## libva-utils
 
@@ -92,4 +87,10 @@ vaapipostproc ! videoconvert ! video/x-raw, format=BGR ! filesink location=out.y
 #### 1:1 transcode
 ```bash
 python3 vis.py "gst-launch-1.0 filesrc location=/home/fresh/data/video/test.mp4 ! qtdemux ! h264parse ! vaapih264dec ! vaapipostproc ! video/x-raw,format=NV12,width=300,height=300 ! vaapih265enc rate-control=cbr bitrate=1500 ! gvafpscounter ! filesink location=/tmp/out.265"
+```
+
+# strace
+```bash
+export LIBVA_TRACE=./tmp
+strace -ff -o tmp.strace -ttt -e trace=ioctl Test_APP_Command_Line
 ```
