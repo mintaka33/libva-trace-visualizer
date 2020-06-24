@@ -5,6 +5,20 @@ import pathlib
 import time
 from datetime import datetime
 
+def get_uptime_epoch():
+    with open('/proc/uptime', 'r') as f:
+        uptime_seconds = float(f.readline().split()[0])
+    uptime_since_epoch = time.time() - uptime_seconds
+    return uptime_since_epoch
+
+uptime = get_uptime_epoch()
+
+def epoch_to_uptime(epoch_time):
+    time_since_up = float(epoch_time) - uptime
+    tmp_str = '%.6f' % time_since_up
+    time_since_up_str = tmp_str.replace('.', '')
+    return time_since_up_str
+
 class ContextInfo():
     def __init__(self, info_lines):
         self.info_lines = info_lines
@@ -63,13 +77,11 @@ class VAEvent():
             self.eventname = 'va_BeginPicture ' + '(' + self.frame_count + ')'
         if self.eventname == 'va_TraceSyncSurface' and len(self.rt_handle) > 0: 
             self.eventname = 'va_SyncSurface ' + '(' + self.rt_handle + ')'
-        a, b = s1[1:].split('.')
-        self.timestamp = a + b
+        self.timestamp = epoch_to_uptime(s1[1:])
         if len(self.endline) > 0:
             elseg = self.endline.split('==========')
             e1, e2 = elseg[0].split('][')
-            a, b = e1[1:].split('.')
-            endtime = a + b
+            endtime = epoch_to_uptime(e1[1:])
             self.dur = int(endtime) - int(self.timestamp)
         if s2.find('ctx') != -1 and s2.find(']') != -1:
             ctx_str = s2.split('ctx')[1].split(']')[0].strip()
@@ -99,10 +111,7 @@ class DrmEvent():
         s0, s1 = self.line.split(' ioctl(')
         t0, t1 = s1.split(') = ')
         sec, us = s0.split('.') # epoch time since 1970
-        th = hex(int(sec, 10))
-        # use last 4 digits of hex value (0xffff) to align with libva time stamp
-        time = '0x' + th[-4] + th[-3] + th[-2] + th[-1] 
-        self.timestamp = str(int(time, 16)) + us
+        self.timestamp = epoch_to_uptime(s0)
         tv0 = t0.split(', ')
         self.fd = tv0[0]
         self.eventname = tv0[1].replace('DRM_IOCTL_', '')
@@ -288,7 +297,7 @@ def gen_json_process_all(proc_events, outjson):
             outjson.append(x.toString())
 
 def gen_json_context(context_events, outjson):
-    pid = 0
+    pid = 20
     for cl in context_events:
         proc_name =  libva_profile[cl[0].profile].split('VAProfile')[1] + '_'
         proc_name += libva_entrypoint[cl[0].entrypoint].split('VAEntrypoint')[1]
@@ -466,6 +475,9 @@ libva_entrypoint = [
     "VAEntrypointFEI", 
     "VAEntrypointStats", 
 ]
+
+#tmpath = '/tmp/vavis/2020-06-23_10-08-46_042566'
+#vis_execute(tmpath, 3)
 
 if __name__ == "__main__":
     app_cmd = ''
